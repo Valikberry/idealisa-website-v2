@@ -3,7 +3,6 @@
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Menu, X, Lightbulb } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 const navItems = [
   { label: "Our Services", href: "#services" },
@@ -15,6 +14,7 @@ const navItems = [
 export function Navbar() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [language, setLanguage] = useState<"pt" | "en">("pt")
   const navRef = useRef<HTMLDivElement>(null)
 
   return (
@@ -61,12 +61,24 @@ export function Navbar() {
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-white hover:bg-zinc-800">
-            Sign In
-          </Button>
-          <Button size="sm" className="shimmer-btn bg-white text-zinc-950 hover:bg-zinc-200 rounded-full px-4">
-            Get Started
-          </Button>
+          <div className="flex items-center h-8 p-0.5 bg-white rounded-full border border-zinc-300">
+            <button
+              onClick={() => setLanguage("pt")}
+              className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
+                language === "pt" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
+              }`}
+            >
+              PT
+            </button>
+            <button
+              onClick={() => setLanguage("en")}
+              className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
+                language === "en" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -99,10 +111,24 @@ export function Navbar() {
               </a>
             ))}
             <hr className="border-zinc-800 my-2" />
-            <Button variant="ghost" className="justify-start text-zinc-400 hover:text-white">
-              Sign In
-            </Button>
-            <Button className="shimmer-btn bg-white text-zinc-950 hover:bg-zinc-200 rounded-full">Get Started</Button>
+            <div className="flex items-center h-8 p-0.5 bg-white rounded-full border border-zinc-300 self-start">
+              <button
+                onClick={() => setLanguage("pt")}
+                className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
+                  language === "pt" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
+                }`}
+              >
+                PT
+              </button>
+              <button
+                onClick={() => setLanguage("en")}
+                className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
+                  language === "en" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
+                }`}
+              >
+                EN
+              </button>
+            </div>
           </div>
         </motion.div>
       )}
