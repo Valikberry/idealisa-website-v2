@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
@@ -31,9 +31,9 @@ export function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-            <span className="text-zinc-950 font-bold text-sm">A</span>
+            <Lightbulb className="text-zinc-950" size={16} />
           </div>
-          <span className="font-semibold text-white hidden sm:block">Apex</span>
+          <span className="font-semibold text-white hidden sm:block">IdealIsa</span>
         </a>
 
         {/* Desktop Nav Items */}
