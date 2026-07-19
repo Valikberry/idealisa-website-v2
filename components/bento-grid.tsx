@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
-import { Activity, Command, ClipboardList, TrendingUp, Award } from "lucide-react"
+import { Palette, MessageSquare, ClipboardList, TrendingUp, Award } from "lucide-react"
 
 const containerVariants = {
   hidden: {},
@@ -123,7 +123,7 @@ export function BentoGrid() {
             <div className="flex items-start justify-between mb-8">
               <div>
                 <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
-                  <Activity className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
+                  <Palette className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Strategy & Branding</h3>
                 <p className="text-zinc-400 text-sm">
@@ -153,7 +153,7 @@ export function BentoGrid() {
             className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
-              <Command className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
+              <MessageSquare className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">Corporate Communication</h3>
             <p className="text-zinc-400 text-sm mb-6">
