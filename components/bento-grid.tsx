@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
-import { Activity, Command, BarChart3, Zap, Shield } from "lucide-react"
+import { Palette, MessageSquare, ClipboardList, TrendingUp, Award } from "lucide-react"
 
 const containerVariants = {
   hidden: {},
@@ -45,36 +45,6 @@ function SystemStatus() {
           transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, delay: i * 0.2 }}
         />
       ))}
-    </div>
-  )
-}
-
-function KeyboardCommand() {
-  const [pressed, setPressed] = useState(false)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPressed(true)
-      setTimeout(() => setPressed(false), 200)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    <div className="flex items-center gap-1">
-      <motion.kbd
-        animate={pressed ? { scale: 0.95, y: 2 } : { scale: 1, y: 0 }}
-        className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 font-mono"
-      >
-        ⌘
-      </motion.kbd>
-      <motion.kbd
-        animate={pressed ? { scale: 0.95, y: 2 } : { scale: 1, y: 0 }}
-        transition={{ delay: 0.05 }}
-        className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 font-mono"
-      >
-        K
-      </motion.kbd>
     </div>
   )
 }
@@ -131,10 +101,10 @@ export function BentoGrid() {
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: "var(--font-instrument-sans)" }}
           >
-            Everything you need to ship
+            Everything IdealIsa brings to the table
           </h2>
           <p className="text-zinc-400 max-w-2xl mx-auto">
-            Built for modern teams. Powerful features that help you build, deploy, and scale faster than ever.
+            Built for companies and organisations across Angola who want their brand to mean something.
           </p>
         </motion.div>
 
@@ -153,20 +123,25 @@ export function BentoGrid() {
             <div className="flex items-start justify-between mb-8">
               <div>
                 <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
-                  <Activity className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
+                  <Palette className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Real-time Monitoring</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Strategy & Branding</h3>
                 <p className="text-zinc-400 text-sm">
-                  Track system health, performance metrics, and alerts in real-time across all your deployments.
+                  We build brand strategies that position your business clearly and confidently.
                 </p>
               </div>
               <SystemStatus />
             </div>
             <div className="grid grid-cols-4 gap-4">
-              {["CPU", "Memory", "Network", "Storage"].map((metric) => (
-                <div key={metric} className="text-center">
-                  <div className="text-2xl font-bold text-white mb-1">{Math.floor(Math.random() * 40 + 60)}%</div>
-                  <div className="text-xs text-zinc-500">{metric}</div>
+              {[
+                { label: "Identity", value: 89 },
+                { label: "Positioning", value: 93 },
+                { label: "Voice", value: 95 },
+                { label: "Branding", value: 95 },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">{stat.value}%</div>
+                  <div className="text-xs text-zinc-500">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -178,11 +153,20 @@ export function BentoGrid() {
             className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
-              <Command className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
+              <MessageSquare className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Command Palette</h3>
-            <p className="text-zinc-400 text-sm mb-6">Navigate anywhere instantly with powerful keyboard shortcuts.</p>
-            <KeyboardCommand />
+            <h3 className="text-lg font-semibold text-white mb-2">Corporate Communication</h3>
+            <p className="text-zinc-400 text-sm mb-6">
+              Communication strategy and company principles that keep your brand credible at every touchpoint.
+            </p>
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 font-mono">
+                24/7
+              </span>
+              <span className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 font-mono">
+                Trusted Voice
+              </span>
+            </div>
           </motion.div>
 
           {/* Analytics */}
@@ -191,10 +175,10 @@ export function BentoGrid() {
             className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
-              <BarChart3 className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
+              <ClipboardList className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Analytics</h3>
-            <p className="text-zinc-400 text-sm mb-4">Deep insights into your application performance.</p>
+            <h3 className="text-lg font-semibold text-white mb-2">Project Management</h3>
+            <p className="text-zinc-400 text-sm mb-4">We plan, coordinate, and execute — from concept to launch.</p>
             <AnimatedChart />
           </motion.div>
 
@@ -204,15 +188,15 @@ export function BentoGrid() {
             className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
-              <Zap className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
+              <TrendingUp className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Blazing Fast</h3>
+            <h3 className="text-lg font-semibold text-white mb-2">Marketing & Digital Communication</h3>
             <p className="text-zinc-400 text-sm mb-4">
-              Edge-optimized infrastructure for sub-50ms response times globally.
+              Websites, landing pages, digital strategy, SEO, digital advertising, and marketing automation.
             </p>
             <div className="flex items-center gap-2 text-emerald-500 text-sm">
-              <span className="font-mono">~32ms</span>
-              <span className="text-zinc-500">avg response</span>
+              <span className="font-mono">1,000+</span>
+              <span className="text-zinc-500">companies reached</span>
             </div>
           </motion.div>
 
@@ -222,14 +206,17 @@ export function BentoGrid() {
             className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
-              <Shield className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
+              <Award className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Enterprise Security</h3>
-            <p className="text-zinc-400 text-sm mb-4">SOC2 compliant with end-to-end encryption and SSO support.</p>
+            <h3 className="text-lg font-semibold text-white mb-2">Why Choose IdealIsa</h3>
+            <p className="text-zinc-400 text-sm mb-4">
+              We combine strategic thinking, business vision, communication, and execution to deliver tailored
+              solutions and sustainable growth.
+            </p>
             <div className="flex items-center gap-2">
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">SOC2</span>
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">GDPR</span>
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">HIPAA</span>
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">Consistency</span>
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">Impact</span>
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">Innovation</span>
             </div>
           </motion.div>
         </motion.div>
