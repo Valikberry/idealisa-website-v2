@@ -28,10 +28,10 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-16 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950 to-zinc-900 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#ffffff] pointer-events-none" />
 
       {/* Subtle radial glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-zinc-800/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-zinc-200/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Badge */}
@@ -39,15 +39,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f4f4f5] border border-[#e5e5e5] mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-emerald-500 pulse-glow" />
-          <span className="text-sm text-zinc-400">Trusted Across Angola</span>
+          <span className="w-2 h-2 rounded-full bg-[#16a34a] pulse-glow" />
+          <span className="text-sm text-[#3f3f46]">Trusted Across Angola</span>
         </motion.div>
 
         {/* Headline with text mask animation */}
         <h1
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0a0a0a] mb-6"
           style={{ fontFamily: "var(--font-cal-sans), sans-serif" }}
         >
           <span className="block overflow-hidden">
@@ -57,7 +57,7 @@ export function Hero() {
           </span>
           <span className="block overflow-hidden">
             <motion.span
-              className="block text-zinc-500"
+              className="block text-[#71717a]"
               variants={textRevealVariants}
               initial="hidden"
               animate="visible"
@@ -73,7 +73,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg sm:text-xl text-[#52525b] max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           IdealIsa is a marketing and communication company helping businesses in Angola build stronger brands,
           strengthen reputation, and grow sustainably.
@@ -88,7 +88,7 @@ export function Hero() {
         >
           <Button
             size="lg"
-            className="shimmer-btn bg-white text-zinc-950 hover:bg-zinc-200 rounded-full px-8 h-12 text-base font-medium shadow-lg shadow-white/10"
+            className="shimmer-btn bg-[#d97706] text-[#ffffff] hover:bg-[#b45309] rounded-full px-8 h-12 text-base font-medium shadow-lg shadow-white/10"
           >
             See Our Work
             <ArrowRight className="ml-2 w-4 h-4" />
@@ -96,7 +96,7 @@ export function Hero() {
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full px-8 h-12 text-base font-medium border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white hover:border-zinc-700 bg-transparent"
+            className="rounded-full px-8 h-12 text-base font-medium bg-[#2E7D32] text-[#ffffff] border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
           >
             Contact on WhatsApp
           </Button>
@@ -121,13 +121,13 @@ export function Hero() {
                 <img
                   src={avatar || "/placeholder.svg"}
                   alt=""
-                  className="w-10 h-10 rounded-full border-2 border-zinc-950 object-cover"
+                  className="w-10 h-10 rounded-full border-2 border-[#ffffff] ring-2 ring-[#e5e5e5] object-cover"
                 />
               </motion.div>
             ))}
           </div>
-          <p className="text-sm text-zinc-500">
-            Trusted by <span className="text-zinc-300 font-medium">1,000+</span> Companies in Angola
+          <p className="text-sm text-[#71717a]">
+            Trusted by <span className="text-[#0a0a0a] font-bold">1,000+</span> Companies in Angola
           </p>
         </motion.div>
       </div>
