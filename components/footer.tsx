@@ -2,12 +2,19 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import { Lightbulb, Instagram } from "lucide-react"
 
 const footerLinks = {
-  Product: ["Features", "Pricing", "Changelog", "Roadmap", "API"],
-  Resources: ["Documentation", "Guides", "Blog", "Community", "Templates"],
-  Company: ["About", "Careers", "Press", "Partners", "Contact"],
-  Legal: ["Privacy", "Terms", "Security", "Cookies", "Licenses"],
+  Services: [
+    "Strategy & Branding",
+    "Corporate Communication",
+    "Project Management",
+    "Marketing & Digital Communication",
+    "Technology & Digital Solutions",
+  ],
+  Resources: ["Who We Are", "What We Do", "Blog", "Our Clients", "Training & Development"],
+  Company: ["About IdealIsa", "Careers", "Our Culture", "Testimonials", "Contact Us"],
+  Legal: ["Privacy Policy", "Terms of Service", "Our Commitment", "Mission & Values", "Our Essence"],
 }
 
 export function Footer() {
@@ -27,15 +34,17 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-                <span className="text-zinc-950 font-bold text-sm">A</span>
+                <Lightbulb className="text-zinc-950" size={16} />
               </div>
-              <span className="font-semibold text-white">Apex</span>
+              <span className="font-semibold text-white">IdealIsa</span>
             </a>
-            <p className="text-sm text-zinc-500 mb-4">The modern platform for teams who ship fast.</p>
-            {/* System Status */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 pulse-glow" />
-              <span className="text-xs text-zinc-400">All Systems Operational</span>
+            <p className="text-sm text-zinc-500 mb-4">
+              Strategy that positions. Communication that strengthens.
+            </p>
+            <div className="text-sm text-zinc-500 space-y-1">
+              <p>Maculusso, Rua Lourenço Mendes da Conceição, Luanda, Angola</p>
+              <p>+244 936 499 706 / +244 976 055 956 / +244 937 445 450</p>
+              <p>geral@idealisa.ao</p>
             </div>
           </div>
 
@@ -63,16 +72,11 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <p className="text-sm text-zinc-500">&copy; {new Date().getFullYear()} Apex, Inc. All rights reserved.</p>
+          <p className="text-sm text-zinc-500">&copy; {new Date().getFullYear()} IdealIsa. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-zinc-500 hover:text-white transition-colors">
-              Twitter
-            </a>
-            <a href="#" className="text-sm text-zinc-500 hover:text-white transition-colors">
-              GitHub
-            </a>
-            <a href="#" className="text-sm text-zinc-500 hover:text-white transition-colors">
-              Discord
+            <a href="#" className="flex items-center gap-2 text-sm text-zinc-500 hover:text-white transition-colors">
+              <Instagram className="w-4 h-4" strokeWidth={1.5} />
+              @idealisa.ao
             </a>
           </div>
         </motion.div>
