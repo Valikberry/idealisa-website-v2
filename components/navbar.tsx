@@ -3,19 +3,21 @@
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Menu, X, Lightbulb } from "lucide-react"
-
-const navItems = [
-  { label: "Our Services", href: "#services" },
-  { label: "Company", href: "#company" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact Us", href: "#contact" },
-]
+import { useLanguage, useTranslation } from "@/lib/language-context"
 
 export function Navbar() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [language, setLanguage] = useState<"pt" | "en">("pt")
+  const { language, setLanguage } = useLanguage()
+  const t = useTranslation()
   const navRef = useRef<HTMLDivElement>(null)
+
+  const navItems = [
+    { label: t.navbar.services, href: "#services" },
+    { label: t.navbar.company, href: "#company" },
+    { label: t.navbar.blog, href: "#blog" },
+    { label: t.navbar.contact, href: "#contact" },
+  ]
 
   return (
     <motion.header

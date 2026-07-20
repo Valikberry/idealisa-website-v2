@@ -3,6 +3,14 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
 import { Palette, MessageSquare, ClipboardList, TrendingUp, Award } from "lucide-react"
+import { useTranslation } from "@/lib/language-context"
+
+const strategyStats = [
+  { key: "identity", value: 89 },
+  { key: "positioning", value: 93 },
+  { key: "voice", value: 95 },
+  { key: "branding", value: 95 },
+] as const
 
 const containerVariants = {
   hidden: {},
@@ -87,6 +95,7 @@ function AnimatedChart() {
 export function BentoGrid() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const t = useTranslation()
 
   return (
     <section id="features" className="py-24 px-4">
@@ -101,11 +110,9 @@ export function BentoGrid() {
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: "var(--font-instrument-sans)" }}
           >
-            Everything IdealIsa brings to the table
+            {t.bentoGrid.heading}
           </h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
-            Built for companies and organisations across Angola who want their brand to mean something.
-          </p>
+          <p className="text-zinc-400 max-w-2xl mx-auto">{t.bentoGrid.subheading}</p>
         </motion.div>
 
         <motion.div
@@ -125,23 +132,16 @@ export function BentoGrid() {
                 <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
                   <Palette className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Strategy & Branding</h3>
-                <p className="text-zinc-400 text-sm">
-                  We build brand strategies that position your business clearly and confidently.
-                </p>
+                <h3 className="text-xl font-semibold text-white mb-2">{t.bentoGrid.strategy.title}</h3>
+                <p className="text-zinc-400 text-sm">{t.bentoGrid.strategy.description}</p>
               </div>
               <SystemStatus />
             </div>
             <div className="grid grid-cols-4 gap-4">
-              {[
-                { label: "Identity", value: 89 },
-                { label: "Positioning", value: 93 },
-                { label: "Voice", value: 95 },
-                { label: "Branding", value: 95 },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
+              {strategyStats.map((stat) => (
+                <div key={stat.key} className="text-center">
                   <div className="text-2xl font-bold text-white mb-1">{stat.value}%</div>
-                  <div className="text-xs text-zinc-500">{stat.label}</div>
+                  <div className="text-xs text-zinc-500">{t.bentoGrid.strategy.stats[stat.key]}</div>
                 </div>
               ))}
             </div>
@@ -155,16 +155,14 @@ export function BentoGrid() {
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <MessageSquare className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Corporate Communication</h3>
-            <p className="text-zinc-400 text-sm mb-6">
-              Communication strategy and company principles that keep your brand credible at every touchpoint.
-            </p>
+            <h3 className="text-lg font-semibold text-white mb-2">{t.bentoGrid.communication.title}</h3>
+            <p className="text-zinc-400 text-sm mb-6">{t.bentoGrid.communication.description}</p>
             <div className="flex items-center gap-2">
               <span className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 font-mono">
-                24/7
+                {t.bentoGrid.communication.badgeAvailability}
               </span>
               <span className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 font-mono">
-                Trusted Voice
+                {t.bentoGrid.communication.badgeVoice}
               </span>
             </div>
           </motion.div>
@@ -177,8 +175,8 @@ export function BentoGrid() {
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <ClipboardList className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Project Management</h3>
-            <p className="text-zinc-400 text-sm mb-4">We plan, coordinate, and execute — from concept to launch.</p>
+            <h3 className="text-lg font-semibold text-white mb-2">{t.bentoGrid.projectManagement.title}</h3>
+            <p className="text-zinc-400 text-sm mb-4">{t.bentoGrid.projectManagement.description}</p>
             <AnimatedChart />
           </motion.div>
 
@@ -190,13 +188,11 @@ export function BentoGrid() {
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <TrendingUp className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Marketing & Digital Communication</h3>
-            <p className="text-zinc-400 text-sm mb-4">
-              Websites, landing pages, digital strategy, SEO, digital advertising, and marketing automation.
-            </p>
+            <h3 className="text-lg font-semibold text-white mb-2">{t.bentoGrid.marketing.title}</h3>
+            <p className="text-zinc-400 text-sm mb-4">{t.bentoGrid.marketing.description}</p>
             <div className="flex items-center gap-2 text-emerald-500 text-sm">
-              <span className="font-mono">1,000+</span>
-              <span className="text-zinc-500">companies reached</span>
+              <span className="font-mono">{t.bentoGrid.marketing.statNumber}</span>
+              <span className="text-zinc-500">{t.bentoGrid.marketing.statLabel}</span>
             </div>
           </motion.div>
 
@@ -208,15 +204,18 @@ export function BentoGrid() {
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <Award className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Why Choose IdealIsa</h3>
-            <p className="text-zinc-400 text-sm mb-4">
-              We combine strategic thinking, business vision, communication, and execution to deliver tailored
-              solutions and sustainable growth.
-            </p>
+            <h3 className="text-lg font-semibold text-white mb-2">{t.bentoGrid.whyChoose.title}</h3>
+            <p className="text-zinc-400 text-sm mb-4">{t.bentoGrid.whyChoose.description}</p>
             <div className="flex items-center gap-2">
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">Consistency</span>
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">Impact</span>
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">Innovation</span>
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">
+                {t.bentoGrid.whyChoose.badgeConsistency}
+              </span>
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">
+                {t.bentoGrid.whyChoose.badgeImpact}
+              </span>
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">
+                {t.bentoGrid.whyChoose.badgeInnovation}
+              </span>
             </div>
           </motion.div>
         </motion.div>

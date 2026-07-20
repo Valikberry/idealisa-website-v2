@@ -3,23 +3,12 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Lightbulb, Instagram } from "lucide-react"
-
-const footerLinks = {
-  Services: [
-    "Strategy & Branding",
-    "Corporate Communication",
-    "Project Management",
-    "Marketing & Digital Communication",
-    "Technology & Digital Solutions",
-  ],
-  Resources: ["Who We Are", "What We Do", "Blog", "Our Clients", "Training & Development"],
-  Company: ["About IdealIsa", "Careers", "Our Culture", "Testimonials", "Contact Us"],
-  Legal: ["Privacy Policy", "Terms of Service", "Our Commitment", "Mission & Values", "Our Essence"],
-}
+import { useTranslation } from "@/lib/language-context"
 
 export function Footer() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const t = useTranslation()
 
   return (
     <footer ref={ref} className="border-t border-zinc-800 bg-zinc-950">
@@ -38,9 +27,7 @@ export function Footer() {
               </div>
               <span className="font-semibold text-white">IdealIsa</span>
             </a>
-            <p className="text-sm text-zinc-500 mb-4">
-              Strategy that positions. Communication that strengthens.
-            </p>
+            <p className="text-sm text-zinc-500 mb-4">{t.footer.tagline}</p>
             <div className="text-sm text-zinc-500 space-y-1">
               <p>Maculusso, Rua Lourenço Mendes da Conceição, Luanda, Angola</p>
               <p>+244 936 499 706 / +244 976 055 956 / +244 937 445 450</p>
@@ -49,11 +36,11 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h4 className="text-sm font-semibold text-white mb-4">{title}</h4>
+          {Object.entries(t.footer.columns).map(([key, column]) => (
+            <div key={key}>
+              <h4 className="text-sm font-semibold text-white mb-4">{column.header}</h4>
               <ul className="space-y-3">
-                {links.map((link) => (
+                {column.links.map((link) => (
                   <li key={link}>
                     <a href="#" className="text-sm text-zinc-500 hover:text-white transition-colors">
                       {link}
@@ -72,7 +59,9 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <p className="text-sm text-zinc-500">&copy; {new Date().getFullYear()} IdealIsa. All rights reserved.</p>
+          <p className="text-sm text-zinc-500">
+            &copy; {new Date().getFullYear()} IdealIsa. {t.footer.copyrightSuffix}
+          </p>
           <div className="flex items-center gap-6">
             <a href="#" className="flex items-center gap-2 text-sm text-zinc-500 hover:text-white transition-colors">
               <Instagram className="w-4 h-4" strokeWidth={1.5} />
