@@ -159,7 +159,7 @@ const pt: Translations = {
   },
   hero: {
     badge: "Presença de Confiança em Angola",
-    headlineLine1: "Comercialize mais rápido.",
+    headlineLine1: "Venda mais rápido.",
     headlineLine2: "Lucre com mais inteligência.",
     subtext:
       "A IdealIsa é uma empresa de marketing e comunicação que ajuda empresas em Angola a construir marcas mais fortes, reforçar a reputação e crescer de forma sustentável.",
