@@ -26,7 +26,7 @@ export function Navbar() {
     >
       <nav
         ref={navRef}
-        className="relative flex items-center justify-between px-4 py-3 rounded-full bg-zinc-900/40 backdrop-blur-md border border-zinc-800"
+        className="relative flex items-center justify-between px-4 py-3 rounded-full bg-[#0a0a0a] backdrop-blur-md border border-zinc-800"
       >
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
