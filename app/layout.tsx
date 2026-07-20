@@ -23,9 +23,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Apex - Enterprise SaaS Platform",
-  description: "The modern platform for teams who ship fast. Built for scale, designed for speed.",
-    generator: 'v0.app'
+  title: "IdealIsa | Brand Strategy & Corporate Communication Agency in Angola",
+  description:
+    "IdealIsa is a leading brand strategy, corporate communication, and project management company in Luanda, Angola.",
 }
 
 export default function RootLayout({
