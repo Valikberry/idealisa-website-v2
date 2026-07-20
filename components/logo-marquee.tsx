@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import { useTranslation } from "@/lib/language-context"
 
 const logos = [
   { name: "Rio Branco Diamantes", width: 100 },
@@ -17,6 +18,7 @@ const logos = [
 export function LogoMarquee() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const t = useTranslation()
 
   return (
     <section ref={ref} className="py-16 overflow-hidden">
@@ -26,7 +28,7 @@ export function LogoMarquee() {
         transition={{ duration: 0.6 }}
         className="text-center mb-10"
       >
-        <p className="text-sm text-zinc-500 uppercase tracking-wider font-medium">Trusted by Brands Across Angola</p>
+        <p className="text-sm text-zinc-500 uppercase tracking-wider font-medium">{t.logoMarquee.heading}</p>
       </motion.div>
 
       <div className="relative">
