@@ -96,7 +96,7 @@ export function Hero() {
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full px-8 h-12 text-base font-medium bg-[#16a34a] text-[#ffffff] border border-[#16a34a] hover:bg-[#15803d] hover:border-[#15803d]"
+            className="rounded-full px-8 h-12 text-base font-medium bg-[#2E7D32] text-[#ffffff] border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
           >
             Contact on WhatsApp
           </Button>
