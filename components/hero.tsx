@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useTranslation } from "@/lib/language-context"
 
 const avatars = [
   "/professional-headshot-1.png",
@@ -25,6 +26,8 @@ const textRevealVariants = {
 }
 
 export function Hero() {
+  const t = useTranslation()
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-16 overflow-hidden">
       {/* Background gradient */}
@@ -42,7 +45,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f4f4f5] border border-[#e5e5e5] mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-[#16a34a] pulse-glow" />
-          <span className="text-sm text-[#3f3f46]">Trusted Across Angola</span>
+          <span className="text-sm text-[#3f3f46]">{t.hero.badge}</span>
         </motion.div>
 
         {/* Headline with text mask animation */}
@@ -52,7 +55,7 @@ export function Hero() {
         >
           <span className="block overflow-hidden">
             <motion.span className="block" variants={textRevealVariants} initial="hidden" animate="visible" custom={0}>
-              Market faster.
+              {t.hero.headlineLine1}
             </motion.span>
           </span>
           <span className="block overflow-hidden">
@@ -63,7 +66,7 @@ export function Hero() {
               animate="visible"
               custom={1}
             >
-              Profit smarter.
+              {t.hero.headlineLine2}
             </motion.span>
           </span>
         </h1>
@@ -75,8 +78,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-lg sm:text-xl text-[#52525b] max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          IdealIsa is a marketing and communication company helping businesses in Angola build stronger brands,
-          strengthen reputation, and grow sustainably.
+          {t.hero.subtext}
         </motion.p>
 
         {/* CTAs */}
@@ -90,7 +92,7 @@ export function Hero() {
             size="lg"
             className="shimmer-btn bg-[#d97706] text-[#ffffff] hover:bg-[#b45309] rounded-full px-8 h-12 text-base font-medium shadow-lg shadow-white/10"
           >
-            See Our Work
+            {t.hero.ctaPrimary}
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <Button
@@ -98,7 +100,7 @@ export function Hero() {
             size="lg"
             className="rounded-full px-8 h-12 text-base font-medium bg-[#2E7D32] text-[#ffffff] border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
           >
-            Contact on WhatsApp
+            {t.hero.ctaSecondary}
           </Button>
         </motion.div>
 
@@ -127,7 +129,8 @@ export function Hero() {
             ))}
           </div>
           <p className="text-sm text-[#71717a]">
-            Trusted by <span className="text-[#0a0a0a] font-bold">1,000+</span> Companies in Angola
+            {t.hero.trustPrefix} <span className="text-[#0a0a0a] font-bold">{t.hero.trustNumber}</span>{" "}
+            {t.hero.trustSuffix}
           </p>
         </motion.div>
       </div>

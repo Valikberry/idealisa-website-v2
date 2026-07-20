@@ -4,10 +4,12 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useTranslation } from "@/lib/language-context"
 
 export function FinalCTA() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const t = useTranslation()
 
   return (
     <section className="py-24 px-4">
@@ -22,18 +24,16 @@ export function FinalCTA() {
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
           style={{ fontFamily: "var(--font-cal-sans)" }}
         >
-          Ready to grow your brand in Angola?
+          {t.finalCta.heading}
         </h2>
-        <p className="text-lg sm:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
-          Join the businesses across Angola building stronger brands with IdealIsa.
-        </p>
+        <p className="text-lg sm:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">{t.finalCta.subheading}</p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="lg"
             className="shimmer-btn bg-white text-zinc-950 hover:bg-zinc-200 rounded-full px-8 h-14 text-base font-medium shadow-lg shadow-white/20"
           >
-            See Our Work
+            {t.finalCta.ctaPrimary}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
           <Button
@@ -41,11 +41,11 @@ export function FinalCTA() {
             size="lg"
             className="rounded-full px-8 h-14 text-base font-medium border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white hover:border-zinc-700 bg-transparent"
           >
-            Contact on WhatsApp
+            {t.finalCta.ctaSecondary}
           </Button>
         </div>
 
-        <p className="mt-8 text-sm text-zinc-500">No fixed packages — every plan is built around your business.</p>
+        <p className="mt-8 text-sm text-zinc-500">{t.finalCta.finePrint}</p>
       </motion.div>
     </section>
   )
