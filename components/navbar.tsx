@@ -6,6 +6,8 @@ import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { useLanguage, useTranslation } from "@/lib/language-context"
 
+const navLinkFontWeight = "font-medium"
+
 export function Navbar() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -62,7 +64,7 @@ export function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className="relative px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors"
+              className={`relative px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors ${navLinkFontWeight}`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -124,7 +126,7 @@ export function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors"
+                className={`px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors ${navLinkFontWeight}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
