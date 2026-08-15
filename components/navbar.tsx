@@ -2,8 +2,11 @@
 
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Menu, X, Lightbulb } from "lucide-react"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 import { useLanguage, useTranslation } from "@/lib/language-context"
+
+const navLinkFontWeight = "font-medium"
 
 export function Navbar() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -28,14 +31,31 @@ export function Navbar() {
     >
       <nav
         ref={navRef}
-        className="relative flex items-center justify-between px-4 py-3 rounded-full bg-[#0a0a0a] backdrop-blur-md border border-zinc-800"
+        className="relative flex items-center justify-between px-4 py-3 rounded-full bg-[#4A3127] backdrop-blur-md border border-zinc-800"
       >
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-            <Lightbulb className="text-zinc-950" size={16} />
+            <Image
+              src="/idealisa-logo.png"
+              alt=""
+              width={24}
+              height={24}
+              className="h-6 w-6 object-contain p-0.5"
+            />
           </div>
-          <span className="font-semibold text-white hidden sm:block">IdealIsa</span>
+          <span className="notranslate font-semibold text-white hidden sm:block" aria-label="Idealisa" translate="no">
+            <span aria-hidden="true">
+              <span>Id</span>
+              <span className="text-[#F6C744]">e</span>
+              <span>al</span>
+              <span className="relative inline-block">
+                {"ı"}
+                <span className="absolute left-1/2 top-[0.2em] h-[0.16em] w-[0.16em] -translate-x-1/2 rounded-full bg-[#F6C744]" />
+              </span>
+              <span>sa</span>
+            </span>
+          </span>
         </a>
 
         {/* Desktop Nav Items */}
@@ -44,7 +64,7 @@ export function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className="relative px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors"
+              className={`relative px-4 py-2 text-sm text-white hover:text-white transition-colors ${navLinkFontWeight}`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -106,7 +126,7 @@ export function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors"
+                className={`px-4 py-3 text-sm text-white hover:text-white hover:bg-zinc-800 rounded-lg transition-colors ${navLinkFontWeight}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
