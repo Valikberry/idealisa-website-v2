@@ -29,7 +29,7 @@ export function Navbar() {
     >
       <nav
         ref={navRef}
-        className="relative flex items-center justify-between px-4 py-3 rounded-full bg-[#0a0a0a] backdrop-blur-md border border-zinc-800"
+        className="relative flex items-center justify-between px-4 py-3 rounded-full bg-[#4A3127] backdrop-blur-md border border-zinc-800"
       >
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
@@ -42,7 +42,18 @@ export function Navbar() {
               className="h-6 w-6 object-contain p-0.5"
             />
           </div>
-          <span className="font-semibold text-white hidden sm:block">IdealIsa</span>
+          <span className="font-semibold text-white hidden sm:block" aria-label="Idealisa">
+            <span aria-hidden="true">
+              <span>Id</span>
+              <span className="text-[#F6C744]">e</span>
+              <span>al</span>
+              <span className="relative inline-block">
+                {"ı"}
+                <span className="absolute left-1/2 top-[0.2em] h-[0.16em] w-[0.16em] -translate-x-1/2 rounded-full bg-[#F6C744]" />
+              </span>
+              <span>sa</span>
+            </span>
+          </span>
         </a>
 
         {/* Desktop Nav Items */}
