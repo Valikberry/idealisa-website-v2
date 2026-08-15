@@ -64,7 +64,7 @@ export function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className={`relative px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors ${navLinkFontWeight}`}
+              className={`relative px-4 py-2 text-sm text-white hover:text-white transition-colors ${navLinkFontWeight}`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -126,7 +126,7 @@ export function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className={`px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors ${navLinkFontWeight}`}
+                className={`px-4 py-3 text-sm text-white hover:text-white hover:bg-zinc-800 rounded-lg transition-colors ${navLinkFontWeight}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
