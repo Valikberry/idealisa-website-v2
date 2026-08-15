@@ -2,7 +2,8 @@
 
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Menu, X, Lightbulb } from "lucide-react"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 import { useLanguage, useTranslation } from "@/lib/language-context"
 
 export function Navbar() {
@@ -33,7 +34,13 @@ export function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-            <Lightbulb className="text-zinc-950" size={16} />
+            <Image
+              src="/idealisa-logo.png"
+              alt=""
+              width={24}
+              height={24}
+              className="h-6 w-6 object-contain p-0.5"
+            />
           </div>
           <span className="font-semibold text-white hidden sm:block">IdealIsa</span>
         </a>
