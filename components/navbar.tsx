@@ -44,7 +44,7 @@ export function Navbar() {
               className="h-6 w-6 object-contain p-0.5"
             />
           </div>
-          <span className="font-semibold text-white hidden sm:block" aria-label="Idealisa">
+          <span className="notranslate font-semibold text-white hidden sm:block" aria-label="Idealisa" translate="no">
             <span aria-hidden="true">
               <span>Id</span>
               <span className="text-[#F6C744]">e</span>
