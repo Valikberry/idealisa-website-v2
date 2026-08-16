@@ -36,6 +36,15 @@ export function Hero() {
       {/* Subtle radial glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-zinc-200/40 rounded-full blur-3xl pointer-events-none" />
 
+      {/* Decorative watermark */}
+      <img
+        src="/idealisa-hero-watermark.png"
+        alt=""
+        aria-hidden="true"
+        draggable={false}
+        className="absolute left-1/2 top-1/2 aspect-square w-[88vw] max-w-[640px] -translate-x-1/2 -translate-y-1/2 object-contain pointer-events-none select-none"
+      />
+
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Badge */}
         <motion.div
