@@ -85,9 +85,9 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <div className="flex items-center h-8 p-0.5 bg-white rounded-full border border-zinc-300">
             <button
-              onClick={() => setLanguage("pt")}
+              onClick={() => setLanguage("pt-AO")}
               className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
-                language === "pt" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
+                language === "pt-AO" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
               }`}
             >
               PT
@@ -135,9 +135,9 @@ export function Navbar() {
             <hr className="border-zinc-800 my-2" />
             <div className="flex items-center h-8 p-0.5 bg-white rounded-full border border-zinc-300 self-start">
               <button
-                onClick={() => setLanguage("pt")}
+                onClick={() => setLanguage("pt-AO")}
                 className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
-                  language === "pt" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
+                  language === "pt-AO" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
                 }`}
               >
                 PT
