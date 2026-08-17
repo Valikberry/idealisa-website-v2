@@ -51,7 +51,7 @@ export function Hero() {
         <div className="relative pt-8 pb-6">
           {/* Decorative watermark */}
           <img
-            src="/idealisa-hero-watermark.png"
+            src="/idealisa-hero-icon.png"
             alt=""
             aria-hidden="true"
             draggable={false}
