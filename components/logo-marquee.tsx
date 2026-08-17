@@ -45,8 +45,8 @@ export function LogoMarquee() {
 
       <div className="relative">
         {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#4A3127] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#4A3127] to-transparent z-10 pointer-events-none" />
 
         {/* Marquee container */}
         <div className="flex animate-marquee">
@@ -62,7 +62,7 @@ export function LogoMarquee() {
                     alt={logo.name}
                     fill
                     sizes="140px"
-                    className="object-contain brightness-0 invert opacity-100"
+                    className="object-contain opacity-100"
                   />
                 </div>
               ) : (
