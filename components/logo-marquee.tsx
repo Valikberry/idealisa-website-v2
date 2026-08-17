@@ -12,18 +12,18 @@ type Logo = {
 }
 
 const logos: Logo[] = [
-  { name: "MALAMU", width: 100, src: "/malamu.png" },
-  { name: "AZORIA", width: 100, src: "/azoria.png" },
-  { name: "EJS GLOBAL", width: 100, src: "/ejs-global.png" },
-  { name: "Rio Branco Diamantes", width: 100, src: "/rio-branco.png" },
-  { name: "FCKS", width: 100, src: "/fcks.png" },
-  { name: "JBDM", width: 100, src: "/jbdm.png" },
   { name: "Coroa Azul Piscinas", width: 80 },
+  { name: "MALAMU", width: 100, src: "/malamu.png" },
   { name: "O Leme Educare", width: 90 },
+  { name: "AZORIA", width: 100, src: "/azoria.png" },
   { name: "Fundação AHAVE", width: 100 },
+  { name: "EJS GLOBAL", width: 100, src: "/ejs-global.png" },
   { name: "The Wine Court", width: 70 },
+  { name: "Rio Branco Diamantes", width: 100, src: "/rio-branco.png" },
   { name: "Diesel Barbershop", width: 90 },
+  { name: "FCKS", width: 100, src: "/fcks.png" },
   { name: "Angola Sessions", width: 100 },
+  { name: "JBDM", width: 100, src: "/jbdm.png" },
   { name: "Café Baía", width: 90 },
 ]
 
@@ -53,14 +53,20 @@ export function LogoMarquee() {
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              className="flex items-center justify-center min-w-[160px] h-16 mx-8 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="flex items-center justify-center min-w-[160px] h-16 mx-8"
             >
               {logo.src ? (
                 <div className="relative h-10 w-[140px]">
-                  <Image src={logo.src} alt={logo.name} fill sizes="140px" className="object-contain" />
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    fill
+                    sizes="140px"
+                    className="object-contain brightness-0 invert opacity-100"
+                  />
                 </div>
               ) : (
-                <div className="flex items-center gap-2 text-zinc-400">
+                <div className="flex items-center gap-2 text-white opacity-100">
                   <span className="font-medium" style={{ fontFamily: "var(--font-instrument-sans)" }}>
                     {logo.name}
                   </span>
