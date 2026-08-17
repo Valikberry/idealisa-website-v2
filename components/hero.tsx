@@ -140,7 +140,8 @@ export function Hero() {
             ))}
           </div>
           <p className="text-sm text-[#71717a]">
-            {t.hero.trustPrefix} <span className="text-[#0a0a0a] font-bold">{t.hero.trustNumber}</span>{" "}
+            {t.hero.trustPrefix && <>{t.hero.trustPrefix} </>}
+            <span className="text-[#0a0a0a] font-bold">{t.hero.trustNumber}</span>{" "}
             {t.hero.trustSuffix}
           </p>
         </motion.div>
