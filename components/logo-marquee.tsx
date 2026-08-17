@@ -62,7 +62,7 @@ export function LogoMarquee() {
                     alt={logo.name}
                     fill
                     sizes="140px"
-                    className="object-contain brightness-0 invert opacity-100"
+                    className="object-contain opacity-100"
                   />
                 </div>
               ) : (
