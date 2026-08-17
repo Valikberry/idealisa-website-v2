@@ -22,7 +22,7 @@ const en = {
     headlineLine1: "Market faster.",
     headlineLine2: "Profit smarter.",
     subtext:
-      "IdealIsa is a marketing and communication company helping businesses in Angola build stronger brands, strengthen reputation, and grow sustainably.",
+      "We are a company specialising in brand strategy, corporate communication and project management.",
     ctaPrimary: "See Our Work",
     ctaSecondary: "Contact on WhatsApp",
     trustPrefix: "Trusted by",
@@ -168,16 +168,16 @@ const ptAO: Translations = {
     contact: "Contacte-nos",
   },
   hero: {
-    badge: "Presença de Confiança em Angola",
+    badge: "Reconhecida em toda a Angola.",
     headlineLine1: "Venda mais rápido.",
-    headlineLine2: "Lucre com mais inteligência.",
+    headlineLine2: "Lucre de forma inteligente.",
     subtext:
-      "A IdealIsa é uma empresa de marketing e comunicação que ajuda empresas em Angola a construir marcas mais fortes, reforçar a reputação e crescer de forma sustentável.",
-    ctaPrimary: "Veja o Nosso Trabalho",
-    ctaSecondary: "Contactar via WhatsApp",
-    trustPrefix: "Com a confiança de",
+      "Somos uma empresa especializada em estratégia de marca, comunicação corporativa e gestão de projectos.",
+    ctaPrimary: "Veja o nosso trabalho",
+    ctaSecondary: "Contacte-nos pelo WhatsApp",
+    trustPrefix: "",
     trustNumber: "1.000+",
-    trustSuffix: "Empresas em Angola",
+    trustSuffix: "empresas em Angola confiam em nós.",
   },
   logoMarquee: {
     heading: "Marcas que Confiam em Nós em Angola",
