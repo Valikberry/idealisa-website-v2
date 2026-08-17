@@ -173,11 +173,11 @@ const ptAO: Translations = {
     headlineLine2: "Lucre de forma inteligente.",
     subtext:
       "Somos uma empresa especializada em estratégia de marca, comunicação corporativa e gestão de projectos.",
-    ctaPrimary: "Veja o Nosso Trabalho",
-    ctaSecondary: "Contactar via WhatsApp",
-    trustPrefix: "Com a confiança de",
+    ctaPrimary: "Veja o nosso trabalho",
+    ctaSecondary: "Contacte-nos pelo WhatsApp",
+    trustPrefix: "",
     trustNumber: "1.000+",
-    trustSuffix: "Empresas em Angola",
+    trustSuffix: "empresas em Angola confiam em nós.",
   },
   logoMarquee: {
     heading: "Marcas que Confiam em Nós em Angola",
