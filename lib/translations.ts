@@ -22,7 +22,7 @@ const en = {
     headlineLine1: "Market faster.",
     headlineLine2: "Profit smarter.",
     subtext:
-      "IdealIsa is a marketing and communication company helping businesses in Angola build stronger brands, strengthen reputation, and grow sustainably.",
+      "We are a company specialising in brand strategy, corporate communication and project management.",
     ctaPrimary: "See Our Work",
     ctaSecondary: "Contact on WhatsApp",
     trustPrefix: "Trusted by",
@@ -172,7 +172,7 @@ const ptAO: Translations = {
     headlineLine1: "Venda mais rápido.",
     headlineLine2: "Lucre de forma inteligente.",
     subtext:
-      "A IdealIsa é uma empresa de marketing e comunicação que ajuda empresas em Angola a construir marcas mais fortes, reforçar a reputação e crescer de forma sustentável.",
+      "Somos uma empresa especializada em estratégia de marca, comunicação corporativa e gestão de projectos.",
     ctaPrimary: "Veja o Nosso Trabalho",
     ctaSecondary: "Contactar via WhatsApp",
     trustPrefix: "Com a confiança de",
