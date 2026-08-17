@@ -33,7 +33,7 @@ const en = {
     heading: "Trusted by Brands Across Angola",
   },
   bentoGrid: {
-    heading: "Everything IdealIsa brings to the table",
+    heading: "Everything Idealisa brings to the table",
     subheading: "Built for companies and organisations across Angola who want their brand to mean something.",
     strategy: {
       title: "Strategy & Branding",
@@ -183,8 +183,8 @@ const ptAO: Translations = {
     heading: "Marcas que Confiam em Nós em Angola",
   },
   bentoGrid: {
-    heading: "Tudo o que a IdealIsa Traz para o Seu Negócio",
-    subheading: "Feito para empresas e organizações em Angola que querem que a sua marca tenha significado.",
+    heading: "Tudo o que a Idealisa traz para a mesa",
+    subheading: "Criado para empresas e organizações em Angola que querem que a sua marca tenha significado.",
     strategy: {
       title: "Estratégia & Branding",
       description: "Construímos estratégias de marca que posicionam o seu negócio de forma clara e confiante.",
