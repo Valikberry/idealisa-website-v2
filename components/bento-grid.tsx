@@ -125,7 +125,7 @@ export function BentoGrid() {
           {/* Large card - System Status */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+            className="md:col-span-2 group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300 overflow-hidden"
           >
             <div className="flex items-start justify-between mb-8">
               <div>
@@ -150,7 +150,7 @@ export function BentoGrid() {
           {/* Command Palette */}
           <motion.div
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <MessageSquare className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
@@ -170,7 +170,7 @@ export function BentoGrid() {
           {/* Analytics */}
           <motion.div
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <ClipboardList className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
@@ -183,7 +183,7 @@ export function BentoGrid() {
           {/* Performance */}
           <motion.div
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <TrendingUp className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
@@ -199,7 +199,7 @@ export function BentoGrid() {
           {/* Security */}
           <motion.div
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <Award className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
