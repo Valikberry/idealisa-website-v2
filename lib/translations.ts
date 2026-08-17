@@ -162,7 +162,7 @@ type Translations = typeof en
 
 const ptAO: Translations = {
   navbar: {
-    services: "Os Nossos Serviços",
+    services: "Nossos Serviços",
     company: "Empresa",
     blog: "Blog",
     contact: "Contacte-nos",
