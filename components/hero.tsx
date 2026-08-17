@@ -55,7 +55,7 @@ export function Hero() {
             alt=""
             aria-hidden="true"
             draggable={false}
-            className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-contain opacity-40 pointer-events-none select-none"
+            className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-contain opacity-20 pointer-events-none select-none"
           />
 
           {/* Headline with text mask animation */}
