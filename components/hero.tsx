@@ -51,11 +51,11 @@ export function Hero() {
         <div className="relative pt-8 pb-6">
           {/* Decorative watermark */}
           <img
-            src="/idealisa-hero-watermark.png"
+            src="/idealisa-hero-icon.png"
             alt=""
             aria-hidden="true"
             draggable={false}
-            className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-contain opacity-40 pointer-events-none select-none"
+            className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-contain opacity-20 pointer-events-none select-none"
           />
 
           {/* Headline with text mask animation */}
