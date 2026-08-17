@@ -168,7 +168,7 @@ const ptAO: Translations = {
     contact: "Contacte-nos",
   },
   hero: {
-    badge: "Presença de Confiança em Angola",
+    badge: "Reconhecida em toda a Angola.",
     headlineLine1: "Venda mais rápido.",
     headlineLine2: "Lucre com mais inteligência.",
     subtext:
