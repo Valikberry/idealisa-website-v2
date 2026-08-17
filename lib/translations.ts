@@ -1,4 +1,14 @@
-export type Language = "pt" | "en"
+export const DEFAULT_LANGUAGE = "pt-AO" as const
+
+export type Language = typeof DEFAULT_LANGUAGE | "en"
+
+export function isLanguage(value: unknown): value is Language {
+  return value === DEFAULT_LANGUAGE || value === "en"
+}
+
+export function getValidLanguage(value: unknown): Language {
+  return isLanguage(value) ? value : DEFAULT_LANGUAGE
+}
 
 const en = {
   navbar: {
@@ -150,7 +160,7 @@ const en = {
 
 type Translations = typeof en
 
-const pt: Translations = {
+const ptAO: Translations = {
   navbar: {
     services: "Os Nossos Serviços",
     company: "Empresa",
@@ -299,6 +309,6 @@ const pt: Translations = {
   },
 }
 
-export const translations: Record<Language, Translations> = { en, pt }
+export const translations: Record<Language, Translations> = { en, "pt-AO": ptAO }
 
 export type { Translations }
