@@ -170,7 +170,7 @@ const ptAO: Translations = {
   hero: {
     badge: "Reconhecida em toda a Angola.",
     headlineLine1: "Venda mais rápido.",
-    headlineLine2: "Lucre com mais inteligência.",
+    headlineLine2: "Lucre de forma inteligente.",
     subtext:
       "A IdealIsa é uma empresa de marketing e comunicação que ajuda empresas em Angola a construir marcas mais fortes, reforçar a reputação e crescer de forma sustentável.",
     ctaPrimary: "Veja o Nosso Trabalho",
