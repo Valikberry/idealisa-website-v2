@@ -57,41 +57,6 @@ function SystemStatus() {
   )
 }
 
-function AnimatedChart() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  const points = [
-    { x: 0, y: 60 },
-    { x: 20, y: 45 },
-    { x: 40, y: 55 },
-    { x: 60, y: 30 },
-    { x: 80, y: 40 },
-    { x: 100, y: 15 },
-  ]
-
-  const pathD = points.reduce((acc, point, i) => {
-    return i === 0 ? `M ${point.x} ${point.y}` : `${acc} L ${point.x} ${point.y}`
-  }, "")
-
-  return (
-    <svg ref={ref} viewBox="0 0 100 70" className="w-full h-24">
-      <defs>
-        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="rgb(255,255,255)" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="rgb(255,255,255)" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      {isInView && (
-        <>
-          <path d={`${pathD} L 100 70 L 0 70 Z`} fill="url(#chartGradient)" className="opacity-50" />
-          <path d={pathD} fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" className="draw-line" />
-        </>
-      )}
-    </svg>
-  )
-}
-
 export function BentoGrid() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
@@ -125,7 +90,7 @@ export function BentoGrid() {
           {/* Large card - System Status */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+            className="md:col-span-2 group relative p-6 rounded-2xl bg-black border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300 overflow-hidden"
           >
             <div className="flex items-start justify-between mb-8">
               <div>
@@ -133,7 +98,7 @@ export function BentoGrid() {
                   <Palette className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{t.bentoGrid.strategy.title}</h3>
-                <p className="text-zinc-400 text-sm">{t.bentoGrid.strategy.description}</p>
+                <p className="text-white text-sm">{t.bentoGrid.strategy.description}</p>
               </div>
               <SystemStatus />
             </div>
@@ -141,7 +106,7 @@ export function BentoGrid() {
               {strategyStats.map((stat) => (
                 <div key={stat.key} className="text-center">
                   <div className="text-2xl font-bold text-white mb-1">{stat.value}%</div>
-                  <div className="text-xs text-zinc-500">{t.bentoGrid.strategy.stats[stat.key]}</div>
+                  <div className="text-xs text-white">{t.bentoGrid.strategy.stats[stat.key]}</div>
                 </div>
               ))}
             </div>
@@ -150,18 +115,18 @@ export function BentoGrid() {
           {/* Command Palette */}
           <motion.div
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-black border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <MessageSquare className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">{t.bentoGrid.communication.title}</h3>
-            <p className="text-zinc-400 text-sm mb-6">{t.bentoGrid.communication.description}</p>
+            <p className="text-white text-sm mb-6">{t.bentoGrid.communication.description}</p>
             <div className="flex items-center gap-2">
-              <span className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 font-mono">
+              <span className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-white font-mono">
                 {t.bentoGrid.communication.badgeAvailability}
               </span>
-              <span className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-zinc-300 font-mono">
+              <span className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded text-white font-mono">
                 {t.bentoGrid.communication.badgeVoice}
               </span>
             </div>
@@ -170,50 +135,49 @@ export function BentoGrid() {
           {/* Analytics */}
           <motion.div
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-black border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <ClipboardList className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">{t.bentoGrid.projectManagement.title}</h3>
-            <p className="text-zinc-400 text-sm mb-4">{t.bentoGrid.projectManagement.description}</p>
-            <AnimatedChart />
+            <p className="text-white text-sm mb-4">{t.bentoGrid.projectManagement.description}</p>
           </motion.div>
 
           {/* Performance */}
           <motion.div
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-black border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <TrendingUp className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">{t.bentoGrid.marketing.title}</h3>
-            <p className="text-zinc-400 text-sm mb-4">{t.bentoGrid.marketing.description}</p>
-            <div className="flex items-center gap-2 text-emerald-500 text-sm">
+            <p className="text-white text-sm mb-4">{t.bentoGrid.marketing.description}</p>
+            <div className="flex items-center gap-2 text-white text-sm">
               <span className="font-mono">{t.bentoGrid.marketing.statNumber}</span>
-              <span className="text-zinc-500">{t.bentoGrid.marketing.statLabel}</span>
+              <span className="text-white">{t.bentoGrid.marketing.statLabel}</span>
             </div>
           </motion.div>
 
           {/* Security */}
           <motion.div
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-[#4A3127] border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
+            className="group relative p-6 rounded-2xl bg-black border border-zinc-800 hover:border-zinc-600 hover:scale-[1.02] transition-all duration-300"
           >
             <div className="p-2 rounded-lg bg-zinc-800 w-fit mb-4">
               <Award className="w-5 h-5 text-zinc-400" strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">{t.bentoGrid.whyChoose.title}</h3>
-            <p className="text-zinc-400 text-sm mb-4">{t.bentoGrid.whyChoose.description}</p>
+            <p className="text-white text-sm mb-4">{t.bentoGrid.whyChoose.description}</p>
             <div className="flex items-center gap-2">
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-white">
                 {t.bentoGrid.whyChoose.badgeConsistency}
               </span>
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-white">
                 {t.bentoGrid.whyChoose.badgeImpact}
               </span>
-              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-zinc-400">
+              <span className="px-2 py-1 text-xs bg-zinc-800 rounded text-white">
                 {t.bentoGrid.whyChoose.badgeInnovation}
               </span>
             </div>
