@@ -33,20 +33,20 @@ export function LogoMarquee() {
   const t = useTranslation()
 
   return (
-    <section ref={ref} className="py-16 overflow-hidden">
+    <section ref={ref} className="py-16 overflow-hidden bg-white border-t border-zinc-200">
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6 }}
         className="text-center mb-10"
       >
-        <p className="text-sm text-zinc-500 uppercase tracking-wider font-medium">{t.logoMarquee.heading}</p>
+        <p className="text-sm text-black uppercase tracking-wider font-black">{t.logoMarquee.heading}</p>
       </motion.div>
 
       <div className="relative">
         {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         {/* Marquee container */}
         <div className="flex animate-marquee">
@@ -56,17 +56,17 @@ export function LogoMarquee() {
               className="flex items-center justify-center min-w-[160px] h-16 mx-8"
             >
               {logo.src ? (
-                <div className="relative h-10 w-[140px]">
+                <div className="relative h-14 w-[156px]">
                   <Image
                     src={logo.src}
                     alt={logo.name}
                     fill
-                    sizes="140px"
-                    className="object-contain opacity-100"
+                    sizes="156px"
+                    className="object-contain opacity-100 brightness-0"
                   />
                 </div>
               ) : (
-                <div className="flex items-center gap-2 text-white opacity-100">
+                <div className="flex items-center gap-2 text-black opacity-100">
                   <span className="font-medium" style={{ fontFamily: "var(--font-instrument-sans)" }}>
                     {logo.name}
                   </span>
