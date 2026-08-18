@@ -33,7 +33,7 @@ export function LogoMarquee() {
   const t = useTranslation()
 
   return (
-    <section ref={ref} className="py-16 overflow-hidden bg-white border-t border-zinc-200">
+    <section ref={ref} className="py-16 overflow-hidden bg-[#f4f4f5] border-t border-zinc-200">
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
@@ -45,8 +45,8 @@ export function LogoMarquee() {
 
       <div className="relative">
         {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#f4f4f5] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#f4f4f5] to-transparent z-10 pointer-events-none" />
 
         {/* Marquee container */}
         <div className="flex animate-marquee">
