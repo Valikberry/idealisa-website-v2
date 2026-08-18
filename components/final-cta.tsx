@@ -12,7 +12,7 @@ export function FinalCTA() {
   const t = useTranslation()
 
   return (
-    <section className="py-24 px-4">
+    <section className="py-24 px-4 bg-[#F4F4F5]">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
@@ -21,12 +21,12 @@ export function FinalCTA() {
         className="max-w-4xl mx-auto text-center"
       >
         <h2
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight"
           style={{ fontFamily: "var(--font-cal-sans)" }}
         >
           {t.finalCta.heading}
         </h2>
-        <p className="text-lg sm:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">{t.finalCta.subheading}</p>
+        <p className="text-lg sm:text-xl text-zinc-500 mb-10 max-w-2xl mx-auto">{t.finalCta.subheading}</p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
@@ -39,7 +39,7 @@ export function FinalCTA() {
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full px-8 h-14 text-base font-medium border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white hover:border-zinc-700 bg-transparent"
+            className="rounded-full px-8 h-14 text-base font-medium border-zinc-300 text-zinc-700 hover:bg-white hover:text-black hover:border-zinc-400 bg-transparent"
           >
             {t.finalCta.ctaSecondary}
           </Button>
