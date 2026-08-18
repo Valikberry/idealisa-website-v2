@@ -63,7 +63,7 @@ export function BentoGrid() {
   const t = useTranslation()
 
   return (
-    <section id="features" className="py-24 px-4 bg-white">
+    <section id="features" className="py-24 px-4 bg-[#f4f4f5]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

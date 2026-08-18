@@ -29,12 +29,9 @@ export function Hero() {
   const t = useTranslation()
 
   return (
-    <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-8 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-16 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-[#ffffff] pointer-events-none" />
-
-      {/* Subtle radial glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-zinc-200/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Badge */}
