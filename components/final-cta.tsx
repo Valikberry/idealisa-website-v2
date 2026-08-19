@@ -31,7 +31,7 @@ export function FinalCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="lg"
-            className="shimmer-btn bg-white text-zinc-950 hover:bg-zinc-200 rounded-full px-8 h-14 text-base font-medium shadow-lg shadow-white/20"
+            className="shimmer-btn bg-[#4A3127] text-white hover:bg-[#3A261F] rounded-full px-8 h-14 text-base font-medium shadow-lg shadow-white/20"
           >
             {t.finalCta.ctaPrimary}
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -39,7 +39,7 @@ export function FinalCTA() {
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full px-8 h-14 text-base font-medium border-zinc-300 text-zinc-700 hover:bg-white hover:text-black hover:border-zinc-400 bg-transparent"
+            className="rounded-full px-8 h-14 text-base font-medium bg-[#2E7D32] text-white border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
           >
             {t.finalCta.ctaSecondary}
           </Button>
