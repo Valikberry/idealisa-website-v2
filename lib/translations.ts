@@ -71,8 +71,8 @@ const en = {
     },
   },
   pricing: {
-    heading: "Our Pricing and Offer for Our Basic Services",
-    subheading: "We help all sort of business with minimum offer to custom so all business can benefit",
+    heading: "INVESTMENT & SERVICE OFFERINGS",
+    subheading: "We help businesses build reputation, communicate with clarity, and turn strategy into sustainable growth.",
     toggleBasic: "Basic",
     toggleCustom: "Custom",
     mostPopular: "Most Popular",
@@ -220,9 +220,9 @@ const ptAO: Translations = {
     },
   },
   pricing: {
-    heading: "Os Nossos Preços e Ofertas para os Serviços Base",
+    heading: "O INVESTIMENTO E OFERTAS PARA OS SERVIÇOS",
     subheading:
-      "Ajudamos todo o tipo de negócio, da oferta base ao serviço personalizado, para que todas as empresas possam beneficiar",
+      "Ajudamos empresas a construir reputação, comunicar com clareza e transformar estratégia em crescimento sustentável.",
     toggleBasic: "Base",
     toggleCustom: "Personalizado",
     mostPopular: "Mais Popular",
