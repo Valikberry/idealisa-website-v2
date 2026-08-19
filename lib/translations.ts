@@ -73,6 +73,10 @@ const en = {
   pricing: {
     heading: "INVESTMENT & SERVICE OFFERINGS",
     subheading: "We help businesses build reputation, communicate with clarity, and turn strategy into sustainable growth.",
+    toggleBasic: "Basic",
+    toggleCustom: "Custom",
+    mostPopular: "Most Popular",
+    priceSuffixMonth: "/month",
     plans: {
       starters: {
         name: "TO GET STARTED",
@@ -213,7 +217,12 @@ const ptAO: Translations = {
   },
   pricing: {
     heading: "O INVESTIMENTO E OFERTAS PARA OS SERVIÇOS",
-    subheading: "Ajudamos empresas a construir reputação, comunicar com clareza e transformar estratégia em crescimento sustentável.",
+    subheading:
+      "Ajudamos empresas a construir reputação, comunicar com clareza e transformar estratégia em crescimento sustentável.",
+    toggleBasic: "Base",
+    toggleCustom: "Personalizado",
+    mostPopular: "Mais Popular",
+    priceSuffixMonth: "/mês",
     plans: {
       starters: {
         name: "PARA COMEÇAR",
