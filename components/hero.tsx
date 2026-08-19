@@ -97,7 +97,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="shimmer-btn bg-[#d97706] text-[#ffffff] hover:bg-[#b45309] rounded-full px-8 h-12 text-base font-medium shadow-lg shadow-white/10"
+              className="shimmer-btn bg-[#4A3127] text-white hover:bg-[#3A261F] rounded-full px-8 h-12 text-base font-medium shadow-lg shadow-white/10"
             >
               {t.hero.ctaPrimary}
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -105,7 +105,7 @@ export function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full px-8 h-12 text-base font-medium bg-[#2E7D32] text-[#ffffff] border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
+              className="rounded-full px-8 h-12 text-base font-medium bg-[#2E7D32] text-white border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
             >
               {t.hero.ctaSecondary}
             </Button>
