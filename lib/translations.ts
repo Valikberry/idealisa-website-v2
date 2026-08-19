@@ -36,8 +36,8 @@ const en = {
     heading: "Everything Idealisa brings to the table",
     subheading: "Built for companies and organisations across Angola who want their brand to mean something.",
     strategy: {
-      title: "Strategy & Branding",
-      description: "We build brand strategies that position your business clearly and confidently.",
+      title: "BRAND STRATEGY & BRANDING",
+      description: "We structure brands with clarity, identity and the ability to differentiate.",
       stats: {
         identity: "Identity",
         positioning: "Positioning",
@@ -46,19 +46,18 @@ const en = {
       },
     },
     communication: {
-      title: "Corporate Communication",
-      description:
-        "Communication strategy and company principles that keep your brand credible at every touchpoint.",
+      title: "CORPORATE COMMUNICATION",
+      description: "We structure communication as a strategic asset to build trust, credibility and institutional value.",
       badgeAvailability: "24/7",
       badgeVoice: "Trusted Voice",
     },
     projectManagement: {
-      title: "Project Management",
-      description: "We plan, coordinate, and execute — from concept to launch.",
+      title: "PROJECT MANAGEMENT",
+      description: "We transform strategic directions into structured projects, coordinating and guiding them towards impact.",
     },
     marketing: {
-      title: "Marketing & Digital Communication",
-      description: "Websites, landing pages, digital strategy, SEO, digital advertising, and marketing automation.",
+      title: "TECHNOLOGY & DIGITAL SOLUTIONS",
+      description: "Development and implementation of technology solutions tailored to the needs of each project.",
       statNumber: "1,000+",
       statLabel: "companies reached",
     },
@@ -186,8 +185,8 @@ const ptAO: Translations = {
     heading: "Tudo o que a Idealisa traz para a mesa",
     subheading: "Criado para empresas e organizações em Angola que querem que a sua marca tenha significado.",
     strategy: {
-      title: "Estratégia & Branding",
-      description: "Construímos estratégias de marca que posicionam o seu negócio de forma clara e confiante.",
+      title: "ESTRATÉGIA DE MARCA E BRANDING",
+      description: "Estruturamos marcas com clareza, identidade e capacidade de diferenciação.",
       stats: {
         identity: "Identidade",
         positioning: "Posicionamento",
@@ -196,19 +195,18 @@ const ptAO: Translations = {
       },
     },
     communication: {
-      title: "Comunicação Corporativa",
-      description:
-        "Estratégia de comunicação e princípios empresariais que mantêm a sua marca credível em cada interação.",
+      title: "COMUNICAÇÃO CORPORATIVA",
+      description: "Estruturamos a comunicação como um activo estratégico para gerar confiança, credibilidade e valor institucional.",
       badgeAvailability: "24/7",
       badgeVoice: "Voz de Confiança",
     },
     projectManagement: {
-      title: "Gestão de Projetos",
-      description: "Planeamos, coordenamos e executamos — do conceito ao lançamento.",
+      title: "GESTÃO DE PROJECTOS",
+      description: "Transformamos orientações estratégicas em projectos estruturado, coordenamos e orientamos para o impacto.",
     },
     marketing: {
-      title: "Marketing & Comunicação Digital",
-      description: "Websites, landing pages, estratégia digital, SEO, publicidade digital e automação de marketing.",
+      title: "TECNOLOGIA E SOLUÇÕES DIGITAIS",
+      description: "Desenvolvimento e implementação de soluções tecnológicas adequadas a cada projecto.",
       statNumber: "1.000+",
       statLabel: "empresas alcançadas",
     },
