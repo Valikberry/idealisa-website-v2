@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Lightbulb, Instagram } from "lucide-react"
+import { Lightbulb, Instagram, Facebook, Linkedin } from "lucide-react"
 import { useTranslation } from "@/lib/language-context"
 
 export function Footer() {
@@ -66,6 +66,20 @@ export function Footer() {
             <a href="#" className="flex items-center gap-2 text-sm text-zinc-500 hover:text-white transition-colors">
               <Instagram className="w-4 h-4" strokeWidth={1.5} />
               @idealisa.ao
+            </a>
+            <a
+              href="#"
+              aria-label="Idealisa on Facebook"
+              className="text-zinc-500 hover:text-white transition-colors"
+            >
+              <Facebook className="w-4 h-4" strokeWidth={1.5} />
+            </a>
+            <a
+              href="#"
+              aria-label="Idealisa on LinkedIn"
+              className="text-zinc-500 hover:text-white transition-colors"
+            >
+              <Linkedin className="w-4 h-4" strokeWidth={1.5} />
             </a>
           </div>
         </motion.div>
