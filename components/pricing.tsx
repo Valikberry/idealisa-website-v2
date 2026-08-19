@@ -1,34 +1,16 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/lib/language-context"
 
-const planConfigs = [
-  { id: "starters", price: "183.600,00 Kz", hasSuffix: false, highlighted: false },
-  { id: "growth", price: "383.600,00 Kz", hasSuffix: true, highlighted: true },
-  { id: "established", price: "683.600,00 Kz", hasSuffix: true, highlighted: false },
-] as const
-
-function BorderBeam() {
-  return (
-    <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
-      <div
-        className="absolute w-24 h-24 bg-zinc-400/20 blur-xl border-beam"
-        style={{
-          offsetPath: "rect(0 100% 100% 0 round 16px)",
-        }}
-      />
-    </div>
-  )
-}
+const serviceLevels = ["starters", "growth", "established"] as const
 
 export function Pricing() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [planType, setPlanType] = useState<"basic" | "custom">("basic")
   const t = useTranslation()
 
   return (
@@ -46,145 +28,56 @@ export function Pricing() {
           >
             {t.pricing.heading}
           </h2>
-          <p className="text-black max-w-2xl mx-auto mb-8">{t.pricing.subheading}</p>
-
-          {/* Plan Type Toggle */}
-          <div className="inline-flex items-center p-1 rounded-full bg-zinc-100/80 border border-zinc-200">
-            <button
-              onClick={() => setPlanType("basic")}
-              className="relative px-4 py-2 text-sm font-medium text-black rounded-full transition-colors"
-            >
-              {planType === "basic" && (
-                <motion.div
-                  layoutId="billing-toggle"
-                  className="absolute inset-0 bg-white rounded-full"
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{t.pricing.toggleBasic}</span>
-            </button>
-            <button
-              onClick={() => setPlanType("custom")}
-              className="relative px-4 py-2 text-sm font-medium text-black rounded-full transition-colors"
-            >
-              {planType === "custom" && (
-                <motion.div
-                  layoutId="billing-toggle"
-                  className="absolute inset-0 bg-white rounded-full"
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{t.pricing.toggleCustom}</span>
-            </button>
-          </div>
+          <p className="text-black max-w-2xl mx-auto">{t.pricing.subheading}</p>
         </motion.div>
 
-        {planType === "basic" ? (
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
-            {planConfigs.map((config, index) => {
-              const plan = t.pricing.plans[config.id]
-              return (
-                <motion.div
-                  key={config.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className={`relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${
-                    config.highlighted
-                      ? "bg-zinc-100/90 border-[#4A3127]/60"
-                      : "bg-zinc-100/70 border-[#4A3127]/25 hover:border-[#4A3127]/50"
-                  }`}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 items-stretch gap-6"
+        >
+          {serviceLevels.map((serviceLevel, index) => {
+            const service = t.pricing.plans[serviceLevel]
+
+            return (
+              <motion.div
+                key={serviceLevel}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                className={`relative h-full flex flex-col p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${
+                  serviceLevel === "growth"
+                    ? "bg-zinc-100/90 border-[#4A3127]/60"
+                    : "bg-zinc-100/70 border-[#4A3127]/25 hover:border-[#4A3127]/50"
+                }`}
+              >
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-black mb-2">{service.name}</h3>
+                  <p className="text-black text-sm">{service.focus}</p>
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3 text-sm text-black">
+                      <Check className="w-4 h-4 mt-0.5 text-emerald-500 shrink-0" strokeWidth={1.5} />
+                      <span className="min-w-0">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="mt-auto w-full rounded-full px-8 h-12 text-base font-medium bg-[#2E7D32] text-white border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
                 >
-                  {config.highlighted && <BorderBeam />}
-
-                  {config.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#4A3127] text-white text-xs font-medium rounded-none">
-                      {t.pricing.mostPopular}
-                    </div>
-                  )}
-
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-black mb-2">{plan.name}</h3>
-                    <p className="text-black text-sm">{plan.description}</p>
-                  </div>
-
-                  <div className="mb-6">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold text-black">{config.price}</span>
-                      {config.hasSuffix && (
-                        <span className="text-black text-sm">{t.pricing.priceSuffixMonth}</span>
-                      )}
-                    </div>
-                  </div>
-
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm text-black">
-                        <Check className="w-4 h-4 text-emerald-500 shrink-0" strokeWidth={1.5} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button
-                    className={`w-full rounded-full ${
-                      config.highlighted
-                        ? "shimmer-btn bg-white text-black hover:bg-zinc-200 border border-zinc-300"
-                        : "bg-white text-black hover:bg-zinc-200 border border-zinc-300"
-                    }`}
-                  >
-                    {plan.cta}
-                  </Button>
-                </motion.div>
-              )
-            })}
-          </motion.div>
-        ) : (
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative w-full max-w-sm p-6 rounded-2xl border bg-zinc-100/70 border-zinc-200 transition-all duration-300 hover:scale-[1.02]"
-            >
-              <BorderBeam />
-
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold text-black mb-2">{t.pricing.custom.name}</h3>
-                <p className="text-black text-sm">{t.pricing.custom.description}</p>
-              </div>
-
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-black">{t.pricing.custom.price}</span>
-              </div>
-
-              <ul className="space-y-3 mb-8">
-                {t.pricing.custom.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm text-black">
-                    <Check className="w-4 h-4 text-emerald-500 shrink-0" strokeWidth={1.5} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <Button className="w-full rounded-full shimmer-btn bg-white text-black hover:bg-zinc-200 border border-zinc-300">
-                {t.pricing.custom.cta}
-              </Button>
-            </motion.div>
-          </motion.div>
-        )}
+                  {t.pricing.cta}
+                </Button>
+              </motion.div>
+            )
+          })}
+        </motion.div>
       </div>
     </section>
   )
