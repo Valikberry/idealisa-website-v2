@@ -104,7 +104,7 @@ export function Pricing() {
                   {config.highlighted && <BorderBeam />}
 
                   {config.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#4A3127] text-white text-xs font-medium rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#4A3127] text-white text-xs font-medium rounded-none">
                       {t.pricing.mostPopular}
                     </div>
                   )}
