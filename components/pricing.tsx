@@ -97,14 +97,14 @@ export function Pricing() {
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   className={`relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${
                     config.highlighted
-                      ? "bg-zinc-100/90 border-zinc-300"
-                      : "bg-zinc-100/70 border-zinc-200 hover:border-zinc-300"
+                      ? "bg-zinc-100/90 border-[#4A3127]/60"
+                      : "bg-zinc-100/70 border-[#4A3127]/25 hover:border-[#4A3127]/50"
                   }`}
                 >
                   {config.highlighted && <BorderBeam />}
 
                   {config.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-white text-black text-xs font-medium rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#4A3127] text-white text-xs font-medium rounded-full">
                       {t.pricing.mostPopular}
                     </div>
                   )}
