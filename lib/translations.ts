@@ -136,20 +136,19 @@ const en = {
       services: {
         header: "Services",
         links: [
-          "Strategy & Branding",
+          "Brand Strategy & Branding",
           "Corporate Communication",
           "Project Management",
-          "Marketing & Digital Communication",
           "Technology & Digital Solutions",
         ],
       },
       resources: {
         header: "Resources",
-        links: ["Who We Are", "What We Do", "Blog", "Our Clients", "Training & Development"],
+        links: ["Who We Are", "What We Do", "Blog", "Our Clients"],
       },
       company: {
         header: "Company",
-        links: ["About IdealIsa", "Careers", "Our Culture", "Testimonials", "Contact Us"],
+        links: ["About Idealisa", "Our Culture", "Testimonials", "Contact Us"],
       },
       legal: {
         header: "Legal",
@@ -291,18 +290,17 @@ const ptAO: Translations = {
         links: [
           "Estratégia & Branding",
           "Comunicação Corporativa",
-          "Gestão de Projetos",
-          "Marketing & Comunicação Digital",
+          "Gestão de Projectos",
           "Tecnologia & Soluções Digitais",
         ],
       },
       resources: {
         header: "Recursos",
-        links: ["Quem Somos", "O Que Fazemos", "Blog", "Os Nossos Clientes", "Formação & Desenvolvimento"],
+        links: ["Quem Somos", "O Que Fazemos", "Blog", "Os Nossos Clientes"],
       },
       company: {
         header: "Empresa",
-        links: ["Sobre a IdealIsa", "Carreiras", "A Nossa Cultura", "Testemunhos", "Contacte-nos"],
+        links: ["Sobre a Idealisa", "A Nossa Cultura", "Testemunhos", "Contacte-nos"],
       },
       legal: {
         header: "Legal",
