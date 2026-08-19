@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/lib/language-context"
@@ -28,6 +28,7 @@ function BorderBeam() {
 export function Pricing() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [planType, setPlanType] = useState<"basic" | "custom">("basic")
   const t = useTranslation()
 
   return (
@@ -45,7 +46,38 @@ export function Pricing() {
           >
             {t.pricing.heading}
           </h2>
-          <p className="text-black max-w-2xl mx-auto">{t.pricing.subheading}</p>
+          <p className="text-black max-w-2xl mx-auto mb-8">{t.pricing.subheading}</p>
+
+          {/* Plan Type Toggle */}
+          <div className="inline-flex items-center p-1 rounded-full bg-zinc-100/80 border border-zinc-200">
+            <button
+              onClick={() => setPlanType("basic")}
+              className="relative px-4 py-2 text-sm font-medium text-black rounded-full transition-colors"
+            >
+              {planType === "basic" && (
+                <motion.div
+                  layoutId="billing-toggle"
+                  className="absolute inset-0 bg-white rounded-full"
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10">{t.pricing.toggleBasic}</span>
+            </button>
+
+            <button
+              onClick={() => setPlanType("custom")}
+              className="relative px-4 py-2 text-sm font-medium text-black rounded-full transition-colors"
+            >
+              {planType === "custom" && (
+                <motion.div
+                  layoutId="billing-toggle"
+                  className="absolute inset-0 bg-white rounded-full"
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10">{t.pricing.toggleCustom}</span>
+            </button>
+          </div>
         </motion.div>
 
         {planType === "basic" ? (
