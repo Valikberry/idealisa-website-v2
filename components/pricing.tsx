@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/lib/language-context"
 
 const planConfigs = [
-  { id: "starters", price: "183.600,00 Kz", hasSuffix: false, highlighted: false },
-  { id: "growth", price: "383.600,00 Kz", hasSuffix: true, highlighted: true },
-  { id: "established", price: "683.600,00 Kz", hasSuffix: true, highlighted: false },
+  { id: "starters", highlighted: false, minHeight: "min-h-0 md:min-h-[34rem]" },
+  { id: "growth", highlighted: true, minHeight: "min-h-0 md:min-h-[42rem]" },
+  { id: "established", highlighted: false, minHeight: "min-h-0 md:min-h-[50rem]" },
 ] as const
 
 function BorderBeam() {
@@ -85,7 +85,7 @@ export function Pricing() {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 items-start gap-6"
           >
             {planConfigs.map((config, index) => {
               const plan = t.pricing.plans[config.id]
@@ -95,7 +95,7 @@ export function Pricing() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className={`relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${
+                  className={`relative flex flex-col p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${config.minHeight} ${
                     config.highlighted
                       ? "bg-zinc-100/90 border-[#4A3127]/60"
                       : "bg-zinc-100/70 border-[#4A3127]/25 hover:border-[#4A3127]/50"
@@ -114,15 +114,6 @@ export function Pricing() {
                     <p className="text-black text-sm">{plan.description}</p>
                   </div>
 
-                  <div className="mb-6">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold text-black">{config.price}</span>
-                      {config.hasSuffix && (
-                        <span className="text-black text-sm">{t.pricing.priceSuffixMonth}</span>
-                      )}
-                    </div>
-                  </div>
-
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-3 text-sm text-black">
@@ -133,11 +124,7 @@ export function Pricing() {
                   </ul>
 
                   <Button
-                    className={`w-full rounded-full ${
-                      config.highlighted
-                        ? "shimmer-btn bg-white text-black hover:bg-zinc-200 border border-zinc-300"
-                        : "bg-white text-black hover:bg-zinc-200 border border-zinc-300"
-                    }`}
+                    className="mt-auto w-full rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
                   >
                     {plan.cta}
                   </Button>
