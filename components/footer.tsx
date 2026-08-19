@@ -62,10 +62,13 @@ export function Footer() {
           <p className="text-sm text-zinc-500">
             &copy; {new Date().getFullYear()} IdealIsa. {t.footer.copyrightSuffix}
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="flex items-center gap-2 text-sm text-zinc-500 hover:text-white transition-colors">
-              <Instagram className="w-4 h-4" strokeWidth={1.5} />
-              @idealisa.ao
+          <div className="flex items-center gap-2">
+            <a
+              href="#"
+              aria-label="Idealisa on LinkedIn"
+              className="text-zinc-500 hover:text-white transition-colors"
+            >
+              <Linkedin className="w-4 h-4" strokeWidth={1.5} />
             </a>
             <a
               href="#"
@@ -74,12 +77,9 @@ export function Footer() {
             >
               <Facebook className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a
-              href="#"
-              aria-label="Idealisa on LinkedIn"
-              className="text-zinc-500 hover:text-white transition-colors"
-            >
-              <Linkedin className="w-4 h-4" strokeWidth={1.5} />
+            <a href="#" className="flex items-center gap-2 text-sm text-zinc-500 hover:text-white transition-colors">
+              <Instagram className="w-4 h-4" strokeWidth={1.5} />
+              @idealisa.ao
             </a>
           </div>
         </motion.div>
