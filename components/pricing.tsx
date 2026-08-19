@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/lib/language-context"
 
 const planConfigs = [
-  { id: "starters", highlighted: false, minHeight: "min-h-0 md:min-h-[34rem]" },
-  { id: "growth", highlighted: true, minHeight: "min-h-0 md:min-h-[42rem]" },
-  { id: "established", highlighted: false, minHeight: "min-h-0 md:min-h-[50rem]" },
+  { id: "starters", highlighted: false },
+  { id: "growth", highlighted: true },
+  { id: "established", highlighted: false },
 ] as const
 
 function BorderBeam() {
@@ -86,7 +86,7 @@ export function Pricing() {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 items-start gap-6"
+            className="grid auto-rows-fr grid-cols-1 items-stretch gap-6 md:grid-cols-3"
           >
             {planConfigs.map((config, index) => {
               const plan = t.pricing.plans[config.id]
@@ -96,7 +96,7 @@ export function Pricing() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className={`relative flex flex-col p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${config.minHeight} ${
+                  className={`relative flex h-full flex-col p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${
                     config.highlighted
                       ? "bg-zinc-100/90 border-[#4A3127]/60"
                       : "bg-zinc-100/70 border-[#4A3127]/25 hover:border-[#4A3127]/50"
@@ -112,7 +112,7 @@ export function Pricing() {
 
                   <div className="mb-6">
                     <h3 className="text-xl font-semibold text-black mb-2">{plan.name}</h3>
-                    <p className="text-black text-sm">{plan.description}</p>
+                    <p className="text-black text-sm">{plan.focus}</p>
                   </div>
 
                   <ul className="space-y-3 mb-8">
@@ -127,7 +127,7 @@ export function Pricing() {
                   <Button
                     className="mt-auto w-full rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
                   >
-                    {plan.cta}
+                    {t.pricing.cta}
                   </Button>
                 </motion.div>
               )
@@ -145,7 +145,7 @@ export function Pricing() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative w-full max-w-sm p-6 rounded-2xl border bg-zinc-100/70 border-zinc-200 transition-all duration-300 hover:scale-[1.02]"
+              className="relative flex w-full max-w-xl flex-col p-6 rounded-2xl border bg-zinc-100/70 border-[#4A3127]/25 transition-all duration-300 hover:scale-[1.02] hover:border-[#4A3127]/50"
             >
               <BorderBeam />
 
@@ -154,9 +154,7 @@ export function Pricing() {
                 <p className="text-black text-sm">{t.pricing.custom.description}</p>
               </div>
 
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-black">{t.pricing.custom.price}</span>
-              </div>
+              <h4 className="mb-6 text-2xl font-bold text-black">{t.pricing.custom.heading}</h4>
 
               <ul className="space-y-3 mb-8">
                 {t.pricing.custom.features.map((feature) => (
@@ -167,7 +165,7 @@ export function Pricing() {
                 ))}
               </ul>
 
-              <Button className="w-full rounded-full shimmer-btn bg-white text-black hover:bg-zinc-200 border border-zinc-300">
+              <Button className="mt-auto w-full rounded-full bg-emerald-600 text-white hover:bg-emerald-700">
                 {t.pricing.custom.cta}
               </Button>
             </motion.div>
