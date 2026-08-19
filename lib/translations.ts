@@ -76,7 +76,6 @@ const en = {
     toggleBasic: "Basic",
     toggleCustom: "Custom",
     mostPopular: "Most Popular",
-    priceSuffixMonth: "/month",
     plans: {
       starters: {
         name: "TO GET STARTED",
@@ -114,7 +113,15 @@ const en = {
         ],
       },
     },
-    cta: "Contact on WhatsApp",
+    cta: "Contact us via WhatsApp",
+    custom: {
+      name: "Custom Solutions",
+      description:
+        "Every business is different. Tell us what your company needs, and we’ll build a tailored plan around it — no fixed packages, no guesswork. We’ll discuss your goals and send you a proposal designed specifically for you.",
+      heading: "Let’s Talk",
+      features: ["Tailored Strategy", "Custom Solution", "Direct Consultation", "An Investment Worth Making"],
+      cta: "Contact us on WhatsApp",
+    },
   },
   finalCta: {
     heading: "Ready to grow your brand in Angola?",
@@ -222,7 +229,6 @@ const ptAO: Translations = {
     toggleBasic: "Base",
     toggleCustom: "Personalizado",
     mostPopular: "Mais Popular",
-    priceSuffixMonth: "/mês",
     plans: {
       starters: {
         name: "PARA COMEÇAR",
@@ -261,6 +267,14 @@ const ptAO: Translations = {
       },
     },
     cta: "Contacte-nos pelo WhatsApp",
+    custom: {
+      name: "Soluções Personalizadas",
+      description:
+        "Cada negócio é diferente. Diga-nos o que a sua empresa precisa e criaremos um plano à medida — sem pacotes fixos, sem suposições. Falaremos sobre os seus objectivos e enviaremos uma proposta desenvolvida especificamente para si.",
+      heading: "Vamos Conversar",
+      features: ["Estratégia à medida", "Solução personalizada", "Consultoria directa", "Investimento que vale a pena"],
+      cta: "Contacte-nos pelo WhatsApp",
+    },
   },
   finalCta: {
     heading: "Pronto para Fazer Crescer a Sua Marca em Angola?",
