@@ -57,9 +57,30 @@ export function Footer() {
             className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-normal text-white lg:justify-end"
             aria-label="Idealisa social networks"
           >
-            <span>LinkedIn</span>
-            <span>Facebook</span>
-            <span>Instagram</span>
+            <a
+              href="https://www.linkedin.com/company/139724042/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Idealisa on LinkedIn"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://www.facebook.com/IdealIsamkt"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Idealisa on Facebook"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/idealisa.ao/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Idealisa on Instagram"
+            >
+              Instagram
+            </a>
           </div>
         </motion.div>
       </div>
