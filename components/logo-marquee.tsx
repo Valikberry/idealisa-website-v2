@@ -40,7 +40,7 @@ export function LogoMarquee() {
         transition={{ duration: 0.6 }}
         className="text-center mb-10"
       >
-        <p className="text-sm text-black uppercase tracking-wider font-black">{t.logoMarquee.heading}</p>
+        <p className="text-base text-black uppercase tracking-wider font-black">{t.logoMarquee.heading}</p>
       </motion.div>
 
       <div className="relative">
