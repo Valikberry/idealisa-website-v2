@@ -204,7 +204,7 @@ const ptAO: Translations = {
     },
     projectManagement: {
       title: "GESTÃO DE PROJECTOS",
-      description: "Transformamos orientações estratégicas em projectos estruturado, coordenamos e orientamos para o impacto.",
+      description: "Transformamos orientações estratégicas em projectos estruturados, coordenamos e orientamos para o impacto.",
     },
     marketing: {
       title: "TECNOLOGIA E SOLUÇÕES DIGITAIS",
