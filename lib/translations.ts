@@ -26,7 +26,7 @@ const en = {
     ctaPrimary: "See Our Work",
     ctaSecondary: "Contact on WhatsApp",
     trustPrefix: "Trusted by",
-    trustNumber: "1,000+",
+    trustNumber: "500+",
     trustSuffix: "Companies in Angola",
   },
   logoMarquee: {
@@ -177,7 +177,7 @@ const ptAO: Translations = {
     ctaPrimary: "Veja o nosso trabalho",
     ctaSecondary: "Contacte-nos pelo WhatsApp",
     trustPrefix: "",
-    trustNumber: "1.000+",
+    trustNumber: "500+",
     trustSuffix: "empresas em Angola confiam em nós.",
   },
   logoMarquee: {
