@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/lib/language-context"
 
 const avatars = [
-  "/professional-headshot-1.png",
-  "/professional-headshot-2.png",
-  "/professional-headshot-3.png",
-  "/professional-headshot-4.png",
-  "/professional-headshot-5.png",
+  "/01-woman-pink-hijab.jpg",
+  "/03-man-charcoal-suit.jpg",
+  "/04-man-navy-suit-window.jpg",
+  "/05-woman-ivory-suit.jpg",
+  "/06-man-gray-suit.jpg",
 ]
 
 const textRevealVariants = {
