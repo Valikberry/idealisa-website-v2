@@ -125,9 +125,12 @@ export function Pricing() {
                   </ul>
 
                   <Button
+                    asChild
                     className="mt-auto w-full rounded-full bg-[#2E7D32] border-[#2E7D32] text-white hover:bg-[#256428] hover:border-[#256428] text-base font-medium"
                   >
-                    {t.pricing.cta}
+                    <a href="https://wa.link/2fbkkl" target="_blank" rel="noopener noreferrer">
+                      {t.pricing.cta}
+                    </a>
                   </Button>
                 </motion.div>
               )
@@ -165,8 +168,13 @@ export function Pricing() {
                 ))}
               </ul>
 
-              <Button className="mt-auto w-full rounded-full bg-[#2E7D32] border-[#2E7D32] text-white hover:bg-[#256428] hover:border-[#256428] text-base font-medium">
-                {t.pricing.custom.cta}
+              <Button
+                asChild
+                className="mt-auto w-full rounded-full bg-[#2E7D32] border-[#2E7D32] text-white hover:bg-[#256428] hover:border-[#256428] text-base font-medium"
+              >
+                <a href="https://wa.link/2fbkkl" target="_blank" rel="noopener noreferrer">
+                  {t.pricing.custom.cta}
+                </a>
               </Button>
             </motion.div>
           </motion.div>

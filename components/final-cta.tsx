@@ -37,11 +37,14 @@ export function FinalCTA() {
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
           <Button
+            asChild
             variant="outline"
             size="lg"
             className="rounded-full px-8 h-14 text-base font-medium bg-[#2E7D32] text-white border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
           >
-            {t.finalCta.ctaSecondary}
+            <a href="https://wa.link/2fbkkl" target="_blank" rel="noopener noreferrer">
+              {t.finalCta.ctaSecondary}
+            </a>
           </Button>
         </div>
 

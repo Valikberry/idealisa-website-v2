@@ -103,11 +103,14 @@ export function Hero() {
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button
+              asChild
               variant="outline"
               size="lg"
               className="rounded-full px-8 h-12 text-base font-medium bg-[#2E7D32] text-white border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
             >
-              {t.hero.ctaSecondary}
+              <a href="https://wa.link/2fbkkl" target="_blank" rel="noopener noreferrer">
+                {t.hero.ctaSecondary}
+              </a>
             </Button>
           </motion.div>
         </div>
