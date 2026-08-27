@@ -30,11 +30,14 @@ export function FinalCTA() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
+            asChild
             size="lg"
             className="shimmer-btn bg-[#4A3127] text-white hover:bg-[#3A261F] rounded-full px-8 h-14 text-base font-medium shadow-lg shadow-white/20"
           >
-            {t.finalCta.ctaPrimary}
-            <ArrowRight className="ml-2 w-5 h-5" />
+            <a href="https://www.instagram.com/idealisa.ao?igsi=YjhpaGxjNGpvZ3k=" target="_blank" rel="noreferrer">
+              {t.finalCta.ctaPrimary}
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
           </Button>
           <Button
             variant="outline"

@@ -96,11 +96,14 @@ export function Hero() {
             className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button
+              asChild
               size="lg"
               className="shimmer-btn bg-[#4A3127] text-white hover:bg-[#3A261F] rounded-full px-8 h-12 text-base font-medium shadow-lg shadow-white/10"
             >
-              {t.hero.ctaPrimary}
-              <ArrowRight className="ml-2 w-4 h-4" />
+              <a href="https://www.instagram.com/idealisa.ao?igsi=YjhpaGxjNGpvZ3k=" target="_blank" rel="noreferrer">
+                {t.hero.ctaPrimary}
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
             </Button>
             <Button
               variant="outline"
