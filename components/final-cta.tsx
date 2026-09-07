@@ -4,11 +4,25 @@ import Link from "next/link";
 import { useTranslation } from "@/lib/language-context";
 import { ROUTES } from "@/lib/routes";
 
-export function FinalCTA() {
+type FinalCTAProps = {
+  company?: {
+    heading: string;
+    sub: string;
+    primary: string;
+    secondary: string;
+  };
+};
+
+export function FinalCTA({ company }: FinalCTAProps = {}) {
   const t = useTranslation();
 
   return (
-    <section style={{ padding: "40px 16px", background: "#f4f4f5" }}>
+    <section
+      style={{
+        padding: company ? "8px 16px 48px" : "40px 16px",
+        background: "#f4f4f5",
+      }}
+    >
       <div
         style={{
           maxWidth: "1024px",
@@ -28,7 +42,8 @@ export function FinalCTA() {
               display: "flex",
               flexDirection: "column",
               gap: "12px",
-              padding: "36px 34px",
+              ...(company ? { justifyContent: "center" as const } : {}),
+              padding: company ? "34px" : "36px 34px",
             }}
           >
             <h2
@@ -42,7 +57,7 @@ export function FinalCTA() {
                 textWrap: "pretty",
               }}
             >
-              {t.finalCta.heading}
+              {company?.heading ?? t.finalCta.heading}
             </h2>
             <p
               style={{
@@ -53,19 +68,21 @@ export function FinalCTA() {
                 textWrap: "pretty",
               }}
             >
-              {t.finalCta.subheading}
+              {company?.sub ?? t.finalCta.subheading}
             </p>
-            <p
-              style={{
-                fontSize: "13px",
-                lineHeight: "20px",
-                color: "#8a5a1f",
-                fontWeight: "600",
-                margin: "4px 0 0",
-              }}
-            >
-              {t.finalCta.finePrint}
-            </p>
+            {!company && (
+              <p
+                style={{
+                  fontSize: "13px",
+                  lineHeight: "20px",
+                  color: "#8a5a1f",
+                  fontWeight: "600",
+                  margin: "4px 0 0",
+                }}
+              >
+                {t.finalCta.finePrint}
+              </p>
+            )}
           </div>
           <div
             style={{
@@ -73,7 +90,7 @@ export function FinalCTA() {
               flexDirection: "column",
               justifyContent: "center",
               gap: "12px",
-              padding: "36px 34px",
+              padding: company ? "34px" : "36px 34px",
               borderLeft: "1px solid #cfc6ba",
               background: "#f4f4f5",
             }}
@@ -96,7 +113,7 @@ export function FinalCTA() {
                 transition: "background .2s",
               }}
             >
-              {t.finalCta.ctaSecondary}
+              {company?.secondary ?? t.finalCta.ctaSecondary}
               <svg
                 width="16"
                 height="16"
@@ -112,7 +129,7 @@ export function FinalCTA() {
               </svg>
             </a>
             <Link
-              href={ROUTES.services}
+              href={company ? ROUTES.contact : ROUTES.services}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -128,7 +145,7 @@ export function FinalCTA() {
                 transition: "background .2s",
               }}
             >
-              {t.finalCta.ctaPrimary}
+              {company?.primary ?? t.finalCta.ctaPrimary}
               <svg
                 width="16"
                 height="16"

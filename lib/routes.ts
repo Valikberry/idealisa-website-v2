@@ -4,6 +4,10 @@
  * "design-reference/Idealisa website design (2)/Idealisa Site.dc.html")
  * to this site's real Next.js routes.
  *
+ * URL convention: use Portuguese-first slugs, independent of the selected
+ * PT/EN language. Navigation labels remain translated. Defining a route
+ * here does not imply that its page has been implemented.
+ *
  * Navbar, Footer and any in-page CTA should link through this table rather
  * than hardcoding paths, so the route for a page only ever changes in one
  * place.
@@ -11,7 +15,7 @@
 export const ROUTES = {
   home: "/",
   services: "/servicos",
-  company: "/empresa",
+  company: "/sobre-nos",
   portfolio: "/portfolio",
   blog: "/blog",
   contact: "/contacto",

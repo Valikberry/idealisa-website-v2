@@ -4,7 +4,9 @@ import { Fragment } from "react";
 import { useTranslation } from "@/lib/language-context";
 import { css } from "@/lib/design-style";
 
-export function Reviews() {
+export function Reviews({
+  background = "#ffffff",
+}: { background?: string } = {}) {
   const t = useTranslation();
   const reviewList = t.reviews.items.map((r) => ({
     ...r,
@@ -12,10 +14,7 @@ export function Reviews() {
       "display:flex;flex-direction:column;gap:8px;padding:24px 20px;border-right:1px solid #cfc6ba;border-bottom:1px solid #cfc6ba",
   }));
   return (
-    <section
-      id="reviews"
-      style={{ padding: "40px 16px", background: "#ffffff" }}
-    >
+    <section id="reviews" style={{ padding: "40px 16px", background }}>
       <div style={{ maxWidth: "1024px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "28px" }}>
           <h2
