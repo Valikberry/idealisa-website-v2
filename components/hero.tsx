@@ -230,7 +230,7 @@ export function Hero() {
                 zIndex: "10",
                 fontSize: "16px",
                 lineHeight: "1.4",
-                letterSpacing: ".16em",
+                letterSpacing: "0.16em",
                 textTransform: "uppercase",
                 fontWeight: "600",
                 color: "#8a5a1f",

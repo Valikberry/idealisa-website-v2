@@ -63,7 +63,7 @@ export function CompanyIntro() {
                 margin: "0",
                 fontFamily: "var(--font-instrument-sans),sans-serif",
                 textAlign: "center",
-                flex: "1",
+                flex: "1 1 0%",
               }}
             >
               {t.whoWeAre.heading}
