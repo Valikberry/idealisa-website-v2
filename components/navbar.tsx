@@ -1,159 +1,80 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Menu, X } from "lucide-react"
-import { useLanguage, useTranslation } from "@/lib/language-context"
-
-const navLinkFontWeight = "font-medium"
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { useLanguage, useTranslation } from "@/lib/language-context";
+import { NAV_PAGE_KEYS, ROUTES } from "@/lib/routes";
 
 export function Navbar() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { language, setLanguage } = useLanguage()
-  const t = useTranslation()
-  const navRef = useRef<HTMLDivElement>(null)
-
-  const navItems = [
-    { label: t.navbar.services, href: "#services" },
-    { label: t.navbar.company, href: "#company" },
-    { label: t.navbar.blog, href: "#blog" },
-    { label: t.navbar.contact, href: "#contact" },
-  ]
-
+  const [open, setOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
+  const t = useTranslation();
+  const labelForKey = {
+    services: t.navbar.services,
+    company: t.navbar.company,
+    portfolio: t.navbar.portfolio,
+    blog: t.navbar.blog,
+    contact: t.navbar.contact,
+  } as const;
+  const items = NAV_PAGE_KEYS.map((key) => ({
+    label: labelForKey[key as keyof typeof labelForKey],
+    href: ROUTES[key],
+  }));
   return (
-    <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl"
-    >
+    <header className="site-header">
       <nav
-        ref={navRef}
-        className="relative flex items-center justify-between px-4 py-3 rounded-full bg-[#4A3127] backdrop-blur-md border border-zinc-800"
+        aria-label={
+          language === "en" ? "Main navigation" : "Navegação principal"
+        }
       >
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-            <Image
-              src="/idealisa-logo.png"
-              alt=""
-              width={24}
-              height={24}
-              className="h-6 w-6 object-contain p-0.5"
-            />
-          </div>
-          <span className="notranslate font-semibold text-white hidden sm:block" aria-label="Idealisa" translate="no">
-            <span aria-hidden="true">
-              <span>Id</span>
-              <span className="text-[#F6C744]">e</span>
-              <span>al</span>
-              <span className="relative inline-block">
-                {"ı"}
-                <span className="absolute left-1/2 top-[0.2em] h-[0.16em] w-[0.16em] -translate-x-1/2 rounded-full bg-[#F6C744]" />
-              </span>
-              <span>sa</span>
-            </span>
+        <Link href={ROUTES.home} className="brand" aria-label="Idealisa">
+          <img src="/idealisa-logo.png" alt="" width={32} height={32} />
+          <span translate="no">
+            Id<span className="text-[#F6C744]">e</span>alisa
           </span>
-        </a>
-
-        {/* Desktop Nav Items */}
-        <div className="hidden md:flex items-center gap-1 relative">
-          {navItems.map((item, index) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`relative px-4 py-2 text-sm text-white hover:text-white transition-colors ${navLinkFontWeight}`}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              {hoveredIndex === index && (
-                <motion.div
-                  layoutId="navbar-hover"
-                  className="absolute inset-0 bg-zinc-800 rounded-full"
-                  initial={false}
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{item.label}</span>
-            </a>
+        </Link>
+        <div className="desktop-links">
+          {items.map((item) => (
+            <Link key={item.href} href={item.href}>
+              {item.label}
+            </Link>
           ))}
         </div>
-
-        {/* CTA Buttons */}
-        <div className="hidden md:flex items-center gap-3">
-          <div className="flex items-center h-8 p-0.5 bg-white rounded-full border border-zinc-300">
-            <button
-              onClick={() => setLanguage("pt-AO")}
-              className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
-                language === "pt-AO" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
-              }`}
-            >
-              PT
-            </button>
-            <button
-              onClick={() => setLanguage("en")}
-              className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
-                language === "en" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
-              }`}
-            >
-              EN
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 text-zinc-400 hover:text-white"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </nav>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="absolute top-full left-0 right-0 mt-2 p-4 rounded-2xl bg-zinc-900/95 backdrop-blur-md border border-zinc-800"
-        >
-          <div className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={`px-4 py-3 text-sm text-white hover:text-white hover:bg-zinc-800 rounded-lg transition-colors ${navLinkFontWeight}`}
-                onClick={() => setMobileMenuOpen(false)}
+        <div className="nav-actions">
+          <div className="language-toggle">
+            {(["pt-AO", "en"] as const).map((locale) => (
+              <button
+                key={locale}
+                type="button"
+                aria-pressed={language === locale}
+                onClick={() => setLanguage(locale)}
               >
-                {item.label}
-              </a>
+                {locale === "en" ? "EN" : "PT"}
+              </button>
             ))}
-            <hr className="border-zinc-800 my-2" />
-            <div className="flex items-center h-8 p-0.5 bg-white rounded-full border border-zinc-300 self-start">
-              <button
-                onClick={() => setLanguage("pt-AO")}
-                className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
-                  language === "pt-AO" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
-                }`}
-              >
-                PT
-              </button>
-              <button
-                onClick={() => setLanguage("en")}
-                className={`h-7 px-2.5 rounded-full text-xs transition-colors ${
-                  language === "en" ? "bg-[#2E7D32] text-white font-bold" : "bg-transparent text-zinc-800"
-                }`}
-              >
-                EN
-              </button>
-            </div>
           </div>
-        </motion.div>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label={language === "en" ? "Menu" : "Menu de navegação"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </nav>
+      {open && (
+        <div id="mobile-navigation" className="mobile-navigation">
+          {items.map((item) => (
+            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
+              {item.label}
+            </Link>
+          ))}
+        </div>
       )}
-    </motion.header>
-  )
+    </header>
+  );
 }

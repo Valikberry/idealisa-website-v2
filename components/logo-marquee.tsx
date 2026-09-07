@@ -1,81 +1,222 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
-import Image from "next/image"
-import { useRef } from "react"
-import { useTranslation } from "@/lib/language-context"
-
-type Logo = {
-  name: string
-  width: number
-  src?: string
-}
-
-const logos: Logo[] = [
-  { name: "Coroa Azul Piscinas", width: 80 },
-  { name: "MALAMU", width: 100, src: "/malamu.png" },
-  { name: "O Leme Educare", width: 90 },
-  { name: "AZORIA", width: 100, src: "/azoria.png" },
-  { name: "Fundação AHAVE", width: 100 },
-  { name: "EJS GLOBAL", width: 100, src: "/ejs-global.png" },
-  { name: "The Wine Court", width: 70 },
-  { name: "Rio Branco Diamantes", width: 100, src: "/rio-branco.png" },
-  { name: "Diesel Barbershop", width: 90 },
-  { name: "FCKS", width: 100, src: "/fcks.png" },
-  { name: "Angola Sessions", width: 100 },
-  { name: "JBDM", width: 100, src: "/jbdm.png" },
-  { name: "Café Baía", width: 90 },
-]
+import { Fragment } from "react";
+import { useTranslation } from "@/lib/language-context";
+import { css } from "@/lib/design-style";
+import { logos } from "@/lib/design-data";
 
 export function LogoMarquee() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const t = useTranslation()
-
+  const t = useTranslation();
+  const ui = t.logoMarquee;
+  const logoGrid = logos.map((l) => ({
+    ...l,
+    hasImage: !!l.src,
+    isText: !l.src,
+    cellStyle:
+      "display:flex;align-items:center;justify-content:center;height:80px;border:1px solid #cfc6ba;padding:10px;background:linear-gradient(135deg,#fdfaf5 0%,#fff6e8 45%,#f6f2fb 100%)",
+  }));
   return (
-    <section ref={ref} className="py-16 overflow-hidden bg-[#f4f4f5] border-t border-zinc-200">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-10"
-      >
-        <p className="text-base text-black uppercase tracking-wider font-black">{t.logoMarquee.heading}</p>
-      </motion.div>
-
-      <div className="relative">
-        {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#f4f4f5] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#f4f4f5] to-transparent z-10 pointer-events-none" />
-
-        {/* Marquee container */}
-        <div className="flex animate-marquee">
-          {[...logos, ...logos].map((logo, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center min-w-[160px] h-16 mx-8"
-            >
-              {logo.src ? (
-                <div className="relative h-14 w-[156px]">
-                  <Image
-                    src={logo.src}
-                    alt={logo.name}
-                    fill
-                    sizes="156px"
-                    className="object-contain opacity-100 brightness-0"
-                  />
-                </div>
-              ) : (
-                <div className="flex items-center gap-2 text-black opacity-100">
-                  <span className="font-medium" style={{ fontFamily: "var(--font-instrument-sans)" }}>
-                    {logo.name}
-                  </span>
-                </div>
-              )}
-            </div>
+    <section
+      style={{
+        padding: "40px 16px",
+        background:
+          "radial-gradient(70% 60% at 30% 8%, #fdf2e8 0%, transparent 70%), radial-gradient(60% 55% at 95% 15%, #f3d3b6 0%, transparent 72%), radial-gradient(65% 60% at 8% 95%, #b9765a 0%, transparent 70%), radial-gradient(70% 60% at 85% 100%, #d99268 0%, transparent 72%), linear-gradient(160deg, #fbeadd 0%, #f0cdb4 55%, #d99a76 100%)",
+      }}
+      id="clients"
+    >
+      <div style={{ maxWidth: "1024px", margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: "36px" }}>
+          <h2
+            style={{
+              fontSize: "29px",
+              lineHeight: "36px",
+              fontWeight: "700",
+              color: "#000",
+              margin: "0 0 8px",
+              fontFamily: "var(--font-instrument-sans),sans-serif",
+            }}
+          >
+            {t.logoMarquee.heading}
+          </h2>
+          <p
+            style={{
+              color: "#71717a",
+              maxWidth: "1024px",
+              margin: "0 auto",
+              fontSize: "16px",
+              lineHeight: "24px",
+            }}
+          >
+            {t.logoMarquee.subheading}
+          </p>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(8,minmax(0,1fr))",
+            gap: "12px",
+            maxWidth: "1024px",
+            margin: "0 auto",
+          }}
+        >
+          {logoGrid.map((logo, index) => (
+            <Fragment key={index}>
+              <div style={css(logo.cellStyle)}>
+                {logo.hasImage && (
+                  <>
+                    <div
+                      role="img"
+                      aria-label={logo.name}
+                      style={css(
+                        `width:100%; height:100%; background-image:url(${logo.src}); background-size:contain; background-repeat:no-repeat; background-position:center;`,
+                      )}
+                    ></div>
+                  </>
+                )}
+                {logo.isText && (
+                  <>
+                    <span
+                      style={{
+                        fontWeight: "500",
+                        color: "#3f3f46",
+                        fontFamily: "var(--font-instrument-sans),sans-serif",
+                        fontSize: "11px",
+                        lineHeight: "1.25",
+                        textAlign: "center",
+                      }}
+                    >
+                      {logo.name}
+                    </span>
+                  </>
+                )}
+              </div>
+            </Fragment>
           ))}
+          <a
+            href="#contact"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2px",
+              boxSizing: "border-box",
+              height: "80px",
+              padding: "10px",
+              border: "1px dashed #b9ab99",
+              background: "#fdfaf5",
+              textDecoration: "none",
+              transition: "border-color .2s, background .2s",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-instrument-sans),sans-serif",
+                fontSize: "11px",
+                lineHeight: "1.25",
+                fontWeight: "700",
+                color: "#6b5a48",
+                textAlign: "center",
+              }}
+            >
+              {ui.slotBrand}
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-instrument-sans),sans-serif",
+                fontSize: "11px",
+                lineHeight: "1.25",
+                color: "#9a8b79",
+                textAlign: "center",
+              }}
+            >
+              {ui.slotNext}
+            </span>
+          </a>
+          <a
+            href="#contact"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2px",
+              boxSizing: "border-box",
+              height: "80px",
+              padding: "10px",
+              border: "1px dashed #b9ab99",
+              background: "#fdfaf5",
+              textDecoration: "none",
+              transition: "border-color .2s, background .2s",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-instrument-sans),sans-serif",
+                fontSize: "11px",
+                lineHeight: "1.25",
+                fontWeight: "700",
+                color: "#6b5a48",
+                textAlign: "center",
+              }}
+            >
+              {ui.slotBrand}
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-instrument-sans),sans-serif",
+                fontSize: "11px",
+                lineHeight: "1.25",
+                color: "#9a8b79",
+                textAlign: "center",
+              }}
+            >
+              {ui.slotNext}
+            </span>
+          </a>
+          <a
+            href="#contact"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2px",
+              boxSizing: "border-box",
+              height: "80px",
+              padding: "10px",
+              border: "1px dashed #b9ab99",
+              background: "#fdfaf5",
+              textDecoration: "none",
+              transition: "border-color .2s, background .2s",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-instrument-sans),sans-serif",
+                fontSize: "11px",
+                lineHeight: "1.25",
+                fontWeight: "700",
+                color: "#6b5a48",
+                textAlign: "center",
+              }}
+            >
+              {ui.slotBrand}
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-instrument-sans),sans-serif",
+                fontSize: "11px",
+                lineHeight: "1.25",
+                color: "#9a8b79",
+                textAlign: "center",
+              }}
+            >
+              {ui.slotNext}
+            </span>
+          </a>
         </div>
       </div>
     </section>
-  )
+  );
 }

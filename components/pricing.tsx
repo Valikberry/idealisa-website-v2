@@ -1,177 +1,64 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useTranslation } from "@/lib/language-context"
-
-const planConfigs = [
-  { id: "starters", highlighted: false },
-  { id: "growth", highlighted: true },
-  { id: "established", highlighted: false },
-] as const
-
-function BorderBeam() {
-  return (
-    <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
-      <div
-        className="absolute w-24 h-24 bg-zinc-400/20 blur-xl border-beam"
-        style={{
-          offsetPath: "rect(0 100% 100% 0 round 16px)",
-        }}
-      />
-    </div>
-  )
-}
+import { useState } from "react";
+import { Check } from "lucide-react";
+import { useTranslation } from "@/lib/language-context";
 
 export function Pricing() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [planType, setPlanType] = useState<"basic" | "custom">("basic")
-  const t = useTranslation()
-
+  const [planType, setPlanType] = useState<"basic" | "custom">("basic");
+  const { pricing: t } = useTranslation();
   return (
-    <section id="pricing" className="py-24 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+    <section id="pricing" className="pricing-section">
+      <div className="section-container">
+        <div className="section-heading">
+          <h2>{t.heading}</h2>
+          <p>{t.subheading}</p>
+        </div>
+        <div className="pricing-toggle">
+          {(["basic", "custom"] as const).map((type) => (
+            <button
+              type="button"
+              key={type}
+              aria-pressed={planType === type}
+              onClick={() => setPlanType(type)}
+            >
+              {type === "basic" ? t.toggleBasic : t.toggleCustom}
+            </button>
+          ))}
+        </div>
+        <div
+          className={`pricing-grid ${planType === "custom" ? "custom-plan" : ""}`}
         >
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-black mb-4"
-            style={{ fontFamily: "var(--font-instrument-sans)" }}
-          >
-            {t.pricing.heading}
-          </h2>
-          <p className="text-black max-w-2xl mx-auto mb-8">{t.pricing.subheading}</p>
-
-          {/* Plan Type Toggle */}
-          <div className="inline-flex items-center p-1 rounded-full bg-zinc-100/80 border border-zinc-200">
-            <button
-              onClick={() => setPlanType("basic")}
-              className="relative px-4 py-2 text-sm font-medium text-black rounded-full transition-colors"
-            >
-              {planType === "basic" && (
-                <motion.div
-                  layoutId="billing-toggle"
-                  className="absolute inset-0 bg-white rounded-full"
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{t.pricing.toggleBasic}</span>
-            </button>
-
-            <button
-              onClick={() => setPlanType("custom")}
-              className="relative px-4 py-2 text-sm font-medium text-black rounded-full transition-colors"
-            >
-              {planType === "custom" && (
-                <motion.div
-                  layoutId="billing-toggle"
-                  className="absolute inset-0 bg-white rounded-full"
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{t.pricing.toggleCustom}</span>
-            </button>
-          </div>
-        </motion.div>
-
-        {planType === "basic" ? (
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid auto-rows-fr grid-cols-1 items-stretch gap-6 md:grid-cols-3"
-          >
-            {planConfigs.map((config, index) => {
-              const plan = t.pricing.plans[config.id]
-              return (
-                <motion.div
-                  key={config.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className={`relative flex h-full flex-col p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${
-                    config.highlighted
-                      ? "bg-zinc-100/90 border-[#4A3127]/60"
-                      : "bg-zinc-100/70 border-[#4A3127]/25 hover:border-[#4A3127]/50"
-                  }`}
+          {(planType === "basic" ? Object.values(t.plans) : [t.custom]).map(
+            (plan, index) => (
+              <article key={plan.name} className="pricing-card">
+                {planType === "basic" && index === 1 && (
+                  <span className="popular-label">{t.mostPopular}</span>
+                )}
+                <h3>{plan.name}</h3>
+                <p>{plan.focus}</p>
+                {planType === "custom" && <p>{t.custom.description}</p>}
+                <ul>
+                  {plan.features.map((feature) => (
+                    <li key={feature}>
+                      <Check size={16} aria-hidden="true" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  className="green-button"
+                  href="https://wa.me/244936499706"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {config.highlighted && <BorderBeam />}
-
-                  {config.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#4A3127] text-white text-xs font-medium rounded-none">
-                      {t.pricing.mostPopular}
-                    </div>
-                  )}
-
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-black mb-2">{plan.name}</h3>
-                    <p className="text-black text-sm">{plan.focus}</p>
-                  </div>
-
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm text-black">
-                        <Check className="w-4 h-4 text-emerald-500 shrink-0" strokeWidth={1.5} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button
-                    className="mt-auto w-full rounded-full bg-[#2E7D32] border-[#2E7D32] text-white hover:bg-[#256428] hover:border-[#256428] text-base font-medium"
-                  >
-                    {t.pricing.cta}
-                  </Button>
-                </motion.div>
-              )
-            })}
-          </motion.div>
-        ) : (
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative flex w-full max-w-xl flex-col p-6 rounded-2xl border bg-zinc-100/70 border-[#4A3127]/25 transition-all duration-300 hover:scale-[1.02] hover:border-[#4A3127]/50"
-            >
-              <BorderBeam />
-
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold text-black mb-2">{t.pricing.custom.name}</h3>
-                <p className="text-black text-sm">{t.pricing.custom.description}</p>
-              </div>
-
-              <h4 className="mb-6 text-2xl font-bold text-black">{t.pricing.custom.heading}</h4>
-
-              <ul className="space-y-3 mb-8">
-                {t.pricing.custom.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm text-black">
-                    <Check className="w-4 h-4 text-emerald-500 shrink-0" strokeWidth={1.5} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <Button className="mt-auto w-full rounded-full bg-[#2E7D32] border-[#2E7D32] text-white hover:bg-[#256428] hover:border-[#256428] text-base font-medium">
-                {t.pricing.custom.cta}
-              </Button>
-            </motion.div>
-          </motion.div>
-        )}
+                  {planType === "basic" ? t.cta : t.custom.cta}
+                </a>
+              </article>
+            ),
+          )}
+        </div>
       </div>
     </section>
-  )
+  );
 }

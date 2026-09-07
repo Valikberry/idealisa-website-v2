@@ -1,52 +1,149 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
-import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useTranslation } from "@/lib/language-context"
+import { useTranslation } from "@/lib/language-context";
 
 export function FinalCTA() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const t = useTranslation()
+  const t = useTranslation();
 
   return (
-    <section className="py-24 px-4 bg-[#F4F4F5]">
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="max-w-4xl mx-auto text-center"
+    <section style={{ padding: "40px 16px", background: "#f4f4f5" }}>
+      <div
+        style={{
+          maxWidth: "1024px",
+          margin: "0 auto",
+          border: "1px solid #cfc6ba",
+          background: "#ffffff",
+        }}
       >
-        <h2
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight"
-          style={{ fontFamily: "var(--font-cal-sans)" }}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "minmax(0,1.15fr) minmax(0,0.85fr)",
+          }}
         >
-          {t.finalCta.heading}
-        </h2>
-        <p className="text-lg sm:text-xl text-zinc-500 mb-10 max-w-2xl mx-auto">{t.finalCta.subheading}</p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            size="lg"
-            className="shimmer-btn bg-[#4A3127] text-white hover:bg-[#3A261F] rounded-full px-8 h-14 text-base font-medium shadow-lg shadow-white/20"
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+              padding: "36px 34px",
+            }}
           >
-            {t.finalCta.ctaPrimary}
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-full px-8 h-14 text-base font-medium bg-[#2E7D32] text-white border border-[#2E7D32] hover:bg-[#256428] hover:border-[#256428] dark:bg-[#2E7D32] dark:border-[#2E7D32] dark:hover:bg-[#256428] dark:hover:border-[#256428]"
+            <h2
+              style={{
+                fontSize: "29px",
+                lineHeight: "36px",
+                fontWeight: "700",
+                color: "#0a0a0a",
+                margin: "0",
+                fontFamily: "var(--font-instrument-sans),sans-serif",
+                textWrap: "pretty",
+              }}
+            >
+              {t.finalCta.heading}
+            </h2>
+            <p
+              style={{
+                fontSize: "15px",
+                lineHeight: "24px",
+                color: "#52525b",
+                margin: "0",
+                textWrap: "pretty",
+              }}
+            >
+              {t.finalCta.subheading}
+            </p>
+            <p
+              style={{
+                fontSize: "13px",
+                lineHeight: "20px",
+                color: "#8a5a1f",
+                fontWeight: "600",
+                margin: "4px 0 0",
+              }}
+            >
+              {t.finalCta.finePrint}
+            </p>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "12px",
+              padding: "36px 34px",
+              borderLeft: "1px solid #cfc6ba",
+              background: "#f4f4f5",
+            }}
           >
-            {t.finalCta.ctaSecondary}
-          </Button>
+            <a
+              href="https://wa.me/244936499706"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "14px",
+                padding: "14px 20px",
+                background: "#2E7D32",
+                color: "#ffffff",
+                fontSize: "15px",
+                fontWeight: "700",
+                cursor: "pointer",
+                transition: "background .2s",
+              }}
+            >
+              {t.finalCta.ctaSecondary}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+            <a
+              href="#services"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "14px",
+                padding: "14px 20px",
+                border: "1px solid #cfc6ba",
+                background: "#ffffff",
+                color: "#0a0a0a",
+                fontSize: "15px",
+                fontWeight: "700",
+                cursor: "pointer",
+                transition: "background .2s",
+              }}
+            >
+              {t.finalCta.ctaPrimary}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#8a5a1f"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-
-        <p className="mt-8 text-sm text-zinc-500">{t.finalCta.finePrint}</p>
-      </motion.div>
+      </div>
     </section>
-  )
+  );
 }
