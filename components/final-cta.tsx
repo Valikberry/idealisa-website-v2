@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslation } from "@/lib/language-context";
+import { ROUTES } from "@/lib/routes";
 
 export function FinalCTA() {
   const t = useTranslation();
@@ -109,8 +111,8 @@ export function FinalCTA() {
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
             </a>
-            <a
-              href="#services"
+            <Link
+              href={ROUTES.services}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -140,7 +142,7 @@ export function FinalCTA() {
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

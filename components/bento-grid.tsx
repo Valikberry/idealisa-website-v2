@@ -1,8 +1,10 @@
 "use client";
 
 import { Fragment } from "react";
+import Link from "next/link";
 import { useTranslation } from "@/lib/language-context";
 import { serviceIcons } from "@/lib/design-data";
+import { ROUTES } from "@/lib/routes";
 
 export function BentoGrid() {
   const t = useTranslation();
@@ -54,8 +56,8 @@ export function BentoGrid() {
         >
           {serviceCells.map((cell, index) => (
             <Fragment key={index}>
-              <a
-                href="#services"
+              <Link
+                href={ROUTES.services}
                 style={{
                   boxSizing: "border-box",
                   display: "flex",
@@ -130,7 +132,7 @@ export function BentoGrid() {
                     <path d="m12 5 7 7-7 7"></path>
                   </svg>
                 </span>
-              </a>
+              </Link>
             </Fragment>
           ))}
         </div>

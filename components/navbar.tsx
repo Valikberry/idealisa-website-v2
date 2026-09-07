@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useLanguage, useTranslation } from "@/lib/language-context";
 import { NAV_PAGE_KEYS, ROUTES } from "@/lib/routes";
@@ -10,6 +11,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
   const t = useTranslation();
+  const pathname = usePathname();
   const labelForKey = {
     services: t.navbar.services,
     company: t.navbar.company,
@@ -29,14 +31,20 @@ export function Navbar() {
         }
       >
         <Link href={ROUTES.home} className="brand" aria-label="Idealisa">
-          <img src="/idealisa-logo.png" alt="" width={32} height={32} />
+          <span className="brand-badge">
+            <img src="/idealisa-logo.png" alt="" width={24} height={24} />
+          </span>
           <span translate="no">
             Id<span className="text-[#F6C744]">e</span>alisa
           </span>
         </Link>
         <div className="desktop-links">
           {items.map((item) => (
-            <Link key={item.href} href={item.href}>
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={pathname === item.href ? "page" : undefined}
+            >
               {item.label}
             </Link>
           ))}

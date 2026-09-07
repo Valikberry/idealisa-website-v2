@@ -161,7 +161,6 @@ const en = {
     sub: "Notes on brand, communication and growth in Angola",
     minRead: "min read",
     readAll: "Read the blog",
-    empty: "New articles are coming soon.",
   },
   reviews: {
     heading: "Trusted by 500+ businesses and institutions",
@@ -375,8 +374,8 @@ const en = {
     heading: "We work with visionary brands of every size",
     subheading:
       "Trusted for digital marketing and web design projects across Angola’s provinces and industries.",
-    slotBrand: "Your brand here",
-    slotNext: "Be the next",
+    slotBrand: "Your brand",
+    slotNext: "next",
   },
   bentoGrid: {
     heading: "Everything Idealisa brings to the table",
@@ -454,66 +453,6 @@ const en = {
       badgeConsistency: "Consistency",
       badgeImpact: "Impact",
       badgeInnovation: "Innovation",
-    },
-  },
-  pricing: {
-    heading: "INVESTMENT & SERVICE OFFERINGS",
-    subheading:
-      "We help businesses build reputation, communicate with clarity, and turn strategy into sustainable growth.",
-    toggleBasic: "Basic",
-    toggleCustom: "Custom",
-    mostPopular: "Most Popular",
-    plans: {
-      starters: {
-        name: "TO GET STARTED",
-        focus: "Focus: Assessment + Strategic Direction",
-        features: [
-          "Business and brand analysis",
-          "Identification of opportunities",
-          "Action plan and strategic recommendations.",
-        ],
-      },
-      growth: {
-        name: "GROWTH",
-        focus: "Focus: Strategy + Direction + Oversight",
-        features: [
-          "Brand positioning",
-          "Strategic planning",
-          "Communication oversight",
-          "Execution and follow-up.",
-        ],
-      },
-      established: {
-        name: "ESTABLISHED",
-        focus: "Focus: Strategy + Direction + Execution + Oversight",
-        features: [
-          "Business and brand assessment",
-          "Brand positioning and strategic direction",
-          "Strategic planning and action plan",
-          "Communication strategy",
-          "Content planning and management",
-          "Creative direction",
-          "Digital presence management",
-          "Communication and execution oversight",
-          "Monitoring, analysis and optimisation",
-          "Coordination of partners and suppliers, when required.",
-        ],
-      },
-    },
-    cta: "Contact us via WhatsApp",
-    custom: {
-      name: "Custom Solutions",
-      focus: "Focus: A plan built around you",
-      description:
-        "Every business is different. Tell us what your company needs, and we’ll build a tailored plan around it, no fixed packages, no guesswork. We’ll discuss your goals and send you a proposal designed specifically for you.",
-      heading: "Let’s Talk",
-      features: [
-        "Tailored Strategy",
-        "Custom Solution",
-        "Direct Consultation",
-        "An Investment Worth Making",
-      ],
-      cta: "Contact us on WhatsApp",
     },
   },
   finalCta: {
@@ -916,7 +855,6 @@ const ptAO: Translations = {
     sub: "Notas sobre marca, comunicação e crescimento em Angola",
     minRead: "min de leitura",
     readAll: "Ver o blog",
-    empty: "Novos artigos em breve.",
   },
   reviews: {
     heading: "A confiança de mais de 500 empresas e instituições",
@@ -1130,8 +1068,8 @@ const ptAO: Translations = {
     heading: "Trabalhamos com marcas visionárias de todos os tamanhos",
     subheading:
       "A confiança de projectos de marketing digital e web design em todas as províncias e sectores de Angola.",
-    slotBrand: "A sua marca aqui",
-    slotNext: "Seja a próxima",
+    slotBrand: "A sua marca",
+    slotNext: "a seguir",
   },
   bentoGrid: {
     heading: "Tudo o que a Idealisa traz para a mesa",
@@ -1209,66 +1147,6 @@ const ptAO: Translations = {
       badgeConsistency: "Consistência",
       badgeImpact: "Impacto",
       badgeInnovation: "Inovação",
-    },
-  },
-  pricing: {
-    heading: "O INVESTIMENTO E OFERTAS PARA OS SERVIÇOS",
-    subheading:
-      "Ajudamos empresas a construir reputação, comunicar com clareza e transformar estratégia em crescimento sustentável.",
-    toggleBasic: "Base",
-    toggleCustom: "Personalizado",
-    mostPopular: "Mais Popular",
-    plans: {
-      starters: {
-        name: "PARA COMEÇAR",
-        focus: "Foco: Diagnóstico + Direcção Estratégica",
-        features: [
-          "Análise do negócio e da marca",
-          "Identificação de oportunidades",
-          "Plano de acção e recomendações estratégicas.",
-        ],
-      },
-      growth: {
-        name: "ESCALAR",
-        focus: "Foco: Estratégia + Direcção + Supervisão",
-        features: [
-          "Posicionamento de marca",
-          "Planeamento estratégico",
-          "Supervisão da comunicação",
-          "Execução e acompanhamento.",
-        ],
-      },
-      established: {
-        name: "CONSOLIDAÇÃO",
-        focus: "Foco: Estratégia + Direcção + Execução + Supervisão",
-        features: [
-          "Diagnóstico do negócio e da marca",
-          "Posicionamento e direcção estratégica",
-          "Planeamento estratégico e plano de acção",
-          "Estratégia de comunicação",
-          "Planeamento e gestão de conteúdos",
-          "Direcção criativa",
-          "Gestão da presença digital",
-          "Supervisão da comunicação e execução",
-          "Monitorização, análise e optimização",
-          "Coordenação de parceiros e fornecedores, quando necessário.",
-        ],
-      },
-    },
-    cta: "Contacte-nos pelo WhatsApp",
-    custom: {
-      name: "Soluções Personalizadas",
-      focus: "Foco: Um plano à sua medida",
-      description:
-        "Cada negócio é diferente. Diga-nos o que a sua empresa precisa e criaremos um plano à medida, sem pacotes fixos, sem suposições. Falaremos sobre os seus objectivos e enviaremos uma proposta desenvolvida especificamente para si.",
-      heading: "Vamos Conversar",
-      features: [
-        "Estratégia à medida",
-        "Solução personalizada",
-        "Consultoria directa",
-        "Investimento que vale a pena",
-      ],
-      cta: "Contacte-nos pelo WhatsApp",
     },
   },
   finalCta: {

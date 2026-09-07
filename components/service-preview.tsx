@@ -1,7 +1,9 @@
 "use client";
 
 import { Fragment } from "react";
+import Link from "next/link";
 import { useTranslation } from "@/lib/language-context";
+import { ROUTES } from "@/lib/routes";
 
 export function ServicePreview() {
   const t = useTranslation();
@@ -116,8 +118,8 @@ export function ServicePreview() {
                     {b.items.map((inc, index) => (
                       <Fragment key={index}>
                         <li style={{ borderBottom: "1px solid #f0eae1" }}>
-                          <a
-                            href="#services"
+                          <Link
+                            href={ROUTES.services}
                             style={{
                               display: "block",
                               padding: "7px 26px",
@@ -129,7 +131,7 @@ export function ServicePreview() {
                             }}
                           >
                             {inc}
-                          </a>
+                          </Link>
                         </li>
                       </Fragment>
                     ))}
@@ -179,8 +181,8 @@ export function ServicePreview() {
             marginTop: "26px",
           }}
         >
-          <a
-            href="#features"
+          <Link
+            href={ROUTES.services}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -196,7 +198,7 @@ export function ServicePreview() {
             }}
           >
             {sv.previewCta}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

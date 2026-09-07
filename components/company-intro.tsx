@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslation } from "@/lib/language-context";
+import { ROUTES } from "@/lib/routes";
 
 export function CompanyIntro() {
   const t = useTranslation();
@@ -101,8 +103,8 @@ export function CompanyIntro() {
           >
             {t.whoWeAre.p2}
           </p>
-          <a
-            href="#company"
+          <Link
+            href={ROUTES.company}
             style={{
               alignSelf: "flex-start",
               fontSize: "15px",
@@ -114,7 +116,7 @@ export function CompanyIntro() {
             }}
           >
             {t.whoWeAre.cta}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,15 +1,59 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/lib/language-context";
 
 export function Metrics() {
   const t = useTranslation();
-  const metricRings = t.metrics.rings.map((r) => ({
-    label: r.label,
-    display: r.value.toLocaleString("en").replaceAll(",", " ") + r.suffix,
-    offset: 289.03 * (1 - r.frac),
-  }));
+  const [metricP, setMetricP] = useState(0);
+  const ringsRef = useRef<HTMLDivElement>(null);
+  const seenRef = useRef(false);
+
+  useEffect(() => {
+    const el = ringsRef.current;
+    if (!el || seenRef.current) return;
+
+    let frame: number;
+    const start = () => {
+      seenRef.current = true;
+      const t0 = performance.now();
+      const dur = 1700;
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - t0) / dur);
+        setMetricP(1 - Math.pow(1 - p, 3));
+        if (p < 1) frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
+    };
+
+    if (typeof IntersectionObserver === "undefined") {
+      start();
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          start();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  const metricRings = t.metrics.rings.map((r) => {
+    const n = Math.round(r.value * metricP);
+    return {
+      label: r.label,
+      display: String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + r.suffix,
+      offset: (289.03 * (1 - r.frac * metricP)).toFixed(2),
+    };
+  });
   return (
     <section style={{ padding: "40px 16px", background: "#ffffff" }}>
       <div style={{ maxWidth: "1024px", margin: "0 auto" }}>
@@ -43,6 +87,7 @@ export function Metrics() {
         </div>
 
         <div
+          ref={ringsRef}
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(6,minmax(0,1fr))",

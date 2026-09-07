@@ -1,9 +1,11 @@
 "use client";
 
 import { Fragment } from "react";
+import Link from "next/link";
 import { useTranslation } from "@/lib/language-context";
 import { css } from "@/lib/design-style";
 import { logos } from "@/lib/design-data";
+import { ROUTES } from "@/lib/routes";
 
 export function LogoMarquee() {
   const t = useTranslation();
@@ -92,8 +94,8 @@ export function LogoMarquee() {
               </div>
             </Fragment>
           ))}
-          <a
-            href="#contact"
+          <Link
+            href={ROUTES.contact}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -132,9 +134,9 @@ export function LogoMarquee() {
             >
               {ui.slotNext}
             </span>
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href={ROUTES.contact}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -173,9 +175,9 @@ export function LogoMarquee() {
             >
               {ui.slotNext}
             </span>
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href={ROUTES.contact}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -214,7 +216,7 @@ export function LogoMarquee() {
             >
               {ui.slotNext}
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

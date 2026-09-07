@@ -25,7 +25,7 @@ export function Industries() {
     .slice(group * 6, group * 6 + 6);
   const industryDots = [0, 1].map((i) => ({
     label: String(i + 1),
-    style: `width:10px;height:10px;border-radius:50%;background:${group === i ? "#8a5a1f" : "#ddd4c7"}`,
+    style: `width:${group === i ? "26px" : "9px"};height:9px;border-radius:9999px;border:none;padding:0;background:${group === i ? "#8a5a1f" : "#cfc6ba"};cursor:pointer;transition:width .3s, background .3s`,
     onClick: () => setGroup(i),
   }));
   return (

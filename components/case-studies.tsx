@@ -12,7 +12,7 @@ export function CaseStudies() {
   const caseBlocks = activeCase.blocks;
   const caseDots = t.cases.items.map((c, i) => ({
     label: c.client,
-    style: `width:10px;height:10px;border-radius:50%;background:${caseIndex === i ? "#8a5a1f" : "#ddd4c7"}`,
+    style: `width:${caseIndex === i ? "26px" : "9px"};height:9px;border-radius:9999px;border:none;padding:0;background:${caseIndex === i ? "#8a5a1f" : "#cfc6ba"};cursor:pointer;transition:width .3s, background .3s`,
     onClick: () => setCaseIndex(i),
   }));
   return (
