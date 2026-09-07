@@ -480,6 +480,28 @@ textarea:focus-visible {
     font-size: 13px;
     padding: 11px 15px;
   }
+
+  /*
+   * Serviços "how we work" table (components/how-we-work.tsx): mirrors the
+   * reference's `[style*="56px minmax(0px, 220px)"]` mobile reflow, done as
+   * plain classes instead — that rule's own inline-string hedge has a typo
+   * (`minmax(0,220)` is missing the trailing "px" before its closing paren,
+   * so it never matches our compact `minmax(0,220px)` render) and can't be
+   * fixed by reformatting our value, since ours is already correct CSS.
+   */
+  .how-row {
+    grid-template-columns: 44px minmax(0, 1fr) !important;
+    gap: 6px 10px !important;
+    padding: 16px 14px !important;
+    align-items: start !important;
+  }
+  .how-row-n {
+    grid-row: 1 / span 2;
+  }
+  .how-row-stage,
+  .how-row-body {
+    grid-column: 2;
+  }
 }
 .legal-dialog {
   width: calc(100% - 32px);
