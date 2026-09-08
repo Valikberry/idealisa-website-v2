@@ -1,12 +1,18 @@
-import { notFound } from "next/navigation";
-import { BLOG_POSTS } from "@/lib/posts";
 import { BlogArticle } from "@/components/blog-article";
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+import { PostStructuredData } from "@/components/seo-json-ld";
+import { getPost, getSeoLanguage, postMetadata } from "@/lib/seo/server";
+
+type Props = { params: Promise<{ slug: string }> };
+export async function generateMetadata({ params }: Props) {
+  return postMetadata((await params).slug);
+}
+export default async function Page({ params }: Props) {
   const { slug } = await params;
-  if (!BLOG_POSTS["pt-AO"].some((post) => post.slug === slug)) notFound();
-  return <BlogArticle slug={slug} />;
+  getPost(slug, await getSeoLanguage());
+  return (
+    <>
+      <BlogArticle slug={slug} />
+      <PostStructuredData slug={slug} />
+    </>
+  );
 }

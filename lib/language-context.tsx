@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { createContext, useContext, useState, type ReactNode } from "react";
 import {
   translations,
@@ -26,12 +27,15 @@ export function LanguageProvider({
   children: ReactNode;
   initialLanguage: Language;
 }) {
+  const router = useRouter();
   const [language, setLanguageState] = useState<Language>(initialLanguage);
 
   const setLanguage = (nextLanguage: Language) => {
     setLanguageState(nextLanguage);
     document.documentElement.lang = nextLanguage;
     document.cookie = `${LOCALE_COOKIE_NAME}=${encodeURIComponent(nextLanguage)}; Path=/; Max-Age=${LOCALE_COOKIE_MAX_AGE}; SameSite=Lax`;
+    // Refresh server metadata and JSON-LD without losing client UI state.
+    router.refresh();
   };
 
   return (

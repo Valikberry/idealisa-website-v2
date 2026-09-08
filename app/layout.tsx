@@ -1,10 +1,9 @@
+import { rootMetadata, getSeoLanguage } from "@/lib/seo/server";
+import { SiteStructuredData } from "@/components/seo-json-ld";
 import type React from "react";
-import type { Metadata } from "next";
-import { cookies } from "next/headers";
 import { Manrope, DM_Sans, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { LanguageProvider } from "@/lib/language-context";
-import { getValidLanguage } from "@/lib/translations";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
@@ -27,22 +26,14 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Idealisa | Marketing Digital e Estratégia de Marca em Angola",
-  icons: { icon: "/idealisa-logo.png", apple: "/idealisa-logo.png" },
-  description:
-    "IdealIsa is a leading brand strategy, corporate communication, and project management company in Luanda, Angola.",
-};
+export const generateMetadata = rootMetadata;
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const initialLanguage = getValidLanguage(
-    cookieStore.get("idealisa-locale")?.value,
-  );
+  const initialLanguage = await getSeoLanguage();
 
   return (
     <html lang={initialLanguage}>
@@ -59,6 +50,7 @@ export default async function RootLayout({
             </div>
           </SmoothScroll>
         </LanguageProvider>
+        <SiteStructuredData />
         <Analytics />
       </body>
     </html>

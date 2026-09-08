@@ -1,3 +1,5 @@
+import { homeMetadata } from "@/lib/seo/server";
+import { PageStructuredData } from "@/components/seo-json-ld";
 import { Hero } from "@/components/hero";
 import { LogoMarquee } from "@/components/logo-marquee";
 import { CompanyIntro } from "@/components/company-intro";
@@ -11,6 +13,8 @@ import { Reviews } from "@/components/reviews";
 import { RecentPosts } from "@/components/recent-posts";
 import { Faq } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
+
+export const generateMetadata = homeMetadata;
 
 export default function Home() {
   return (
@@ -28,6 +32,7 @@ export default function Home() {
       <RecentPosts />
       <Faq />
       <FinalCTA />
+      <PageStructuredData pageKey="home" />
     </>
   );
 }
