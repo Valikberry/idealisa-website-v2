@@ -171,9 +171,11 @@ export function Industries() {
               type="button"
               aria-label={t.whoWeWorkWith.videoTitle}
               onClick={toggleVideo}
+              className="hover-play-trigger"
               style={css(videoOverlayStyle)}
             >
               <span
+                className="hover-play-target"
                 style={{
                   display: "flex",
                   alignItems: "center",

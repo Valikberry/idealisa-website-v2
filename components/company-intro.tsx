@@ -105,6 +105,7 @@ export function CompanyIntro() {
           </p>
           <Link
             href={ROUTES.company}
+            className="hover-green-text"
             style={{
               alignSelf: "flex-start",
               fontSize: "15px",
@@ -113,6 +114,7 @@ export function CompanyIntro() {
               textDecoration: "underline",
               textUnderlineOffset: "4px",
               cursor: "pointer",
+              transition: "color .2s",
             }}
           >
             {t.whoWeAre.cta}

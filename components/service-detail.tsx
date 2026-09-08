@@ -120,6 +120,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
     <div style={{ display: "flex", flexDirection: "column" }}>
       <a
         href="tel:+244936499706"
+        className="hover-warm"
         style={{
           display: "flex",
           alignItems: "center",
@@ -146,6 +147,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
         <Fragment key={action.key}>
           <button
             onClick={() => openModal(action.key)}
+            className="hover-warm"
             style={{
               display: "flex",
               alignItems: "center",
@@ -432,7 +434,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
               }}
             >
               <a
-                className="shimmer-btn"
+                className="shimmer-btn hover-green"
                 href="https://wa.me/244936499706"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -787,6 +789,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                   href="https://wa.me/244936499706"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover-green"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -907,6 +910,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                           <button
                             aria-expanded={isOpen}
                             onClick={() => setOpenFaq(isOpen ? null : index)}
+                            className="hover-warm"
                             style={{
                               display: "flex",
                               alignItems: "center",
@@ -988,6 +992,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                     <Link
                       href={ROUTES.services}
                       title={label}
+                      className="hover-gold"
                       style={{
                         display: "block",
                         width: "100%",

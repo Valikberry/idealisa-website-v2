@@ -164,6 +164,7 @@ export default function ServicosPage() {
                                 ? ROUTES[card.detailRoute]
                                 : ROUTES.contact
                             }
+                            className="hover-gold"
                             style={{
                               display: "block",
                               padding: "7px 26px",
@@ -278,6 +279,7 @@ export default function ServicosPage() {
               <Fragment key={cell.label}>
                 <a
                   href={cell.href}
+                  className="hover-warm"
                   style={{
                     display: "flex",
                     flexDirection: "column",

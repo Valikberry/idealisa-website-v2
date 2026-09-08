@@ -58,6 +58,7 @@ export function BentoGrid() {
             <Fragment key={index}>
               <Link
                 href={ROUTES.services}
+                className="hover-warm"
                 style={{
                   boxSizing: "border-box",
                   display: "flex",

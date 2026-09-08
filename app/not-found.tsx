@@ -97,7 +97,7 @@ export default function NotFound() {
         <div className="notfound-actions" style={{ marginTop: "10px" }}>
           <Link
             href={ROUTES.home}
-            className="shimmer-btn"
+            className="shimmer-btn hover-green"
             style={{
               position: "relative",
               overflow: "hidden",
@@ -125,6 +125,7 @@ export default function NotFound() {
           </Link>
           <Link
             href={ROUTES.contact}
+            className="hover-warm"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -169,6 +170,7 @@ export default function NotFound() {
             <Link
               key={item.href}
               href={item.href}
+              className="hover-gold"
               style={{
                 fontSize: "14px",
                 fontWeight: "600",

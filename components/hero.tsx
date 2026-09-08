@@ -1022,7 +1022,7 @@ export function Hero() {
             }}
           >
             <a
-              className="shimmer-btn"
+              className="shimmer-btn hover-green"
               href="https://wa.me/244936499706"
               target="_blank"
               rel="noopener noreferrer"

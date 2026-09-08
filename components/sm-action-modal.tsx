@@ -228,6 +228,7 @@ export function SmActionModal({
             )}
             <button
               type="submit"
+              className="hover-green"
               style={{
                 display: "flex",
                 alignItems: "center",

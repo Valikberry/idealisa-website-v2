@@ -309,13 +309,21 @@ textarea:focus-visible {
 }
 .language-toggle {
   display: flex;
+  align-items: center;
+  height: 38px;
+  box-sizing: border-box;
   padding: 2px;
   background: white;
   border: 1px solid #d4d4d8;
   border-radius: 999px;
 }
 .language-toggle button {
-  padding: 5px 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  box-sizing: border-box;
+  padding: 0 10px;
   font-size: 12px;
   line-height: 18px;
   border-radius: 999px;
@@ -552,4 +560,42 @@ textarea:focus-visible {
   .notfound-actions > a {
     width: 100%;
   }
+}
+
+/*
+ * Hover-state utilities — ports design-reference's `style-hover` attributes
+ * (background/color changes on :hover across cards, CTAs and links) to real
+ * CSS, since inline styles can't express :hover. Each needs !important:
+ * a plain class selector otherwise loses to the element's own inline base
+ * style (higher specificity), even during :hover.
+ */
+.hover-warm:hover {
+  background: #faf7f2 !important;
+}
+.hover-green:hover {
+  background: #256428 !important;
+}
+.hover-gold:hover {
+  color: #8a5a1f !important;
+}
+.hover-green-text:hover {
+  color: #256428 !important;
+}
+.hover-lightgreen:hover {
+  color: #a8e3b0 !important;
+}
+.hover-grey:hover {
+  background: #ececed !important;
+}
+.hover-dashed:hover {
+  border-color: #2e7d32 !important;
+  background: #f6faf6 !important;
+}
+.hover-fill-gold:hover {
+  background: #8a5a1f !important;
+  color: #ffffff !important;
+}
+.hover-play-trigger:hover .hover-play-target {
+  background: #256428 !important;
+  transform: scale(1.06) !important;
 }

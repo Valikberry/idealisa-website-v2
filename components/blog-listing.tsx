@@ -304,7 +304,7 @@ export function BlogListing() {
                 {postCells.map((p) => (
                   <a
                     key={p.id}
-                    className={styles.postCard}
+                    className={`${styles.postCard} ${styles.warmHover}`}
                     href={blogPostRoute(p.slug)}
                     style={p.cellStyle}
                   >

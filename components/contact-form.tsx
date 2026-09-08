@@ -121,6 +121,7 @@ export function ContactForm() {
           </p>
           <a
             href="tel:+244936499706"
+            className="hover-lightgreen"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -130,6 +131,7 @@ export function ContactForm() {
               fontWeight: "700",
               color: "#7fd18a",
               cursor: "pointer",
+              transition: "color .2s",
             }}
           >
             <svg
@@ -379,6 +381,7 @@ export function ContactForm() {
           >
             <button
               type="submit"
+              className="hover-green"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

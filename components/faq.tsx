@@ -54,6 +54,7 @@ export function Faq() {
                   <button
                     aria-expanded={item.expanded}
                     onClick={item.toggle}
+                    className="hover-warm"
                     style={{
                       display: "flex",
                       alignItems: "center",

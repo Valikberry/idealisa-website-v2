@@ -99,6 +99,7 @@ export function FinalCTA({ company }: FinalCTAProps = {}) {
               href="https://wa.me/244936499706"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover-green"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -130,6 +131,7 @@ export function FinalCTA({ company }: FinalCTAProps = {}) {
             </a>
             <Link
               href={company ? ROUTES.contact : ROUTES.services}
+              className="hover-warm"
               style={{
                 display: "flex",
                 alignItems: "center",

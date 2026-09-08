@@ -120,6 +120,7 @@ export function ServicePreview() {
                         <li style={{ borderBottom: "1px solid #f0eae1" }}>
                           <Link
                             href={ROUTES.services}
+                            className="hover-gold"
                             style={{
                               display: "block",
                               padding: "7px 26px",
@@ -183,6 +184,7 @@ export function ServicePreview() {
         >
           <Link
             href={ROUTES.services}
+            className="hover-fill-gold"
             style={{
               display: "inline-flex",
               alignItems: "center",

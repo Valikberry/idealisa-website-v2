@@ -399,6 +399,7 @@ export function Metrics() {
             href="https://wa.me/244936499706"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover-warm"
             style={{
               display: "inline-flex",
               alignItems: "center",

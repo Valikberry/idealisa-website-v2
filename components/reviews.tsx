@@ -11,7 +11,7 @@ export function Reviews({
   const reviewList = t.reviews.items.map((r) => ({
     ...r,
     cellStyle:
-      "display:flex;flex-direction:column;gap:8px;padding:24px 20px;border-right:1px solid #cfc6ba;border-bottom:1px solid #cfc6ba",
+      "display:flex;flex-direction:column;gap:8px;padding:24px 20px;border-right:1px solid #cfc6ba;border-bottom:1px solid #cfc6ba;transition:background .2s",
   }));
   return (
     <section id="reviews" style={{ padding: "40px 16px", background }}>
@@ -54,6 +54,7 @@ export function Reviews({
             href="https://www.trustpilot.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover-grey"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -205,6 +206,7 @@ export function Reviews({
                 href="https://www.trustpilot.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover-warm"
                 style={css(rev.cellStyle)}
               >
                 <div style={{ display: "flex", gap: "3px" }}>

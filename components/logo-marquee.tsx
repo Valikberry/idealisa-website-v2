@@ -96,6 +96,7 @@ export function LogoMarquee() {
           ))}
           <Link
             href={ROUTES.contact}
+            className="hover-dashed"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -137,6 +138,7 @@ export function LogoMarquee() {
           </Link>
           <Link
             href={ROUTES.contact}
+            className="hover-dashed"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -178,6 +180,7 @@ export function LogoMarquee() {
           </Link>
           <Link
             href={ROUTES.contact}
+            className="hover-dashed"
             style={{
               display: "flex",
               flexDirection: "column",

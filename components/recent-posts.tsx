@@ -52,6 +52,7 @@ export function RecentPosts() {
             <Fragment key={post.id}>
               <Link
                 href={blogPostRoute(post.id)}
+                className="hover-warm"
                 style={{
                   display: "flex",
                   flexDirection: "column",

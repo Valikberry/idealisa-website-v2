@@ -231,6 +231,7 @@ export default function PortfolioPage() {
                   </label>
                   <button
                     type="submit"
+                    className="hover-green"
                     style={{
                       gridColumn: "span 2",
                       display: "flex",

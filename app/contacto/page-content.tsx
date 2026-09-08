@@ -164,6 +164,7 @@ export default function ContactoPage() {
                   </label>
                   <button
                     type="submit"
+                    className="hover-green"
                     style={{
                       gridColumn: "span 2",
                       padding: "13px 18px",
@@ -271,6 +272,7 @@ export default function ContactoPage() {
                   href="https://wa.me/244936499706"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover-green"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -296,6 +298,7 @@ export default function ContactoPage() {
                   href="https://www.google.com/maps/search/?api=1&query=Rua+Louren%C3%A7o+Mendes+da+Concei%C3%A7%C3%A3o%2C+Maculusso%2C+Luanda%2C+Angola"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover-warm"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -350,6 +353,7 @@ export default function ContactoPage() {
                 href="https://wa.me/244936499706"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover-green"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -373,6 +377,7 @@ export default function ContactoPage() {
               </a>
               <a
                 href="mailto:geral@idealisa.ao"
+                className="hover-warm"
                 style={{
                   display: "flex",
                   alignItems: "center",
