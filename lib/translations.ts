@@ -700,6 +700,17 @@ const en = {
     },
   ],
   close: "Close",
+  notFound: {
+    badge: "ERROR 404",
+    heading: "Oops! Page not found",
+    sub: "The page you're looking for moved or no longer exists. I promise I won't do it again. But the good work is still right here.",
+    backHome: "Back home",
+    talkToUs: "Talk to us",
+    linkServices: "Services",
+    linkPortfolio: "Portfolio",
+    linkBlog: "Blog",
+    linkContact: "Contact",
+  },
 };
 
 type Translations = typeof en;
@@ -1395,6 +1406,17 @@ const ptAO: Translations = {
     },
   ],
   close: "Fechar",
+  notFound: {
+    badge: "ERRO 404",
+    heading: "Ops! Página não encontrada",
+    sub: "A página que procura mudou de sítio ou já não existe. Prometo não repetir. Mas o bom trabalho continua por aqui.",
+    backHome: "Voltar ao início",
+    talkToUs: "Falar connosco",
+    linkServices: "Serviços",
+    linkPortfolio: "Portefólio",
+    linkBlog: "Blog",
+    linkContact: "Contacto",
+  },
 };
 
 export const translations: Record<Language, Translations> = {

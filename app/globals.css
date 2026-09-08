@@ -534,3 +534,22 @@ textarea:focus-visible {
   margin-bottom: 12px;
   color: #52525b;
 }
+
+/* 404 page: recovery button row — inline styles can't express the
+   stack-and-go-full-width behavior below ~480px, so that part lives here. */
+.notfound-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .notfound-actions {
+    flex-direction: column;
+  }
+  .notfound-actions > a {
+    width: 100%;
+  }
+}
