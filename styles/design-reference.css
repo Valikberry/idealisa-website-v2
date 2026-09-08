@@ -408,7 +408,11 @@
 
   /* padding */
   #dc-root
-    :is([style*="padding: 30px 32px 34px"], [style*="padding:30 32px 34px"]),
+    :is(
+      [style*="padding: 30px 32px 34px"],
+      [style*="padding:30 32px 34px"],
+      [style*="padding:30px 32px 34px"]
+    ),
   #dc-root :is([style*="padding: 44px 40px"], [style*="padding:44px 40"]),
   #dc-root
     :is([style*="padding: 36px 40px 40px"], [style*="padding:36px 40 40"]),
