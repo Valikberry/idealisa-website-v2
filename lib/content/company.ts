@@ -1,27 +1,7 @@
 // Company copy from the design reference, including mission and vision.
 const en = {
   hero: {
-    eyebrow: "Company",
     title: "The company behind the work",
-    sub: "Idealisa is an Angolan company specialising in brand strategy, corporate communication and project management.",
-    stats: [
-      {
-        value: "Luanda",
-        label: "Where we are based",
-      },
-      {
-        value: "03",
-        label: "Complementary practices",
-      },
-      {
-        value: "05",
-        label: "Stages in how we work",
-      },
-      {
-        value: "100%",
-        label: "Angolan owned",
-      },
-    ],
   },
   kicker: "About us",
   introTagline:
@@ -83,27 +63,6 @@ const en = {
       desc: "We stay ahead of what your competitors are doing and use it.",
     },
   ],
-  testimonialsHeading: "What clients say",
-  testimonials: [
-    {
-      quote:
-        "They spent three weeks understanding us before they showed a single design. That had never happened to us before.",
-      name: "Direcção-Geral",
-      role: "Financial services group, Luanda",
-    },
-    {
-      quote:
-        "Our communication used to depend on whoever was free that week. Now there is a plan, a voice and someone accountable.",
-      name: "Communication Office",
-      role: "National foundation",
-    },
-    {
-      quote:
-        "The positioning work changed how we sell. Our commercial team finally says the same thing in every room.",
-      name: "Commercial Director",
-      role: "Construction and real estate",
-    },
-  ],
   cta: {
     heading: "Want to see whether we fit?",
     sub: "One conversation is usually enough to know. We will be direct about whether we are the right people for the problem.",
@@ -114,27 +73,7 @@ const en = {
 
 const ptAO: typeof en = {
   hero: {
-    eyebrow: "Empresa",
     title: "A empresa por trás do trabalho",
-    sub: "A Idealisa é uma empresa angolana especializada em estratégia de marca, comunicação corporativa e gestão de projectos.",
-    stats: [
-      {
-        value: "Luanda",
-        label: "Onde estamos",
-      },
-      {
-        value: "03",
-        label: "Áreas complementares",
-      },
-      {
-        value: "05",
-        label: "Etapas do nosso método",
-      },
-      {
-        value: "100%",
-        label: "Capital angolano",
-      },
-    ],
   },
   kicker: "Sobre nós",
   introTagline:
@@ -194,27 +133,6 @@ const ptAO: typeof en = {
       n: "05",
       title: "Grandeza competitiva.",
       desc: "Acompanhamos o que a concorrência faz e usamos isso a seu favor.",
-    },
-  ],
-  testimonialsHeading: "O que dizem os clientes",
-  testimonials: [
-    {
-      quote:
-        "Passaram três semanas a perceber-nos antes de mostrarem um único desenho. Nunca nos tinha acontecido.",
-      name: "Direcção-Geral",
-      role: "Grupo de serviços financeiros, Luanda",
-    },
-    {
-      quote:
-        "A nossa comunicação dependia de quem estivesse livre nessa semana. Agora há plano, há voz e há um responsável.",
-      name: "Gabinete de Comunicação",
-      role: "Fundação nacional",
-    },
-    {
-      quote:
-        "O trabalho de posicionamento mudou a forma como vendemos. A equipa comercial diz finalmente o mesmo em todas as salas.",
-      name: "Director Comercial",
-      role: "Construção e imobiliário",
     },
   ],
   cta: {
