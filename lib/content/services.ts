@@ -7,6 +7,7 @@
 // how/essence/culture fields were deliberately dropped from the Sobre Nós
 // page and shouldn't be depended on going forward.
 import type { Language } from "@/lib/translations";
+import type { RoutePageKey } from "@/lib/routes";
 
 export type ServiceGroup = {
   /** Duplicates one of the 4 pillars below — excluded from the rendered grid. */
@@ -15,6 +16,13 @@ export type ServiceGroup = {
   desc?: string;
   outcome?: string;
   items: string[];
+  /**
+   * Set once this card has its own dedicated page (the eventual silo
+   * structure — every "What's included" row should link to its own page).
+   * Until then its items keep linking to Contact. Cards without this stay
+   * on Contact indefinitely.
+   */
+  detailRoute?: RoutePageKey;
 };
 
 export type ServicePillar = {
@@ -23,6 +31,8 @@ export type ServicePillar = {
   desc: string;
   includes: string[];
   outcome: string;
+  /** See ServiceGroup.detailRoute. */
+  detailRoute?: RoutePageKey;
 };
 
 export type HowWeWorkRow = {
@@ -58,6 +68,7 @@ const en: ServicesContent = {
     {
       n: "01",
       title: "Brand Strategy & Branding",
+      detailRoute: "brand",
       desc: "We structure brands with clarity, identity and the ability to differentiate, so the business stops competing on price and starts competing on meaning.",
       includes: [
         "Business and brand diagnostics",
@@ -97,6 +108,7 @@ const en: ServicesContent = {
     {
       n: "03",
       title: "Project Management",
+      detailRoute: "pm",
       desc: "We transform strategic direction into structured projects, coordinating teams, partners and suppliers and guiding the work towards measurable impact.",
       includes: [
         "Scoping, milestones and budget frameworks",
@@ -277,6 +289,7 @@ const en: ServicesContent = {
     },
     {
       group: "Social media advertising",
+      detailRoute: "smm",
       desc: "Presence and paid reach on the platforms your audience actually opens every day.",
       outcome: "Audiences that grow on purpose and creative that earns its place in the feed.",
       items: [
@@ -437,6 +450,7 @@ const ptAO: ServicesContent = {
     {
       n: "01",
       title: "Estratégia de Marca e Branding",
+      detailRoute: "brand",
       desc: "Estruturamos marcas com clareza, identidade e capacidade de diferenciação, para que o negócio deixe de competir pelo preço e passe a competir pelo significado.",
       includes: [
         "Diagnóstico do negócio e da marca",
@@ -476,6 +490,7 @@ const ptAO: ServicesContent = {
     {
       n: "03",
       title: "Gestão de Projectos",
+      detailRoute: "pm",
       desc: "Transformamos orientações estratégicas em projectos estruturados, coordenando equipas, parceiros e fornecedores e orientando o trabalho para um impacto mensurável.",
       includes: [
         "Âmbito, marcos e enquadramento orçamental",
@@ -656,6 +671,7 @@ const ptAO: ServicesContent = {
     },
     {
       group: "Publicidade em redes sociais",
+      detailRoute: "smm",
       desc: "Presença e alcance pago nas plataformas que o seu público abre todos os dias.",
       outcome: "Audiências que crescem com intenção e criativos que merecem o lugar no feed.",
       items: [
@@ -823,6 +839,7 @@ export function buildServiceCards(content: ServicesContent) {
     desc: pillar.desc as string | undefined,
     items: pillar.includes,
     outcome: pillar.outcome as string | undefined,
+    detailRoute: pillar.detailRoute,
   }));
   content.dir
     .filter((group) => !group.dup)
@@ -833,6 +850,7 @@ export function buildServiceCards(content: ServicesContent) {
         desc: group.desc,
         items: group.items,
         outcome: group.outcome,
+        detailRoute: group.detailRoute,
       });
     });
   return cards;

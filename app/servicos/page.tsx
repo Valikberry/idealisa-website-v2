@@ -159,7 +159,11 @@ export default function ServicosPage() {
                       <Fragment key={item}>
                         <li style={{ borderBottom: "1px solid #f0eae1" }}>
                           <Link
-                            href={ROUTES.contact}
+                            href={
+                              card.detailRoute
+                                ? ROUTES[card.detailRoute]
+                                : ROUTES.contact
+                            }
                             style={{
                               display: "block",
                               padding: "7px 26px",

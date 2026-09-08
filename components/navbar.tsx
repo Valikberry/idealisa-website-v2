@@ -23,6 +23,10 @@ export function Navbar() {
     label: labelForKey[key as keyof typeof labelForKey],
     href: ROUTES[key],
   }));
+  // "/servicos" should stay active on its own sub-pages (the 3 service-detail
+  // routes) too, not just on an exact match.
+  const isActive = (href: string) =>
+    pathname === href || (href !== "/" && pathname?.startsWith(href + "/"));
   return (
     <header className="site-header">
       <nav
@@ -43,7 +47,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              aria-current={pathname === item.href ? "page" : undefined}
+              aria-current={isActive(item.href) ? "page" : undefined}
             >
               {item.label}
             </Link>
