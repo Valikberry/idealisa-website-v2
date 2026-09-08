@@ -453,7 +453,22 @@ textarea:focus-visible {
   }
   .menu-toggle {
     display: block;
+    position: relative;
     padding: 6px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  /* The visible icon box is 34x34 (matches the reference exactly, and keeps
+     the pill's height unchanged) — that's below Apple/Google's 44px minimum
+     recommended touch target, which on a real finger (unlike a precise
+     mouse click) is a well-documented cause of taps that silently miss.
+     Extend the *tappable* area with a pseudo-element instead of padding, so
+     the hit target reaches ~44x44 without enlarging the button's own box or
+     the pill around it. */
+  .menu-toggle::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
   }
   .mobile-navigation {
     display: flex;
