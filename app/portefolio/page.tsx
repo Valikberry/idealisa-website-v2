@@ -125,8 +125,15 @@ export default function PortfolioPage() {
                       borderBottom: "1px solid #cfc6ba",
                     }}
                   >
-                    <div
+                    {/* `image-slot` (not `div`): design-reference.css's mobile
+                        hairline-table rule only skips its padding override
+                        for cells `:has(image-slot)` — matching the literal
+                        tag the reference itself uses for photo placeholders,
+                        so our flush, edge-to-edge photo isn't pushed inward
+                        with unwanted padding on mobile. */}
+                    <image-slot
                       style={{
+                        display: "block",
                         position: "relative",
                         height: "160px",
                         borderBottom: "1px solid #cfc6ba",
@@ -142,7 +149,7 @@ export default function PortfolioPage() {
                             }
                           : {}),
                       }}
-                    ></div>
+                    ></image-slot>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "20px" }}>
                       <p
                         style={{

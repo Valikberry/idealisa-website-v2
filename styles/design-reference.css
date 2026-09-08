@@ -266,8 +266,17 @@
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  /* pairs that stay 2-up: case stats, contact checkboxes */
-  #dc-root :is([style*="gap: 30px 16px"], [style*="gap:30 16px"]),
+  /* pairs that stay 2-up: case stats, contact checkboxes.
+     The bare "gap:30 16px" compact variant is missing its "px" unit and
+     never matches React's actual serialization (always "gap:30px 16px") —
+     "gap:30px 16px" is the real compact form to match here (found on
+     components/case-showcase.tsx's stats grid, used by home and Portefólio). */
+  #dc-root
+    :is(
+      [style*="gap: 30px 16px"],
+      [style*="gap:30 16px"],
+      [style*="gap:30px 16px"]
+    ),
   #dc-root :is([style*="gap: 6px 16px"], [style*="gap:6px 16px"]) {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
