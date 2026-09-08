@@ -16,7 +16,7 @@ export const ROUTES = {
   home: "/",
   services: "/servicos",
   company: "/sobre-nos",
-  portfolio: "/portfolio",
+  portfolio: "/portefolio",
   blog: "/blog",
   contact: "/contacto",
   smm: "/servicos/gestao-de-redes-sociais-angola",
