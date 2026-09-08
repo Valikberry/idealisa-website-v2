@@ -19,8 +19,9 @@ export function DocPage({ docKey }: { docKey: DocKey }) {
   const reviewCells = t.reviews.items;
 
   return (
-    <div>
+    <div className={styles.docPage}>
       <section
+        className={styles.header}
         style={{
           padding: "150px 16px 32px",
           background:
@@ -72,7 +73,10 @@ export function DocPage({ docKey }: { docKey: DocKey }) {
         </div>
       </section>
 
-      <section style={{ padding: "36px 16px 44px", background: "#f4f4f5" }}>
+      <section
+        className={styles.body}
+        style={{ padding: "36px 16px 44px", background: "#f4f4f5" }}
+      >
         <div
           style={{
             maxWidth: "1024px",
@@ -87,6 +91,7 @@ export function DocPage({ docKey }: { docKey: DocKey }) {
               style={{ display: "flex", flexDirection: "column", gap: "18px" }}
             >
               <div
+                className={styles.ratingSummary}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -99,6 +104,7 @@ export function DocPage({ docKey }: { docKey: DocKey }) {
                 }}
               >
                 <div
+                  className={styles.ratingDetails}
                   style={{ display: "flex", alignItems: "center", gap: "12px" }}
                 >
                   <div
@@ -157,18 +163,11 @@ export function DocPage({ docKey }: { docKey: DocKey }) {
                   {ui.reviewSource}
                 </span>
               </div>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(2,minmax(0,1fr))",
-                  borderTop: "1px solid #cfc6ba",
-                  borderLeft: "1px solid #cfc6ba",
-                  background: "#ffffff",
-                }}
-              >
+              <div className={styles.reviewGrid}>
                 {reviewCells.map((r) => (
                   <div
                     key={r.name}
+                    className={styles.reviewCard}
                     style={{
                       display: "flex",
                       flexDirection: "column",
@@ -218,7 +217,7 @@ export function DocPage({ docKey }: { docKey: DocKey }) {
                         fontSize: "12px",
                         lineHeight: "18px",
                         color: "#71717a",
-                        margin: "6px 0 0",
+                        margin: "auto 0 0",
                         paddingTop: "10px",
                         borderTop: "1px solid #e4e4e7",
                       }}
@@ -233,6 +232,7 @@ export function DocPage({ docKey }: { docKey: DocKey }) {
 
           {hasDocSections && (
             <div
+              className={styles.legalPanel}
               style={{
                 border: "1px solid #cfc6ba",
                 background: "#ffffff",
@@ -301,6 +301,7 @@ export function DocPage({ docKey }: { docKey: DocKey }) {
       </section>
 
       <section
+        className={styles.cta}
         style={{
           padding: "40px 16px",
           background:
