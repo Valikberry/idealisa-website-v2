@@ -57,8 +57,9 @@ export function BlogListing() {
     },
   }));
   return (
-    <div>
+    <div className={styles.listing}>
       <section
+        className={styles.listingHeader}
         style={{
           padding: "150px 16px 32px",
           background:
@@ -110,7 +111,10 @@ export function BlogListing() {
         </div>
       </section>
 
-      <section style={{ padding: "36px 16px 44px", background: "#f4f4f5" }}>
+      <section
+        className={styles.listingBody}
+        style={{ padding: "36px 16px 44px", background: "#f4f4f5" }}
+      >
         <div
           style={{
             maxWidth: "1024px",
@@ -131,7 +135,7 @@ export function BlogListing() {
                 cursor: "pointer",
                 transition: "background .2s",
               }}
-              className={styles.warmHover}
+              className={`${styles.warmHover} ${styles.featured}`}
             >
               <div
                 style={{
@@ -139,7 +143,10 @@ export function BlogListing() {
                   gridTemplateColumns: "minmax(0,1.25fr) minmax(0,0.75fr)",
                 }}
               >
-                <div style={{ padding: "30px 32px 32px" }}>
+                <div
+                  className={styles.featuredCopy}
+                  style={{ padding: "30px 32px 32px" }}
+                >
                   <div
                     style={{
                       display: "flex",
@@ -285,6 +292,7 @@ export function BlogListing() {
             </div>
             {hasPosts && (
               <div
+                className={styles.postGrid}
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(3,minmax(0,1fr))",
@@ -296,6 +304,7 @@ export function BlogListing() {
                 {postCells.map((p) => (
                   <a
                     key={p.id}
+                    className={styles.postCard}
                     href={blogPostRoute(p.slug)}
                     style={p.cellStyle}
                   >
@@ -383,6 +392,7 @@ export function BlogListing() {
       </section>
 
       <section
+        className={styles.newsletter}
         style={{
           padding: "40px 16px",
           background:

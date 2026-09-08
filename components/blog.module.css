@@ -10,3 +10,150 @@
 .goldHover:hover {
   color: #8a5a1f !important;
 }
+
+/* Supplement the shared 820px rules with blog-scoped selectors. Explicit
+   classes avoid the reference's missing-px/style-serialization mismatches
+   and its generic bordered-grid rule, which forces two mobile columns. */
+@media (max-width: 820px) {
+  :global(#dc-root) .listing .listingHeader {
+    padding: 78px 16px 20px !important;
+  }
+
+  :global(#dc-root) .listing .listingHeader h1 {
+    font-size: 27px !important;
+    line-height: 31px !important;
+    margin-bottom: 16px !important;
+  }
+
+  :global(#dc-root) .listing .listingHeader p:first-child {
+    font-size: 11px !important;
+    line-height: 16px !important;
+    margin-bottom: 14px !important;
+  }
+
+  :global(#dc-root) .listing .listingHeader p:last-child {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  :global(#dc-root) .listing .listingBody {
+    padding-top: 16px !important;
+    padding-bottom: 0 !important;
+  }
+
+  :global(#dc-root) .listing .listingBody > div {
+    gap: 16px !important;
+  }
+
+  :global(#dc-root) .listing .featuredCopy {
+    padding: 18px 14px !important;
+  }
+
+  :global(#dc-root) .listing .featuredCopy h2 {
+    font-size: 23px !important;
+    line-height: 28px !important;
+  }
+
+  :global(#dc-root) .listing .featuredCopy > div {
+    flex-wrap: wrap;
+  }
+
+  :global(#dc-root) .listing .featuredCopy > div:last-child {
+    gap: 6px 8px !important;
+  }
+
+  :global(#dc-root) .listing .featured > div > div:last-child {
+    padding: 20px 16px !important;
+  }
+
+  :global(#dc-root) .listing .featured img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  :global(#dc-root) .listing button[aria-pressed] {
+    padding: 8px 10px !important;
+    font-size: 12px !important;
+  }
+
+  :global(#dc-root) .listing .postGrid.postGrid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  :global(#dc-root) .listing .postGrid .postCard.postCard {
+    padding: 0 0 14px !important;
+    border: 1px solid #cfc6ba !important;
+    background: #fff;
+    gap: 8px !important;
+  }
+
+  :global(#dc-root) .listing .postCard > :is(p, h3) {
+    margin: 0 14px !important;
+  }
+
+  :global(#dc-root) .listing .newsletter {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    background: #f4f4f5 !important;
+  }
+
+  :global(#dc-root) .listing .newsletter > div > div > div:last-child {
+    border: 0 !important;
+    background: #fff !important;
+    padding-top: 0 !important;
+  }
+
+  :global(#dc-root) .listing .newsletter :is(input, button) {
+    width: 100%;
+  }
+
+  :global(#dc-root) .articlePage > section {
+    padding: 78px 16px 32px !important;
+  }
+
+  :global(#dc-root) .articlePage article h1 {
+    font-size: 28px !important;
+    line-height: 34px !important;
+    margin-bottom: 16px !important;
+  }
+
+  :global(#dc-root) .articlePage article h2 {
+    font-size: 22px !important;
+    line-height: 29px !important;
+  }
+
+  :global(#dc-root) .articlePage article > h1 + div {
+    flex-wrap: wrap;
+    gap: 6px 8px !important;
+    letter-spacing: 0 !important;
+    font-size: 11px !important;
+  }
+
+  :global(#dc-root) .articlePage article blockquote {
+    padding: 16px 20px !important;
+  }
+
+  :global(#dc-root) .articlePage article > div:last-child {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  :global(#dc-root) .articlePage aside h2 {
+    font-size: 11px !important;
+    line-height: 15px !important;
+  }
+
+  :global(#dc-root) .articlePage aside a[title] {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  :global(#dc-root) .articlePage aside :is(button, a[href^="tel:"]) {
+    min-height: 48px;
+  }
+}

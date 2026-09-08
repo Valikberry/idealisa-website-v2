@@ -53,7 +53,7 @@ export function BlogArticle({ slug }: { slug: string }) {
   }));
   return (
     <>
-      <div style={{ background: "#ffffff" }}>
+      <div className={styles.articlePage} style={{ background: "#ffffff" }}>
         <section style={{ padding: "124px 16px 56px" }}>
           <div style={{ maxWidth: "1024px", margin: "0 auto" }}>
             <a
