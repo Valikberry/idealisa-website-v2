@@ -73,7 +73,7 @@ export function Hero() {
                 overflow: "hidden",
                 border: "1px solid #cfc6ba",
                 backgroundColor: "#e6e6e6",
-                backgroundImage: "url(/team-videographer.png)",
+                backgroundImage: "url(/team-videographer.webp)",
                 backgroundSize: "cover",
                 backgroundPosition: "center 20%",
               }}
@@ -100,7 +100,7 @@ export function Hero() {
                 overflow: "hidden",
                 border: "1px solid #cfc6ba",
                 backgroundColor: "#2E7D32",
-                backgroundImage: "url(/team-head-technology.png)",
+                backgroundImage: "url(/team-head-technology.webp)",
                 backgroundSize: "cover",
                 backgroundPosition: "center 18%",
               }}

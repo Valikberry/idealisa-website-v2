@@ -79,7 +79,7 @@ export function ContactForm() {
             borderRight: "1px solid #cfc6ba",
             backgroundColor: "#5c6672",
             backgroundImage:
-              "linear-gradient(180deg,rgba(20,26,32,.62),rgba(20,26,32,.72)),url(/rain-on-glass.png)",
+              "linear-gradient(180deg,rgba(20,26,32,.62),rgba(20,26,32,.72)),url(/rain-on-glass.webp)",
             backgroundSize: "cover, cover",
             backgroundPosition: "center, center",
           }}

@@ -232,7 +232,7 @@
     > div:is([style*="flex: 1 1 260px"], [style*="flex:1 1 260"]) {
     display: contents !important;
   }
-  #dc-root img[src="/kwanza-stack.png"] {
+  #dc-root img[src="/kwanza-stack.webp"] {
     order: 2 !important;
     align-self: center !important;
     width: auto !important;

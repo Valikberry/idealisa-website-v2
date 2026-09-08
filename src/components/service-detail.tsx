@@ -237,7 +237,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                   overflow: "hidden",
                   border: "1px solid #cfc6ba",
                   backgroundColor: "#e6e6e6",
-                  backgroundImage: "url(/team-videographer.png)",
+                  backgroundImage: "url(/team-videographer.webp)",
                   backgroundSize: "cover",
                   backgroundPosition: "center 20%",
                 }}
@@ -252,7 +252,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                   overflow: "hidden",
                   border: "1px solid #cfc6ba",
                   backgroundColor: "#2E7D32",
-                  backgroundImage: "url(/team-head-technology.png)",
+                  backgroundImage: "url(/team-head-technology.webp)",
                   backgroundSize: "cover",
                   backgroundPosition: "center 18%",
                 }}
@@ -695,7 +695,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                     minHeight: "300px",
                     borderLeft: "1px solid #cfc6ba",
                     backgroundColor: "#9c8878",
-                    backgroundImage: "url(/team-videographer.png)",
+                    backgroundImage: "url(/team-videographer.webp)",
                     backgroundSize: "cover",
                     backgroundPosition: "center 20%",
                   }}
@@ -814,7 +814,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                 </a>
               </div>
               <img
-                src="/kwanza-stack.png"
+                src="/kwanza-stack.webp"
                 alt=""
                 aria-hidden="true"
                 draggable={false}

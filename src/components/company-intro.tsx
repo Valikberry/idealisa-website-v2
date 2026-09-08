@@ -32,7 +32,7 @@ export function CompanyIntro() {
             minHeight: "460px",
             borderRight: "1px solid #cfc6ba",
             backgroundColor: "#9c8878",
-            backgroundImage: "url(/team-group.png)",
+            backgroundImage: "url(/team-group.webp)",
             backgroundSize: "cover",
             backgroundPosition: "center top",
           }}

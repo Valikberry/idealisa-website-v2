@@ -76,7 +76,7 @@
   position: relative;
   min-height: 460px;
   border-right: 1px solid #cfc6ba;
-  background: #9c8878 url("/team-group.png") center top / cover;
+  background: #9c8878 url("/team-group.webp") center top / cover;
 }
 .introCopy {
   display: flex;
