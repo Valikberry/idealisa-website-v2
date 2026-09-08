@@ -1,0 +1,12 @@
+.warmHover:hover {
+  background: #faf7f2 !important;
+}
+.greenHover:hover {
+  background: #256428 !important;
+}
+.brownHover:hover {
+  color: #4a3127 !important;
+}
+.goldHover:hover {
+  color: #8a5a1f !important;
+}

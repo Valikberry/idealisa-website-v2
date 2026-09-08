@@ -1,3 +1,5 @@
+import { BLOG_POSTS } from "@/lib/posts";
+
 /**
  * Single source of truth mapping the design's page-keys (design-reference's
  * `state.page` values — see PAGES/DOCS/FOOTER_ROUTES in
@@ -32,7 +34,10 @@ export type RoutePageKey = keyof typeof ROUTES;
 
 /** `/blog/[slug]` isn't a static entry above since it's data-driven. */
 export function blogPostRoute(slug: string): string {
-  return `/blog/${slug}`;
+  const post = BLOG_POSTS["pt-AO"].find(
+    (post) => post.id === slug || post.slug === slug,
+  );
+  return `/blog/${post?.slug ?? slug}`;
 }
 
 /** Main navbar links, left to right — mirrors the design's `navDefs`. */
