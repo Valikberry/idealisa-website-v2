@@ -99,6 +99,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
   const [modalKey, setModalKey] = useState<SmModalKey | null>(null);
   const [sent, setSent] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [mTalkOpen, setMTalkOpen] = useState(false);
 
   const openModal = (key: SmModalKey) => {
     setModalKey(key);
@@ -112,6 +113,71 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
 
   const chips = [...sm.chips, ...sm.chips];
   const otherServiceLabels = sm.relatedServices ?? ui.adServices;
+
+  // Shared call/appointment/email action rows — rendered in the sticky
+  // desktop aside card and again inside the mobile-only `m-talk` accordion.
+  const actionsList = (
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <a
+        href="tel:+244936499706"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "12px",
+          padding: "14px 16px",
+          borderBottom: "1px solid #e6ded2",
+          textDecoration: "none",
+          fontSize: "14px",
+          lineHeight: "21px",
+          fontWeight: "600",
+          color: "#2E7D32",
+          transition: "background .2s",
+        }}
+      >
+        <span style={{ flex: "0 0 auto", fontSize: "12px", lineHeight: "18px", fontWeight: "700", color: "#8a5a1f", fontVariantNumeric: "tabular-nums" }}>
+          01
+        </span>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" style={{ flex: "0 0 auto" }}>
+          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path>
+        </svg>
+        <span style={{ fontVariantNumeric: "tabular-nums" }}>+244 936 499 706</span>
+      </a>
+      {ACTIONS.map((action) => (
+        <Fragment key={action.key}>
+          <button
+            onClick={() => openModal(action.key)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              width: "100%",
+              boxSizing: "border-box",
+              padding: "14px 16px",
+              border: "none",
+              borderBottom: "1px solid #e6ded2",
+              background: "none",
+              fontFamily: "inherit",
+              fontSize: "14px",
+              lineHeight: "21px",
+              fontWeight: "600",
+              color: "#0a0a0a",
+              textAlign: "left",
+              cursor: "pointer",
+              transition: "background .2s",
+            }}
+          >
+            <span style={{ flex: "0 0 auto", fontSize: "12px", lineHeight: "18px", fontWeight: "700", color: "#8a5a1f", fontVariantNumeric: "tabular-nums" }}>
+              {action.n}
+            </span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8a5a1f" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" style={{ flex: "0 0 auto" }}>
+              <path d={action.icon}></path>
+            </svg>
+            {ui[ACTION_LABEL_KEY[action.key]]}
+          </button>
+        </Fragment>
+      ))}
+    </div>
+  );
 
   return (
     <>
@@ -521,6 +587,48 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
               </div>
             </div>
 
+            {/* Mobile-only talk-to-us accordion: the sticky aside's actions
+                card is hidden under 820px (design-reference.css), so this
+                gives mobile visitors the same call/appointment/email actions
+                inline in the article flow. */}
+            <div className="m-talk">
+              <button
+                onClick={() => setMTalkOpen((open) => !open)}
+                aria-expanded={mTalkOpen}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "14px",
+                  width: "100%",
+                  boxSizing: "border-box",
+                  padding: "16px 18px",
+                  border: "1px solid #cfc6ba",
+                  background: "#faf7f2",
+                  fontFamily: "inherit",
+                  fontSize: "14px",
+                  lineHeight: "20px",
+                  fontWeight: "700",
+                  letterSpacing: ".12em",
+                  textTransform: "uppercase",
+                  color: "#8a5a1f",
+                  textAlign: "left",
+                  cursor: "pointer",
+                }}
+              >
+                {ui.actionsHeading}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a5a1f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flex: "0 0 auto" }}>
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+              {mTalkOpen && (
+                <div style={{ display: "flex", flexDirection: "column", marginTop: "-1px", border: "1px solid #cfc6ba", background: "#ffffff" }}>
+                  {actionsList}
+                </div>
+              )}
+            </div>
+
             {/* Pillars + photo */}
             <div>
               <p style={kickerStyle}>{sm.solutionsKicker}</p>
@@ -855,66 +963,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
               >
                 {ui.actionsHeading}
               </h2>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <a
-                  href="tel:+244936499706"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    padding: "14px 16px",
-                    borderBottom: "1px solid #e6ded2",
-                    textDecoration: "none",
-                    fontSize: "14px",
-                    lineHeight: "21px",
-                    fontWeight: "600",
-                    color: "#2E7D32",
-                    transition: "background .2s",
-                  }}
-                >
-                  <span style={{ flex: "0 0 auto", fontSize: "12px", lineHeight: "18px", fontWeight: "700", color: "#8a5a1f", fontVariantNumeric: "tabular-nums" }}>
-                    01
-                  </span>
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" style={{ flex: "0 0 auto" }}>
-                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path>
-                  </svg>
-                  <span style={{ fontVariantNumeric: "tabular-nums" }}>+244 936 499 706</span>
-                </a>
-                {ACTIONS.map((action) => (
-                  <Fragment key={action.key}>
-                    <button
-                      onClick={() => openModal(action.key)}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "12px",
-                        width: "100%",
-                        boxSizing: "border-box",
-                        padding: "14px 16px",
-                        border: "none",
-                        borderBottom: "1px solid #e6ded2",
-                        background: "none",
-                        fontFamily: "inherit",
-                        fontSize: "14px",
-                        lineHeight: "21px",
-                        fontWeight: "600",
-                        color: "#0a0a0a",
-                        textAlign: "left",
-                        cursor: "pointer",
-                        transition: "background .2s",
-                      }}
-                    >
-                      <span style={{ flex: "0 0 auto", fontSize: "12px", lineHeight: "18px", fontWeight: "700", color: "#8a5a1f", fontVariantNumeric: "tabular-nums" }}>
-                        {action.n}
-                      </span>
-                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8a5a1f" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" style={{ flex: "0 0 auto" }}>
-                        <path d={action.icon}></path>
-                      </svg>
-                      {ui[ACTION_LABEL_KEY[action.key]]}
-                    </button>
-                  </Fragment>
-                ))}
-              </div>
+              {actionsList}
             </div>
 
             <div style={{ border: "1px solid #cfc6ba", background: "#ffffff" }}>

@@ -70,6 +70,8 @@ export function SmActionModal({
         style={{
           width: "100%",
           maxWidth: "420px",
+          maxHeight: "calc(100vh - 40px)",
+          overflowY: "auto",
           border: "1px solid #cfc6ba",
           background: "#ffffff",
           boxShadow: "0 18px 48px rgba(74,49,39,.22)",

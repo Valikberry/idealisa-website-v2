@@ -540,6 +540,9 @@
 .hero-cap {
   display: none;
 }
+.m-talk {
+  display: none;
+}
 .case-image {
   position: absolute;
   inset: 0;
