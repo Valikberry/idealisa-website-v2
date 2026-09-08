@@ -1,7 +1,7 @@
 # Idealisa website
 
 Single-page Next.js 16 / React 19 / Tailwind CSS 4 site. Copy lives in
-`lib/translations.ts`; the existing language provider defaults to `pt-AO`,
+`src/lib/translations.ts`; the existing language provider defaults to `pt-AO`,
 persists the selection in a cookie, and falls back to English translations.
 
 Use Node.js 22.16 or later and pnpm 10.33:
