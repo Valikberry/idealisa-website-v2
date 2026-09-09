@@ -83,6 +83,13 @@
   "engines": {
     "node": ">=22.16.0"
   },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "iOS >= 12",
+    "Safari >= 12",
+    "Android >= 6"
+  ],
   "packageManager": "pnpm@10.33.0",
   "pnpm": {
     "onlyBuiltDependencies": [
