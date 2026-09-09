@@ -254,7 +254,7 @@ export function BlogListing() {
                   }}
                 >
                   <img
-                    src="/idealisa-hero-icon.png"
+                    src="/idealisa-hero-icon.webp"
                     alt=""
                     aria-hidden="true"
                     style={{

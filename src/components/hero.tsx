@@ -6,10 +6,21 @@ export function Hero() {
   const t = useTranslation();
 
   return (
-    <section
-      style={{
-        position: "relative",
-        padding: "112px 16px 40px",
+    <>
+      {/* LCP hint: on desktop this top-left tile is the largest above-the-fold
+          contentful element. It's painted via CSS background-image (invisible
+          to the browser's HTML preload scanner), so preload it explicitly.
+          React 19 hoists this <link> into <head> automatically. */}
+      <link
+        rel="preload"
+        as="image"
+        href="/team-site-visit.jpg"
+        fetchPriority="high"
+      />
+      <section
+        style={{
+          position: "relative",
+          padding: "112px 16px 40px",
         background:
           "radial-gradient(56% 46% at 8% 12%, rgba(160,105,55,.18), transparent 72%), radial-gradient(52% 42% at 93% 10%, rgba(226,146,72,.17), transparent 72%), radial-gradient(54% 46% at 90% 90%, rgba(46,125,50,.14), transparent 74%), radial-gradient(56% 48% at 6% 92%, rgba(226,146,72,.14), transparent 74%), #ffffff",
       }}
@@ -127,7 +138,7 @@ export function Hero() {
                 overflow: "hidden",
                 border: "1px solid #cfc6ba",
                 backgroundColor: "#0a0a0a",
-                backgroundImage: "url(/team-head-communication.jpeg)",
+                backgroundImage: "url(/team-head-communication.webp)",
                 backgroundSize: "cover",
                 backgroundPosition: "center 15%",
               }}
@@ -158,7 +169,7 @@ export function Hero() {
         >
           <div style={{ position: "relative", padding: "0 0 8px" }}>
             <img
-              src="/idealisa-hero-icon.png"
+              src="/idealisa-hero-icon.webp"
               alt=""
               aria-hidden="true"
               draggable={false}
@@ -1147,6 +1158,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

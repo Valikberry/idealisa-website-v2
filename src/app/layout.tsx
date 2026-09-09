@@ -2,7 +2,6 @@ import { rootMetadata, getSeoLanguage } from "@/lib/seo/server";
 import { SiteStructuredData } from "@/components/seo-json-ld";
 import type React from "react";
 import { Manrope, DM_Sans, Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import { LanguageProvider } from "@/lib/language-context";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -51,7 +50,6 @@ export default async function RootLayout({
           </SmoothScroll>
         </LanguageProvider>
         <SiteStructuredData />
-        <Analytics />
       </body>
     </html>
   );

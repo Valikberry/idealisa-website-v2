@@ -267,7 +267,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                   overflow: "hidden",
                   border: "1px solid #cfc6ba",
                   backgroundColor: "#0a0a0a",
-                  backgroundImage: "url(/team-head-communication.jpeg)",
+                  backgroundImage: "url(/team-head-communication.webp)",
                   backgroundSize: "cover",
                   backgroundPosition: "center 15%",
                 }}
@@ -286,7 +286,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
           >
             <div style={{ position: "relative", padding: "0 0 8px" }}>
               <img
-                src="/idealisa-hero-icon.png"
+                src="/idealisa-hero-icon.webp"
                 alt=""
                 aria-hidden="true"
                 draggable={false}

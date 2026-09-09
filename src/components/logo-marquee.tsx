@@ -129,7 +129,7 @@ export function LogoMarquee() {
                 fontFamily: "var(--font-instrument-sans),sans-serif",
                 fontSize: "11px",
                 lineHeight: "1.25",
-                color: "#9a8b79",
+                color: "#7d6e5c",
                 textAlign: "center",
               }}
             >
@@ -171,7 +171,7 @@ export function LogoMarquee() {
                 fontFamily: "var(--font-instrument-sans),sans-serif",
                 fontSize: "11px",
                 lineHeight: "1.25",
-                color: "#9a8b79",
+                color: "#7d6e5c",
                 textAlign: "center",
               }}
             >
@@ -213,7 +213,7 @@ export function LogoMarquee() {
                 fontFamily: "var(--font-instrument-sans),sans-serif",
                 fontSize: "11px",
                 lineHeight: "1.25",
-                color: "#9a8b79",
+                color: "#7d6e5c",
                 textAlign: "center",
               }}
             >

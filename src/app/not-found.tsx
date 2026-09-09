@@ -41,7 +41,7 @@ export default function NotFound() {
         }}
       >
         <img
-          src="/idealisa-hero-icon.png"
+          src="/idealisa-hero-icon.webp"
           alt=""
           aria-hidden="true"
           draggable={false}
