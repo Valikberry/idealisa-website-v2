@@ -7,6 +7,9 @@ import Lenis from "lenis";
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
+    // Opt-in A/B isolation on a physical phone; default behaviour is unchanged.
+    const diagnostics = new URLSearchParams(window.location.search);
+    if (diagnostics.get("touchDebug") === "1" && diagnostics.get("nativeScroll") === "1") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const lenis = new Lenis({
       anchors: true,

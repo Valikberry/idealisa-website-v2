@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -8,7 +8,12 @@ import { useLanguage, useTranslation } from "@/lib/language-context";
 import { NAV_PAGE_KEYS, ROUTES } from "@/lib/routes";
 
 export function Navbar() {
+  const headerRef = useRef<HTMLElement>(null);
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    // Physical-device diagnostics can distinguish hydration from hit testing.
+    headerRef.current?.setAttribute("data-nav-hydrated", "true");
+  }, []);
   const { language, setLanguage } = useLanguage();
   const t = useTranslation();
   const pathname = usePathname();
@@ -28,7 +33,7 @@ export function Navbar() {
   const isActive = (href: string) =>
     pathname === href || (href !== "/" && pathname?.startsWith(href + "/"));
   return (
-    <header className="site-header">
+    <header ref={headerRef} className="site-header">
       <nav
         aria-label={
           language === "en" ? "Main navigation" : "Navegação principal"

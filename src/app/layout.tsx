@@ -1,6 +1,7 @@
 import { rootMetadata, getSeoLanguage } from "@/lib/seo/server";
 import { SiteStructuredData } from "@/components/seo-json-ld";
 import type React from "react";
+import Script from "next/script";
 import { Manrope, DM_Sans, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { LanguageProvider } from "@/lib/language-context";
@@ -40,6 +41,7 @@ export default async function RootLayout({
       <body
         className={`${manrope.variable} ${dmSans.variable} ${inter.variable} font-sans antialiased`}
       >
+        <Script src="/touch-diagnostics.js" strategy="beforeInteractive" />
         <div className="noise-overlay" aria-hidden="true" />
         <LanguageProvider initialLanguage={initialLanguage}>
           <SmoothScroll>
