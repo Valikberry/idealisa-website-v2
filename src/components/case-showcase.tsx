@@ -43,7 +43,7 @@ export function CaseShowcase() {
           }}
         >
           <img
-            src={caseIndex === 0 ? "/malamu.png" : "/fcks.png"}
+            src={caseIndex === 0 ? "/malamu.webp" : "/fcks.webp"}
             alt={activeCase.client}
             className="case-image"
           />

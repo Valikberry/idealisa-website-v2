@@ -36,7 +36,7 @@ export function Navbar() {
       >
         <Link href={ROUTES.home} className="brand" aria-label="Idealisa">
           <span className="brand-badge">
-            <img src="/idealisa-logo.png" alt="" width={24} height={24} />
+            <img src="/idealisa-logo.webp" alt="" width={24} height={24} />
           </span>
           <span translate="no">
             Id<span className="text-[#F6C744]">e</span>alisa

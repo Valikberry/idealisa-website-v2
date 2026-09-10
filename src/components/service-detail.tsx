@@ -477,7 +477,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
               <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <img
-                    src="/01-woman-pink-hijab.jpg"
+                    src="/01-woman-pink-hijab.webp"
                     alt=""
                     style={{
                       width: "40px",
@@ -489,20 +489,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                     }}
                   />
                   <img
-                    src="/03-man-charcoal-suit.jpg"
-                    alt=""
-                    style={{
-                      width: "40px",
-                      height: "40px",
-                      borderRadius: "9999px",
-                      border: "2px solid #ffffff",
-                      boxShadow: "0 0 0 2px #e5e5e5",
-                      objectFit: "cover",
-                      marginLeft: "-12px",
-                    }}
-                  />
-                  <img
-                    src="/04-man-navy-suit-window.jpg"
+                    src="/03-man-charcoal-suit.webp"
                     alt=""
                     style={{
                       width: "40px",
@@ -515,7 +502,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                     }}
                   />
                   <img
-                    src="/05-woman-ivory-suit.jpg"
+                    src="/04-man-navy-suit-window.webp"
                     alt=""
                     style={{
                       width: "40px",
@@ -528,7 +515,20 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                     }}
                   />
                   <img
-                    src="/06-man-gray-suit.jpg"
+                    src="/05-woman-ivory-suit.webp"
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "9999px",
+                      border: "2px solid #ffffff",
+                      boxShadow: "0 0 0 2px #e5e5e5",
+                      objectFit: "cover",
+                      marginLeft: "-12px",
+                    }}
+                  />
+                  <img
+                    src="/06-man-gray-suit.webp"
                     alt=""
                     style={{
                       width: "40px",

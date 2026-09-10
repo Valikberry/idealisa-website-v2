@@ -63,7 +63,7 @@ const en: PortfolioContent = {
       line: "Positioning, editorial line and content for a Luanda restaurant, run alongside its commercial team.",
       disciplines: "Strategy · Social · Paid media",
       tint: "#4A3127",
-      image: "/malamu.png",
+      image: "/malamu.webp",
     },
     {
       client: "Diesel Barbershop",
@@ -85,7 +85,7 @@ const en: PortfolioContent = {
       line: "Institutional communication, event coverage and a consistent voice for members and press.",
       disciplines: "Communication · Press · Production",
       tint: "#2f4f7a",
-      image: "/aebran.png",
+      image: "/aebran.webp",
     },
     {
       client: "Residencial Villa Aurora",
@@ -93,7 +93,7 @@ const en: PortfolioContent = {
       line: "Launch communication for a residential development, from naming through to enquiry flow.",
       disciplines: "Brand · Campaign · Landing pages",
       tint: "#6b4a8a",
-      image: "/villa-aurora.png",
+      image: "/villa-aurora.webp",
     },
     {
       client: "JBDM",
@@ -101,7 +101,7 @@ const en: PortfolioContent = {
       line: "A website and digital positioning that match how the firm actually works.",
       disciplines: "UX · Development · Copy",
       tint: "#0f5f5c",
-      image: "/jbdm.png",
+      image: "/jbdm.webp",
     },
   ],
   caseKicker: "In detail",
@@ -145,7 +145,7 @@ const ptAO: PortfolioContent = {
       line: "Posicionamento, linha editorial e conteúdo para um restaurante em Luanda, em conjunto com a equipa comercial.",
       disciplines: "Estratégia · Redes sociais · Media paga",
       tint: "#4A3127",
-      image: "/malamu.png",
+      image: "/malamu.webp",
     },
     {
       client: "Diesel Barbershop",
@@ -167,7 +167,7 @@ const ptAO: PortfolioContent = {
       line: "Comunicação institucional, cobertura de eventos e uma voz consistente para membros e imprensa.",
       disciplines: "Comunicação · Imprensa · Produção",
       tint: "#2f4f7a",
-      image: "/aebran.png",
+      image: "/aebran.webp",
     },
     {
       client: "Residencial Villa Aurora",
@@ -175,7 +175,7 @@ const ptAO: PortfolioContent = {
       line: "Comunicação de lançamento de um empreendimento residencial, do nome ao percurso de contacto.",
       disciplines: "Marca · Campanha · Páginas de destino",
       tint: "#6b4a8a",
-      image: "/villa-aurora.png",
+      image: "/villa-aurora.webp",
     },
     {
       client: "JBDM",
@@ -183,7 +183,7 @@ const ptAO: PortfolioContent = {
       line: "Um website e um posicionamento digital à altura da forma como a empresa trabalha.",
       disciplines: "UX · Desenvolvimento · Texto",
       tint: "#0f5f5c",
-      image: "/jbdm.png",
+      image: "/jbdm.webp",
     },
   ],
   caseKicker: "Em detalhe",
