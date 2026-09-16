@@ -53,6 +53,7 @@ export function Faq() {
                 >
                   <button
                     aria-expanded={item.expanded}
+                    aria-controls={`faq-answer-${index}`}
                     onClick={item.toggle}
                     className="hover-warm"
                     style={{
@@ -88,23 +89,21 @@ export function Faq() {
                     </span>
                   </button>
                 </h3>
-                {item.open && (
-                  <>
-                    <p
-                      style={{
-                        fontSize: "14px",
-                        lineHeight: "23px",
-                        color: "#52525b",
-                        margin: "0",
-                        padding: "0 22px 20px",
-                        maxWidth: "820px",
-                        textWrap: "pretty",
-                      }}
-                    >
-                      {item.a}
-                    </p>
-                  </>
-                )}
+                <p
+                  id={`faq-answer-${index}`}
+                  hidden={!item.open}
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "23px",
+                    color: "#52525b",
+                    margin: "0",
+                    padding: "0 22px 20px",
+                    maxWidth: "820px",
+                    textWrap: "pretty",
+                  }}
+                >
+                  {item.a}
+                </p>
               </div>
             </Fragment>
           ))}

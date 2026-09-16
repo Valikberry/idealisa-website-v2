@@ -53,7 +53,7 @@ const en = {
     },
   },
   faq: {
-    heading: "Questions about working with us",
+    heading: "Frequently asked questions about Idealisa",
     sub: "The things companies ask before the first conversation.",
     items: [
       {
@@ -196,7 +196,7 @@ const en = {
   },
   cases: {
     kicker: "Success stories",
-    heading: "Our marketing case studies",
+    heading: "Digital marketing case studies in Angola",
     readAll: "Talk to us about a project like this",
     items: [
       {
@@ -306,14 +306,14 @@ const en = {
     thanks: "Thank you. We will reply within one business day.",
   },
   whoWeAre: {
-    heading: "Who we are",
+    heading: "Who we are: digital marketing agency in Luanda",
     lede: "We live in Luanda, we work in Luanda, and we know what it takes to grow a brand in this market.",
     p1: "Idealisa is a digital marketing and brand strategy company based in Luanda. For six years we have helped companies, institutions and organisations across Angola turn attention into revenue, strategy first, then execution that holds up in the market.",
     p2: "We work across brand strategy, corporate communication, digital marketing, web design, technology solutions and project management, so one team carries the work from positioning to publication. Every plan is built around the business in front of us, never a fixed package.",
     cta: "Get to know us",
   },
   whoWeWorkWith: {
-    heading: "Who We Work With",
+    heading: "Sectors we work with in Angola",
     subheading:
       "We partner with medium, large, and enterprise organisations looking for a long-term digital marketing and growth partner.",
     videoTitle: "See the work in motion",
@@ -502,7 +502,7 @@ const en = {
   },
   servicePreview: {
     previewKicker: "What we do",
-    previewHeading: "Services we provide",
+    previewHeading: "Digital marketing and communication services",
     previewCta: "See more services",
     includesLabel: "What's included",
     outcomeLabel: "Typical outcome",
@@ -758,7 +758,7 @@ const ptAO: Translations = {
     },
   },
   faq: {
-    heading: "Perguntas sobre trabalhar connosco",
+    heading: "Perguntas frequentes sobre a Idealisa",
     sub: "O que as empresas perguntam antes da primeira conversa.",
     items: [
       {
@@ -901,7 +901,7 @@ const ptAO: Translations = {
   },
   cases: {
     kicker: "Casos de sucesso",
-    heading: "Os nossos casos de estudo em marketing",
+    heading: "Casos de estudo de marketing digital em Angola",
     readAll: "Fale connosco sobre um projecto assim",
     items: [
       {
@@ -1011,14 +1011,14 @@ const ptAO: Translations = {
     thanks: "Obrigado, respondemos em um dia útil.",
   },
   whoWeAre: {
-    heading: "Quem somos",
+    heading: "Quem somos: agência de marketing digital em Luanda",
     lede: "Vivemos em Luanda, trabalhamos em Luanda e sabemos o que é preciso para fazer crescer uma marca neste mercado.",
     p1: "A Idealisa é uma empresa de marketing digital e estratégia de marca com base em Luanda. Há seis anos ajudamos empresas, instituições e organizações em todo o país a transformar atenção em receita, primeiro a estratégia, depois uma execução que se sustenta no mercado.",
     p2: "Trabalhamos em estratégia de marca, comunicação corporativa, marketing digital, web design, soluções tecnológicas e gestão de projectos, para que uma só equipa leve o trabalho do posicionamento à publicação. Cada plano é construído em torno do negócio à nossa frente, nunca de um pacote fixo.",
     cta: "Conheça-nos",
   },
   whoWeWorkWith: {
-    heading: "Com Quem Trabalhamos",
+    heading: "Sectores com quem trabalhamos em Angola",
     subheading:
       "Somos parceiros de organizações médias, grandes e empresariais que procuram um parceiro de marketing digital e crescimento a longo prazo.",
     videoTitle: "Veja o trabalho em movimento",
@@ -1208,7 +1208,7 @@ const ptAO: Translations = {
   },
   servicePreview: {
     previewKicker: "O que fazemos",
-    previewHeading: "Serviços que prestamos",
+    previewHeading: "Serviços de marketing digital e comunicação",
     previewCta: "Ver mais serviços",
     includesLabel: "O que inclui",
     outcomeLabel: "Resultado típico",

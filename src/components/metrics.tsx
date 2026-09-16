@@ -1,11 +1,12 @@
 "use client";
 
 import { Fragment, useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { useTranslation } from "@/lib/language-context";
 
 export function Metrics() {
   const t = useTranslation();
-  const [metricP, setMetricP] = useState(0);
+  const [metricP, setMetricP] = useState(1);
   const ringsRef = useRef<HTMLDivElement>(null);
   const seenRef = useRef(false);
 
@@ -13,9 +14,18 @@ export function Metrics() {
     const el = ringsRef.current;
     if (!el || seenRef.current) return;
 
+    // Keep final values when arriving with this section already visible (for
+    // example, restored scroll). Only count up on a subsequent scroll entry.
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      seenRef.current = true;
+      return;
+    }
+
     let frame: number;
     const start = () => {
       seenRef.current = true;
+      flushSync(() => setMetricP(0));
       const t0 = performance.now();
       const dur = 1700;
       const tick = (now: number) => {
@@ -27,7 +37,6 @@ export function Metrics() {
     };
 
     if (typeof IntersectionObserver === "undefined") {
-      start();
       return;
     }
     const io = new IntersectionObserver(
@@ -37,7 +46,7 @@ export function Metrics() {
           start();
         }
       },
-      { threshold: 0.25 },
+      { threshold: 0 },
     );
     io.observe(el);
     return () => {
@@ -155,6 +164,11 @@ export function Metrics() {
                         color: "#0a0a0a",
                         letterSpacing: "-.02em",
                         fontVariantNumeric: "tabular-nums",
+                        position: "absolute",
+                        left: "50%",
+                        width: "max-content",
+                        whiteSpace: "nowrap",
+                        transform: "translateX(-50%)",
                       }}
                     >
                       {m.display}

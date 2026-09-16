@@ -122,7 +122,7 @@ export function LogoMarquee() {
                 textAlign: "center",
               }}
             >
-              {ui.slotBrand}
+              {ui.slotBrand}{" "}
             </span>
             <span
               style={{
@@ -164,7 +164,7 @@ export function LogoMarquee() {
                 textAlign: "center",
               }}
             >
-              {ui.slotBrand}
+              {ui.slotBrand}{" "}
             </span>
             <span
               style={{
@@ -206,7 +206,7 @@ export function LogoMarquee() {
                 textAlign: "center",
               }}
             >
-              {ui.slotBrand}
+              {ui.slotBrand}{" "}
             </span>
             <span
               style={{

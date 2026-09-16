@@ -11,6 +11,10 @@ export function BentoGrid() {
   const serviceCells = t.bentoGrid.cells.map((c, i) => ({
     ...c,
     icon: serviceIcons[i],
+    href:
+      i === 0 ? ROUTES.brand :
+      i === 5 ? ROUTES.pm :
+      i === 6 ? ROUTES.smm : ROUTES.services,
   }));
   return (
     <section
@@ -57,7 +61,7 @@ export function BentoGrid() {
           {serviceCells.map((cell, index) => (
             <Fragment key={index}>
               <Link
-                href={ROUTES.services}
+                href={cell.href}
                 className="hover-warm"
                 style={{
                   boxSizing: "border-box",

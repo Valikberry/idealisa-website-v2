@@ -50,8 +50,8 @@ export function ServicePreview() {
             gap: "18px",
           }}
         >
-          {svcTop2.map((b, index) => (
-            <Fragment key={index}>
+          {svcTop2.map((b, blockIndex) => (
+            <Fragment key={blockIndex}>
               <div
                 style={{
                   border: "1px solid #cfc6ba",
@@ -119,7 +119,11 @@ export function ServicePreview() {
                       <Fragment key={index}>
                         <li style={{ borderBottom: "1px solid #f0eae1" }}>
                           <Link
-                            href={ROUTES.services}
+                            href={
+                              blockIndex === 0 && index === 0
+                                ? ROUTES.smm
+                                : ROUTES.services
+                            }
                             className="hover-gold"
                             style={{
                               display: "block",
