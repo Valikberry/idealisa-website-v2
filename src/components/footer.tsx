@@ -42,7 +42,7 @@ export function Footer() {
             ))}
           </div>
           <div className="footer-bottom">
-            <p>© 2026 IdealIsa. {t.footer.copyrightSuffix}</p>
+            <p>© 2026 Idealisa. {t.footer.copyrightSuffix}</p>
             <address>
               Maculusso, Rua Lourenço Mendes da Conceição, Luanda, Angola
               <br />

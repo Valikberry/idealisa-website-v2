@@ -7,7 +7,7 @@ type SeoCopy = { title: string; description: string };
 export const pageSeo: Record<Language, Record<RoutePageKey, SeoCopy>> = {
   "pt-AO": {
     home: {
-      title: "Marketing Digital e Agência de Branding em Angola",
+      title: "Idealisa | Agência de Marketing Digital e Branding em Angola",
       description:
         "Estratégia de marca, marketing digital e comunicação corporativa em Luanda, Angola. A Idealisa ajuda empresas a posicionar a marca e a crescer com clareza.",
     },
@@ -74,7 +74,7 @@ export const pageSeo: Record<Language, Record<RoutePageKey, SeoCopy>> = {
   },
   en: {
     home: {
-      title: "Digital Marketing and Branding Agency in Angola",
+      title: "Idealisa | Digital Marketing & Branding Agency in Angola",
       description:
         "Brand strategy, digital marketing and corporate communication in Luanda, Angola. Idealisa helps businesses position their brands and grow with clarity.",
     },

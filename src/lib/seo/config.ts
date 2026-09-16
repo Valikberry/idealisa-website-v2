@@ -1,5 +1,9 @@
 export const SITE = {
   name: "Idealisa",
+  organizationAlternateName: ["IdealIsa", "Idealisa Angola"],
+  websiteAlternateName: ["IdealIsa", "idealisa.ao"],
+  description:
+    "A Idealisa ajuda empresas a crescer com estratégia de marca, marketing digital e branding em Luanda, Angola.",
   url: "https://idealisa.ao",
   organizationId: "https://idealisa.ao/#org",
   websiteId: "https://idealisa.ao/#site",

@@ -28,7 +28,7 @@ function metadataFor(
   post?: BlogPost,
 ): Metadata {
   const url = absoluteUrl(path);
-  const fullTitle = `${title} | ${SITE.name}`;
+  const fullTitle = path === ROUTES.home ? title : `${title} | ${SITE.name}`;
   return {
     title,
     description,
@@ -73,8 +73,9 @@ export async function rootMetadata(): Promise<Metadata> {
   return {
     ...metadata,
     metadataBase: new URL(SITE.url),
+    applicationName: SITE.name,
     title: {
-      default: `${copy.title} | ${SITE.name}`,
+      default: copy.title,
       template: `%s | ${SITE.name}`,
     },
     icons: {
@@ -99,16 +100,10 @@ export async function pageMetadata(key: RoutePageKey): Promise<Metadata> {
   return metadataFor(copy.title, copy.description, ROUTES[key], language);
 }
 
-/**
- * Home's own generateMetadata resolves for the same "/" segment as the root
- * layout's, so — unlike every other route — the layout's `title.template`
- * ("%s | Idealisa") never gets a chance to apply to it. Set the full,
- * already-suffixed title directly so the <title> tag matches what every
- * other page gets (and what home's own og:title/twitter:title already show).
- */
+/** The homepage uses a complete brand-first title, without the page suffix. */
 export async function homeMetadata(): Promise<Metadata> {
   const metadata = await pageMetadata("home");
-  return { ...metadata, title: `${metadata.title} | ${SITE.name}` };
+  return { ...metadata, title: { absolute: String(metadata.title) } };
 }
 
 export async function postMetadata(slug: string): Promise<Metadata> {

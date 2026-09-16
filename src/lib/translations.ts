@@ -19,7 +19,7 @@ const en = {
     contact: "Contact Us",
   },
   hero: {
-    headline: "Your digital marketing company in Luanda, Angola.",
+    headline: "Idealisa: Your digital marketing company in Luanda, Angola.",
     credYears: "6 years",
     credRest:
       "of strategic digital marketing, technology and digital solutions, brand strategy",
@@ -447,7 +447,7 @@ const en = {
       statLabel: "companies reached",
     },
     whyChoose: {
-      title: "Why Choose IdealIsa",
+      title: "Why Choose Idealisa",
       description:
         "We combine strategic thinking, business vision, communication, and execution to deliver tailored solutions and sustainable growth.",
       badgeConsistency: "Consistency",
@@ -458,7 +458,7 @@ const en = {
   finalCta: {
     heading: "Ready to grow your brand in Angola?",
     subheading:
-      "Join the businesses across Angola building stronger brands with IdealIsa.",
+      "Join the businesses across Angola building stronger brands with Idealisa.",
     ctaPrimary: "See what we do",
     ctaSecondary: "Talk to us on WhatsApp",
     finePrint: "No fixed packages, every plan is built around your business.",
@@ -724,7 +724,7 @@ const ptAO: Translations = {
     contact: "Contacte-nos",
   },
   hero: {
-    headline: "A sua empresa de marketing digital em Luanda, Angola.",
+    headline: "Idealisa: a sua empresa de marketing digital em Luanda, Angola.",
     credYears: "6 anos",
     credRest:
       "de marketing digital estratégico, tecnologia e soluções digitais, estratégia de marca,",
@@ -1152,7 +1152,7 @@ const ptAO: Translations = {
       statLabel: "empresas alcançadas",
     },
     whyChoose: {
-      title: "Porquê Escolher a IdealIsa",
+      title: "Porquê Escolher a Idealisa",
       description:
         "Combinamos pensamento estratégico, visão de negócio, comunicação e execução para entregar soluções personalizadas e crescimento sustentável.",
       badgeConsistency: "Consistência",
@@ -1163,7 +1163,7 @@ const ptAO: Translations = {
   finalCta: {
     heading: "Pronto para Fazer Crescer a Sua Marca em Angola?",
     subheading:
-      "Junte-se às empresas em Angola que estão a construir marcas mais fortes com a IdealIsa.",
+      "Junte-se às empresas em Angola que estão a construir marcas mais fortes com a Idealisa.",
     ctaPrimary: "Veja o Nosso Trabalho",
     ctaSecondary: "Contactar via WhatsApp",
     finePrint:
