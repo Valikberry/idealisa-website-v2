@@ -213,6 +213,25 @@ export function BlogArticle({ slug }: { slug: string }) {
                     ))}
                   </div>
                 ))}
+                {post.relatedService && (
+                  <p
+                    style={{
+                      fontSize: "15px",
+                      lineHeight: "25px",
+                      color: "#3f3f46",
+                      margin: "0",
+                      textWrap: "pretty",
+                    }}
+                  >
+                    {language === "pt-AO"
+                      ? "Saiba mais sobre o nosso serviço de "
+                      : "Learn more about our "}
+                    <a href={ROUTES[post.relatedService.route]}>
+                      {post.relatedService.anchor}
+                    </a>
+                    {language === "pt-AO" ? "." : " service."}
+                  </p>
+                )}
               </div>
 
               <blockquote

@@ -60,7 +60,7 @@ export type ServicesContent = {
 
 const en: ServicesContent = {
   dirKicker: "Our services",
-  dirHeading: "Everything we do, in one place",
+  dirHeading: "Digital marketing and branding services in Angola",
   dirSub: "Strategy, communication, web, performance and technology: pick the piece you need or the whole direction.",
   includesLabel: "What's included",
   outcomeLabel: "Typical outcome",
@@ -435,14 +435,14 @@ const en: ServicesContent = {
   contactNote: "Every enquiry is answered within 10 working hours, and within 24 hours over weekends and holidays.",
   contactCells: [
     { label: "WhatsApp", value: "+244 936 499 706", href: "https://wa.me/244936499706" },
-    { label: "Email", value: "hello@idealisa.co.ao", href: "mailto:hello@idealisa.co.ao" },
+    { label: "Email", value: "geral@idealisa.ao", href: "mailto:geral@idealisa.ao" },
     { label: "Office", value: "Luanda, Angola", href: "https://maps.google.com/?q=Luanda,+Angola" },
   ],
 };
 
 const ptAO: ServicesContent = {
   dirKicker: "Os nossos serviços",
-  dirHeading: "Tudo o que fazemos, num só lugar",
+  dirHeading: "Serviços de marketing digital e branding em Angola",
   dirSub: "Estratégia, comunicação, web, performance e tecnologia: escolha a peça de que precisa ou a direcção completa.",
   includesLabel: "O que inclui",
   outcomeLabel: "Resultado típico",
@@ -616,7 +616,7 @@ const ptAO: ServicesContent = {
       desc: "As tecnologias em que construímos, escolhidas pelo trabalho e pelo orçamento, não pela moda.",
       outcome: "Um código que outro programador consegue retomar, numa plataforma que continuará suportada dentro de cinco anos.",
       items: [
-        "Gestão de Redes Sociais",
+        "Desenvolvimento de websites Shopify",
         "Desenvolvimento WooCommerce",
         "Desenvolvimento Magento",
         "Desenvolvimento Next.js",
@@ -817,7 +817,7 @@ const ptAO: ServicesContent = {
   contactNote: "Respondemos a cada pedido em 10 horas úteis e em 24 horas aos fins de semana e feriados.",
   contactCells: [
     { label: "WhatsApp", value: "+244 936 499 706", href: "https://wa.me/244936499706" },
-    { label: "Email", value: "hello@idealisa.co.ao", href: "mailto:hello@idealisa.co.ao" },
+    { label: "Email", value: "geral@idealisa.ao", href: "mailto:geral@idealisa.ao" },
     { label: "Escritório", value: "Luanda, Angola", href: "https://maps.google.com/?q=Luanda,+Angola" },
   ],
 };

@@ -15,7 +15,11 @@ export type ProcessStep = { n: string; title: string; body: string };
 export type PlatformItem = { name: string; body: string };
 export type FaqItem = { q: string; a: string };
 
+export type RelatedService = { label: string; route: RoutePageKey };
+
 export type ServiceDetailContent = {
+  serviceName: string;
+  serviceType: string;
   headline: string;
   credYears: string;
   credRest: string;
@@ -50,7 +54,7 @@ export type ServiceDetailContent = {
   platformsSub: string;
   platforms: PlatformItem[];
   /** Only brand and pm define this in the reference; smm falls back to `ui.adServices`. */
-  relatedServices?: string[];
+  relatedServices?: RelatedService[];
   faqHeading: string;
   faq: FaqItem[];
 };
@@ -63,6 +67,8 @@ export const SERVICE_DETAIL_ROUTE_KEYS: Record<ServiceDetailKey, RoutePageKey> =
 };
 
 const smmEn: ServiceDetailContent = {
+  serviceName: "Social Media Management in Angola",
+  serviceType: "Social media management",
   headline: "Your social media management company in Luanda, Angola.",
   credYears: "6 years",
   credRest: "of strategic social media management, content creation, paid campaigns, community growth and creative that turns followers into customers.",
@@ -161,6 +167,8 @@ const smmEn: ServiceDetailContent = {
 };
 
 const brandEn: ServiceDetailContent = {
+  serviceName: "Brand Strategy and Branding in Angola",
+  serviceType: "Brand strategy",
   headline: "Your brand strategy and branding company in Luanda, Angola.",
   credYears: "6 years",
   credRest: "of brand strategy, positioning, naming, visual identity and brand systems built for companies that have to be taken seriously in this market.",
@@ -243,7 +251,16 @@ const brandEn: ServiceDetailContent = {
     { name: "Asset Library", body: "Organised files ready for suppliers, printers and platforms." },
     { name: "Rollout Plan", body: "A staged plan for retiring the old identity without confusing your market." },
   ],
-  relatedServices: ["Naming & Verbal Identity", "Visual Identity Design", "Brand Architecture", "Rebranding & Transitions", "Brand Guidelines & Rollout", "Corporate Communication", "Social Media Management"],
+  relatedServices: [
+    { label: "Naming & Verbal Identity", route: "brand" },
+    { label: "Visual Identity Design", route: "brand" },
+    { label: "Brand Architecture", route: "brand" },
+    { label: "Rebranding & Transitions", route: "brand" },
+    { label: "Brand Guidelines & Rollout", route: "brand" },
+    { label: "Corporate Communication", route: "services" },
+    { label: "Social Media Management", route: "smm" },
+    { label: "Project management", route: "pm" },
+  ],
   faqHeading: "Branding FAQs",
   faq: [
     { q: "What does a branding agency in Angola actually do?", a: "It decides what the business stands for, expresses that decision in a name, identity and voice, and documents it so everyone applies it the same way. Designing a logo is the last part, not the work." },
@@ -256,6 +273,8 @@ const brandEn: ServiceDetailContent = {
 };
 
 const pmEn: ServiceDetailContent = {
+  serviceName: "Project Management in Angola",
+  serviceType: "Project management",
   headline: "Your project management company in Luanda, Angola.",
   credYears: "6 years",
   credRest: "of scoping, coordinating and delivering marketing, communication and technology projects on time in Angola.",
@@ -338,7 +357,15 @@ const pmEn: ServiceDetailContent = {
     { name: "Launches and Openings", body: "Fixed-date projects where nothing can move." },
     { name: "Internal Change Programmes", body: "Communication and training rollouts inside the organisation." },
   ],
-  relatedServices: ["Campaign Production", "Corporate Events", "Vendor & Supplier Management", "Website & Platform Builds", "Institutional Communication", "Brand & Identity Rollouts", "Social Media Management"],
+  relatedServices: [
+    { label: "Campaign Production", route: "services" },
+    { label: "Corporate Events", route: "services" },
+    { label: "Vendor & Supplier Management", route: "services" },
+    { label: "Website & Platform Builds", route: "services" },
+    { label: "Institutional Communication", route: "services" },
+    { label: "Brand & Identity Rollouts", route: "brand" },
+    { label: "Social Media Management", route: "smm" },
+  ],
   faqHeading: "Project Management FAQs",
   faq: [
     { q: "What does a project manager actually do on my project?", a: "Owns the scope, the schedule, the suppliers and the reporting. In practice it means someone chases the decisions and the deliveries daily so your team does not have to." },
@@ -351,6 +378,8 @@ const pmEn: ServiceDetailContent = {
 };
 
 const smmPt: ServiceDetailContent = {
+  serviceName: "Gestão de Redes Sociais em Angola",
+  serviceType: "Gestão de redes sociais",
   headline: "A sua empresa de gestão de redes sociais em Luanda, Angola.",
   credYears: "6 anos",
   credRest: "de gestão estratégica de redes sociais, criação de conteúdo, campanhas pagas, crescimento de comunidade e criativo que transforma seguidores em clientes.",
@@ -449,6 +478,8 @@ const smmPt: ServiceDetailContent = {
 };
 
 const brandPt: ServiceDetailContent = {
+  serviceName: "Estratégia de Marca e Branding em Angola",
+  serviceType: "Estratégia de marca",
   headline: "A sua empresa de estratégia de marca e branding em Luanda, Angola.",
   credYears: "6 anos",
   credRest: "de estratégia de marca, posicionamento, naming, identidade visual e sistemas de marca para empresas que precisam de ser levadas a sério neste mercado.",
@@ -531,7 +562,16 @@ const brandPt: ServiceDetailContent = {
     { name: "Biblioteca de ficheiros", body: "Ficheiros organizados e prontos para fornecedores, gráficas e plataformas." },
     { name: "Plano de implementação", body: "Plano faseado para retirar a identidade antiga sem confundir o mercado." },
   ],
-  relatedServices: ["Naming e identidade verbal", "Identidade visual", "Arquitectura de marca", "Rebranding e transições", "Manual de marca e implementação", "Comunicação corporativa", "Gestão de redes sociais"],
+  relatedServices: [
+    { label: "Naming e identidade verbal", route: "brand" },
+    { label: "Identidade visual", route: "brand" },
+    { label: "Arquitectura de marca", route: "brand" },
+    { label: "Rebranding e transições", route: "brand" },
+    { label: "Manual de marca e implementação", route: "brand" },
+    { label: "Comunicação corporativa", route: "services" },
+    { label: "Gestão de redes sociais", route: "smm" },
+    { label: "Gestão de projectos", route: "pm" },
+  ],
   faqHeading: "Perguntas frequentes sobre branding",
   faq: [
     { q: "O que faz uma agência de branding em Angola?", a: "Decide o que o negócio representa, expressa essa decisão num nome, identidade e voz, e documenta tudo para que todos apliquem da mesma forma. Desenhar um logótipo é a última parte, não o trabalho." },
@@ -544,6 +584,8 @@ const brandPt: ServiceDetailContent = {
 };
 
 const pmPt: ServiceDetailContent = {
+  serviceName: "Gestão de Projectos em Angola",
+  serviceType: "Gestão de projectos",
   headline: "A sua empresa de gestão de projectos em Luanda, Angola.",
   credYears: "6 anos",
   credRest: "a definir âmbito, coordenar fornecedores e entregar projectos de marketing, comunicação e tecnologia a tempo em Angola.",
@@ -626,7 +668,15 @@ const pmPt: ServiceDetailContent = {
     { name: "Lançamentos e inaugurações", body: "Projectos de data fixa onde nada pode mudar." },
     { name: "Programas de mudança interna", body: "Comunicação e formação dentro da organização." },
   ],
-  relatedServices: ["Produção de campanhas", "Eventos corporativos", "Gestão de fornecedores", "Websites e plataformas", "Comunicação institucional", "Implementação de marca", "Gestão de redes sociais"],
+  relatedServices: [
+    { label: "Produção de campanhas", route: "services" },
+    { label: "Eventos corporativos", route: "services" },
+    { label: "Gestão de fornecedores", route: "services" },
+    { label: "Websites e plataformas", route: "services" },
+    { label: "Comunicação institucional", route: "services" },
+    { label: "Implementação de marca", route: "brand" },
+    { label: "Gestão de redes sociais", route: "smm" },
+  ],
   faqHeading: "Perguntas frequentes sobre gestão de projectos",
   faq: [
     { q: "O que faz um gestor de projecto no meu projecto?", a: "Responde pelo âmbito, pelo calendário, pelos fornecedores e pelo reporte. Na prática, significa que alguém persegue diariamente as decisões e as entregas para que a sua equipa não tenha de o fazer." },
@@ -659,7 +709,7 @@ export type ServiceDetailUi = {
   formEmail: string;
   formMessage: string;
   formSubmit: string;
-  adServices: string[];
+  adServices: RelatedService[];
 };
 
 const uiEn: ServiceDetailUi = {
@@ -677,7 +727,17 @@ const uiEn: ServiceDetailUi = {
   formEmail: "Email",
   formMessage: "Tell us about your project",
   formSubmit: "Send message",
-  adServices: ["Facebook Advertising", "Instagram Advertising", "TikTok Advertising", "LinkedIn Advertising", "WhatsApp Advertising", "YouTube Advertising", "Google Ads Management"],
+  adServices: [
+    { label: "Facebook Advertising", route: "services" },
+    { label: "Instagram Advertising", route: "services" },
+    { label: "TikTok Advertising", route: "services" },
+    { label: "LinkedIn Advertising", route: "services" },
+    { label: "WhatsApp Advertising", route: "services" },
+    { label: "YouTube Advertising", route: "services" },
+    { label: "Google Ads Management", route: "services" },
+    { label: "Brand strategy and branding", route: "brand" },
+    { label: "Project management", route: "pm" },
+  ],
 };
 
 const uiPt: ServiceDetailUi = {
@@ -695,7 +755,17 @@ const uiPt: ServiceDetailUi = {
   formEmail: "Email",
   formMessage: "Fale-nos do seu projecto",
   formSubmit: "Enviar mensagem",
-  adServices: ["Publicidade no Facebook", "Publicidade no Instagram", "Publicidade no TikTok", "Publicidade no LinkedIn", "Publicidade no WhatsApp", "Publicidade no YouTube", "Gestão de Google Ads"],
+  adServices: [
+    { label: "Publicidade no Facebook", route: "services" },
+    { label: "Publicidade no Instagram", route: "services" },
+    { label: "Publicidade no TikTok", route: "services" },
+    { label: "Publicidade no LinkedIn", route: "services" },
+    { label: "Publicidade no WhatsApp", route: "services" },
+    { label: "Publicidade no YouTube", route: "services" },
+    { label: "Gestão de Google Ads", route: "services" },
+    { label: "Estratégia de marca e branding", route: "brand" },
+    { label: "Gestão de projectos", route: "pm" },
+  ],
 };
 
 export const serviceDetailUi: Record<Language, ServiceDetailUi> = {

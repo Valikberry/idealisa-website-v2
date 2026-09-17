@@ -1,3 +1,4 @@
+import type { RoutePageKey } from "@/lib/routes";
 import type { Language } from "@/lib/translations";
 
 export type PostSummary = {
@@ -13,6 +14,10 @@ export type PostSummary = {
   excerpt: string;
 };
 export type BlogPost = PostSummary & {
+  relatedService?: {
+    route: Extract<RoutePageKey, "brand" | "smm" | "services">;
+    anchor: string;
+  };
   lead: string;
   quote: string;
   body: { h: string; p: string[] }[];
@@ -24,6 +29,7 @@ const en: BlogPost[] = [
     id: "branding-agency",
     datePublished: "2026-09-03",
     slug: "como-escolher-agencia-de-branding-angola",
+    relatedService: { route: "brand", anchor: "brand strategy and branding in Angola" },
     category: "Brand strategy",
     date: "3 September 2026",
     read: 7,
@@ -55,6 +61,7 @@ const en: BlogPost[] = [
     id: "twitter-ads",
     datePublished: "2026-08-28",
     slug: "publicidade-twitter-x-angola",
+    relatedService: { route: "smm", anchor: "social media management in Angola" },
     category: "Digital",
     date: "28 August 2026",
     read: 5,
@@ -85,6 +92,7 @@ const en: BlogPost[] = [
     id: "social-cost",
     datePublished: "2026-08-18",
     slug: "quanto-custa-marketing-redes-sociais-angola",
+    relatedService: { route: "smm", anchor: "social media management in Angola" },
     category: "Digital",
     date: "18 August 2026",
     read: 8,
@@ -116,6 +124,7 @@ const en: BlogPost[] = [
     id: "youtube",
     datePublished: "2026-08-12",
     slug: "agencia-marketing-publicidade-youtube-angola",
+    relatedService: { route: "smm", anchor: "social media management in Angola" },
     category: "Digital",
     date: "12 August 2026",
     read: 6,
@@ -146,6 +155,7 @@ const en: BlogPost[] = [
     id: "meta-ads",
     datePublished: "2026-08-06",
     slug: "publicidade-facebook-angola",
+    relatedService: { route: "smm", anchor: "social media management in Angola" },
     category: "Digital",
     date: "6 August 2026",
     read: 6,
@@ -176,6 +186,7 @@ const en: BlogPost[] = [
     id: "branding-companies",
     datePublished: "2026-08-02",
     slug: "melhores-empresas-branding-angola",
+    relatedService: { route: "brand", anchor: "brand strategy and branding in Angola" },
     category: "Brand strategy",
     date: "2 August 2026",
     read: 7,
@@ -207,6 +218,7 @@ const en: BlogPost[] = [
     id: "google-ads-roi",
     datePublished: "2026-08-01",
     slug: "melhor-agencia-google-ads-angola",
+    relatedService: { route: "services", anchor: "digital marketing in Angola" },
     category: "Digital",
     date: "1 August 2026",
     read: 7,
@@ -239,6 +251,7 @@ const en: BlogPost[] = [
     id: "social-agency",
     datePublished: "2026-07-29",
     slug: "como-escolher-agencia-redes-sociais-angola",
+    relatedService: { route: "smm", anchor: "social media management in Angola" },
     category: "Digital",
     date: "29 July 2026",
     read: 6,
@@ -269,6 +282,7 @@ const en: BlogPost[] = [
     id: "adwords",
     datePublished: "2026-07-22",
     slug: "google-adwords-angola-crescimento-pago",
+    relatedService: { route: "services", anchor: "digital marketing in Angola" },
     category: "Digital",
     date: "22 July 2026",
     read: 6,
@@ -301,6 +315,7 @@ const en: BlogPost[] = [
     id: "ads-strategies",
     datePublished: "2026-07-02",
     slug: "estrategias-google-ads-gerar-contactos-angola",
+    relatedService: { route: "services", anchor: "digital marketing in Angola" },
     category: "Digital",
     date: "2 July 2026",
     read: 8,
@@ -335,6 +350,7 @@ const ptAO: BlogPost[] = [
     id: "branding-agency",
     datePublished: "2026-09-03",
     slug: "como-escolher-agencia-de-branding-angola",
+    relatedService: { route: "brand", anchor: "estratégia de marca e branding em Angola" },
     category: "Estratégia de marca",
     date: "3 de Setembro de 2026",
     read: 7,
@@ -366,6 +382,7 @@ const ptAO: BlogPost[] = [
     id: "twitter-ads",
     datePublished: "2026-08-28",
     slug: "publicidade-twitter-x-angola",
+    relatedService: { route: "smm", anchor: "gestão de redes sociais em Angola" },
     category: "Digital",
     date: "28 de Agosto de 2026",
     read: 5,
@@ -396,6 +413,7 @@ const ptAO: BlogPost[] = [
     id: "social-cost",
     datePublished: "2026-08-18",
     slug: "quanto-custa-marketing-redes-sociais-angola",
+    relatedService: { route: "smm", anchor: "gestão de redes sociais em Angola" },
     category: "Digital",
     date: "18 de Agosto de 2026",
     read: 8,
@@ -427,6 +445,7 @@ const ptAO: BlogPost[] = [
     id: "youtube",
     datePublished: "2026-08-12",
     slug: "agencia-marketing-publicidade-youtube-angola",
+    relatedService: { route: "smm", anchor: "gestão de redes sociais em Angola" },
     category: "Digital",
     date: "12 de Agosto de 2026",
     read: 6,
@@ -458,6 +477,7 @@ const ptAO: BlogPost[] = [
     id: "meta-ads",
     datePublished: "2026-08-06",
     slug: "publicidade-facebook-angola",
+    relatedService: { route: "smm", anchor: "gestão de redes sociais em Angola" },
     category: "Digital",
     date: "6 de Agosto de 2026",
     read: 6,
@@ -488,6 +508,7 @@ const ptAO: BlogPost[] = [
     id: "branding-companies",
     datePublished: "2026-08-02",
     slug: "melhores-empresas-branding-angola",
+    relatedService: { route: "brand", anchor: "estratégia de marca e branding em Angola" },
     category: "Estratégia de marca",
     date: "2 de Agosto de 2026",
     read: 7,
@@ -519,6 +540,7 @@ const ptAO: BlogPost[] = [
     id: "google-ads-roi",
     datePublished: "2026-08-01",
     slug: "melhor-agencia-google-ads-angola",
+    relatedService: { route: "services", anchor: "marketing digital em Angola" },
     category: "Digital",
     date: "1 de Agosto de 2026",
     read: 7,
@@ -549,6 +571,7 @@ const ptAO: BlogPost[] = [
     id: "social-agency",
     datePublished: "2026-07-29",
     slug: "como-escolher-agencia-redes-sociais-angola",
+    relatedService: { route: "smm", anchor: "gestão de redes sociais em Angola" },
     category: "Digital",
     date: "29 de Julho de 2026",
     read: 6,
@@ -579,6 +602,7 @@ const ptAO: BlogPost[] = [
     id: "adwords",
     datePublished: "2026-07-22",
     slug: "google-adwords-angola-crescimento-pago",
+    relatedService: { route: "services", anchor: "marketing digital em Angola" },
     category: "Digital",
     date: "22 de Julho de 2026",
     read: 6,
@@ -611,6 +635,7 @@ const ptAO: BlogPost[] = [
     id: "ads-strategies",
     datePublished: "2026-07-02",
     slug: "estrategias-google-ads-gerar-contactos-angola",
+    relatedService: { route: "services", anchor: "marketing digital em Angola" },
     category: "Digital",
     date: "2 de Julho de 2026",
     read: 8,

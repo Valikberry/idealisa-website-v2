@@ -909,6 +909,7 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                         <h3 style={{ margin: "0", fontSize: "inherit", fontWeight: "inherit" }}>
                           <button
                             aria-expanded={isOpen}
+                            aria-controls={`${service}-faq-answer-${index}`}
                             onClick={() => setOpenFaq(isOpen ? null : index)}
                             className="hover-warm"
                             style={{
@@ -937,11 +938,12 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                             </span>
                           </button>
                         </h3>
-                        {isOpen && (
-                          <p style={{ fontSize: "14px", lineHeight: "23px", color: "#52525b", margin: "0", padding: "0 20px 18px", textWrap: "pretty" }}>
-                            {item.a}
-                          </p>
-                        )}
+                        <p
+                          id={`${service}-faq-answer-${index}`}
+                          hidden={!isOpen}
+                          style={{ fontSize: "14px", lineHeight: "23px", color: "#52525b", margin: "0", padding: "0 20px 18px", textWrap: "pretty" }}>
+                          {item.a}
+                        </p>
                       </div>
                     </Fragment>
                   );
@@ -987,10 +989,10 @@ export function ServiceDetail({ service }: { service: ServiceDetailKey }) {
                 {ui.otherServices}
               </h2>
               <div style={{ display: "flex", flexDirection: "column" }}>
-                {otherServiceLabels.map((label) => (
+                {otherServiceLabels.map(({ label, route }) => (
                   <Fragment key={label}>
                     <Link
-                      href={ROUTES.services}
+                      href={ROUTES[route]}
                       title={label}
                       className="hover-gold"
                       style={{

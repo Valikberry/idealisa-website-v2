@@ -111,14 +111,19 @@ export function pageGraph(key: RoutePageKey, language: Language): Entity[] {
   const graph: Entity[] = [page];
   if (key === "smm" || key === "brand" || key === "pm") {
     const service = serviceDetailContent[language][key];
-    page.mainEntity = { "@id": `${url}#service` };
+    page["@type"] = ["WebPage", "FAQPage"];
+    page.mainEntity = service.faq.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    }));
     graph.push({
       "@type": "Service",
       "@id": `${url}#service`,
       url,
-      name: service.solutionsHeading,
+      name: service.serviceName,
       description: service.intro,
-      serviceType: service.kicker,
+      serviceType: service.serviceType,
       provider: organization,
       areaServed: { "@type": "Country", name: "Angola" },
       mainEntityOfPage: { "@id": `${url}#webpage` },
